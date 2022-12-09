@@ -30,6 +30,7 @@ const HeroSection = () => {
               style={{ objectFit: "cover" }}
               src={heroImg}
               alt="phots of some pet"
+              loading="lazy"
             />
           </div>
         </div>

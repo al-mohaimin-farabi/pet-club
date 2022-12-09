@@ -15,6 +15,7 @@ const Footer = () => {
                 style={{ width: "40%" }}
                 alt="logo"
                 className="m-0 p-0"
+                loading="lazy"
               />
             </div>
             <p className="text-main ">

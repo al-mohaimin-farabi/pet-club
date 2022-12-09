@@ -14,11 +14,11 @@ const Login = () => {
           <div className="col-12 col-md-12 col-lg-6 p-3">
             <div className="d-flex justify-content-center py-2 mb-2 ">
               <img
-                className=""
                 width="40%"
                 // height="70px"
                 src={logo}
                 alt="petclub"
+                loading="lazy"
               />
             </div>
             <div>
@@ -102,6 +102,7 @@ const Login = () => {
               className="img-fluid"
               src={authImg}
               alt="young-man-using-laptop-computer-with-dog-pet-on-white-background-free-vector"
+              loading="lazy"
             />
           </div>
         </div>

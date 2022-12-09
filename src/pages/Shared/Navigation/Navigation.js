@@ -13,6 +13,7 @@ const Navigation = () => {
             src={logo}
             className="img-fluid"
             alt="pet club"
+            loading="lazy"
           />
         </NavLink>
         <button
