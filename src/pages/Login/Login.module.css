@@ -1,0 +1,29 @@
+.or::after,
+.or::before {
+  position: absolute;
+  content: "";
+  width: 45%;
+  height: 2px;
+  background-color: var(--main-color);
+  top: 50%;
+  transform: translateY(-50%);
+}
+.or::after {
+  right: 0px;
+}
+.or::before {
+  left: 0px;
+}
+@media only screen and (min-width: 380px) and (max-width: 770px) {
+  .responsive {
+    font-size: 14px;
+    padding: 5px !important;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1399px) {
+  .responsive {
+    font-size: 20px;
+    padding: 8px !important;
+  }
+}

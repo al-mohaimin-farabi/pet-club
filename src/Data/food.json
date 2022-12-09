@@ -1,0 +1,204 @@
+[
+  {
+    "id": 1,
+    "img": "./Images/food-images/images-1.png",
+    "animal": "cat 🐱",
+    "title": "Drools Cat Food Mackerel Flavour 1.2kg",
+    "brand": "Drools",
+    "price": 500,
+    "discounted": 400,
+    "stock": 6
+  },
+  {
+    "id": 2,
+    "img": "./Images/food-images/images-2.png",
+    "animal": "cat 🐱",
+    "title": "Smile Cat Food Adult Chicken 1KG",
+    "brand": "Smile",
+    "price": 350,
+    "discounted": "undefined",
+    "stock": 4
+  },
+  {
+    "id": 3,
+    "img": "./Images/food-images/images-3.png",
+    "animal": "cat 🐱",
+    "title": "Honghaipet Bentonite Cat Litter Rose 5ltr",
+    "brand": "Clean +",
+    "price": 330,
+    "discounted": 320,
+    "stock": 25
+  },
+  {
+    "id": 4,
+    "img": "./Images/food-images/images-4.png",
+    "animal": "cat 🐱",
+    "title": "Kiwof Cat Dewormer Chewable Tablets 1pcs",
+    "brand": "Kiwof",
+    "price": 120,
+    "discounted": 100,
+    "stock": 44
+  },
+  {
+    "id": 5,
+    "img": "./Images/food-images/images-5.png",
+    "animal": "dog 🐶",
+    "title": "Drool's Real Chicken Sausage is for dogs",
+    "brand": "Drools",
+    "price": 120,
+    "discounted": "undefined",
+    "stock": 44
+  },
+  {
+    "id": 6,
+    "img": "./Images/food-images/images-6.png",
+    "animal": "dog 🐶",
+    "title": "Drools Adult Dog Food Chicken And Egg 3kg(700 gm)",
+    "brand": "Drools",
+    "price": 990,
+    "discounted": "undefined",
+    "stock": 44
+  },
+
+  {
+    "id": 7,
+    "img": "./Images/food-images/images-7.png",
+    "animal": "bird 🐤",
+    "title": "Versele-Laga Prestige Loco Parque Ara Parrot 2kg",
+    "brand": "unknown",
+    "price": 1300,
+    "discounted": 1250,
+    "stock": 12
+  },
+  {
+    "id": 8,
+    "img": "./Images/food-images/images-8.png",
+    "animal": "rabbit 🐰",
+    "title": "Quik Premium Rabbit Food 750gm",
+    "brand": "Quik",
+    "price": 275,
+    "discounted": "undefined",
+    "stock": 36
+  },
+  {
+    "id": 9,
+    "img": "./Images/food-images/images-9.png",
+    "animal": "rabbit 🐰",
+    "title": "Versele Laga Rabbit Crispy Crunchies Fruits 75gm",
+    "brand": "Versele Laga",
+    "price": 255,
+    "discounted": 150,
+    "stock": 29
+  },
+  {
+    "id": 10,
+    "img": "./Images/food-images/images-10.png",
+    "animal": "rabbit 🐰",
+    "title": "Versele-Laga Complete Cuni Adult Rabbit Carrot + Timothy 500gm",
+    "brand": "Versele Laga",
+    "price": 255,
+    "discounted": "undefined",
+    "stock": 23
+  },
+  {
+    "id": 11,
+    "img": "./Images/food-images/images-11.png",
+    "animal": "bird 🐤",
+    "title": "Deli Nature Parakeets Eggfood 1Kg",
+    "brand": "Deli Nature",
+    "price": 500,
+    "discounted": "undefined",
+    "stock": 11
+  },
+  {
+    "id": 12,
+    "img": "./Images/food-images/images-12.png",
+    "animal": "bird 🐤",
+    "title": "Versele Laga Exotic Nuts 750gm",
+    "brand": "Versele Laga",
+    "price": 1000,
+    "discounted": 500,
+    "stock": 9
+  },
+
+  {
+    "id": 13,
+    "animal": "cat 🐱",
+    "img": "./Images/food-images/images-13.png",
+    "title": "Adult Chicken with Anchovy & Rice Cat Dry food",
+    "brand": "Bonacibo ",
+    "price": 1200,
+    "discounted": 1000,
+    "stock": 15
+  },
+  {
+    "id": 14,
+    "animal": "cat 🐱",
+    "img": "./Images/food-images/images-14.png",
+    "title": "Adult Sunny I,ve Beautiful Hair Cat Dry Food 7kg",
+    "brand": "Brit Care",
+    "price": 3500,
+    "discounted": null,
+    "stock": 12
+  },
+  {
+    "id": 15,
+    "animal": "cat 🐱",
+    "img": "./Images/food-images/images-15.png",
+    "title": "Adult Cat Food Chicken 2kg",
+    "brand": "Felicia Digest Care",
+    "price": 1200,
+    "discounted": null,
+    "stock": 10
+  },
+  {
+    "id": 16,
+    "animal": "dog 🐶",
+    "img": "./Images/food-images/images-16.png",
+    "title": "Performance Adult Dog Food 20kg ",
+    "brand": "Drools ",
+    "price": 5000,
+    "discounted": 4500,
+    "stock": 20
+  },
+  {
+    "id": 17,
+    "animal": "dog 🐶",
+    "img": "./Images/food-images/images-17.png",
+    "title": "Energy Treats Cut Bone",
+    "brand": "Goodies",
+    "price": 850,
+    "discounted": null,
+    "stock": 11
+  },
+  {
+    "id": 18,
+    "animal": "dog 🐶",
+    "img": "./Images/food-images/images-18.png",
+    "title": "Bone Jumbo Twist Bones with Chicken 240g (20cm X 6pcs)",
+    "brand": "Kennel ",
+    "price": 1050,
+    "discounted": 950,
+    "stock": 20
+  },
+  {
+    "id": 19,
+    "animal": "cat 🐱",
+    "img": "./Images/food-images/images-19.png",
+    "title": "Adult Cat Food Seafood Sensations",
+    "brand": "Friskies",
+    "price": 500,
+    "discounted": 450,
+    "stock": 8
+  },
+  {
+    "id": 20,
+    "animal": "cat 🐱",
+    "img": "./Images/food-images/images-20.png",
+    "title": "Adult Cat Food Chicken & Tuna",
+    "brand": "Smart Heart ",
+    "price": 750,
+    "discounted": null,
+    "stock": 10
+  }
+]

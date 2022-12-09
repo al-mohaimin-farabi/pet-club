@@ -1,38 +1,174 @@
-.App {
-  text-align: center;
+/* custom common css */
+/* coler:#16213E */
+/* common reuseable css stylesheet */
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600;700");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --main-color: #16213e;
+  --main-color-semi-transparent: rgba(22, 33, 62, 0.5);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.text-main {
+  color: var(--main-color) !important;
+  /* color: linear-gradient(20deg, #16213e, #352396) !important; */
+}
+.text-main.active {
+  font-weight: 600;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.nav-link,
+.dropdown-item {
+  position: relative;
+}
+.nav-link:hover::before,
+.dropdown-item:hover:before {
+  position: absolute;
+  content: "";
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--main-color);
+}
+.dropdown-item:focus {
+  color: #ffffff !important;
+  background-color: var(--main-color);
 }
 
-.App-link {
-  color: #61dafb;
+.bg-main {
+  background-color: var(--main-color) !important;
+}
+.bg-main-bordered {
+  border: 1px solid transparent;
+  background-color: var(--main-color) !important;
+}
+.bg-main-gradient {
+  background: radial-gradient(
+    circle,
+    rgba(22, 33, 62, 1),
+    rgba(17, 32, 75, 0.9),
+    rgba(22, 33, 62, 1)
+  ) !important;
+}
+.border-primary {
+  border: 1px solid var(--main-color) !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button-defult-hover {
+  border: 1px solid transparent;
+  background-color: var(--main-color);
+  color: #ffffff;
+  transition: 0.3s all ease-in;
 }
+.button-defult-hover:hover {
+  border: 1px solid var(--main-color);
+  background-color: #fff;
+  color: var(--main-color);
+  transition: 0.3s all ease-in;
+}
+.button-defult-reverse-hover {
+  border: 1px solid var(--main-color);
+  background-color: #fff;
+  color: var(--main-color);
+  transition: 0.3s all ease-in;
+}
+.button-defult-reverse-hover:focus {
+  border: 1px solid transparent;
+  background-color: var(--main-color) !important;
+  color: #ffffff !important;
+  transition: 0.3s all ease-in;
+}
+.button-defult-reverse-hover:hover {
+  order: 1px solid transparent;
+  background-color: var(--main-color);
+  color: #ffffff;
+  transition: 0.3s all ease-in;
+}
+
+.messeage-box h2 {
+  font-size: 24px;
+}
+
+.messeage-box h2::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: var(--main-color);
+  bottom: -15px;
+}
+
+/* .card.border-primary {
+  border: 1px solid rgba(22, 33, 62, 0.6) !important;
+}
+.nav-link.text-main {
+  font-weight: 400;
+}
+.nav-link.active {
+  font-weight: 600;
+}
+.dropdwon-item.text-main {
+  font-weight: 400;
+}
+.hover {
+  position: relative;
+}
+
+.nav-link.hover:hover::after,
+.dropdown-item.hover:hover::after {
+  position: absolute;
+  content: "";
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--main-color);
+}
+.dropdown-toggle:hover {
+  transform: scale(1.1);
+}
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: var(--main-color) !important;
+  color: #ffffff !important;
+}
+.btn.hover:hover {
+  transition: all 0.5s ease-in-out;
+  background-color: #ffffff !important;
+  color: var(--main-color) !important;
+  border: 1px solid var(--main-color);
+}
+.btn.implicite {
+  border: 1px solid var(--main-color);
+}
+.btn.implicite:hover {
+  border: 1px solid var(--main-color) !important;
+  background-color: var(--main-color) !important;
+  color: #ffffff !important;
+}
+.btn.active {
+  border: 1px solid var(--main-color) !important;
+}
+.btn.active:hover {
+  border: 1px solid var(--main-color) !important;
+
+  background-color: var(--main-color) !important;
+  color: #ffffff !important;
+}
+
+
+.form-control:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: var(--main-color) !important;
+  outline: unset !important;
+  box-shadow: none !important;
+} */
