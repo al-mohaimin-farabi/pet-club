@@ -18,7 +18,7 @@ const Login = () => {
                 // height="70px"
                 src={logo}
                 alt="petclub"
-                loading="lazy"
+                
               />
             </div>
             <div>
@@ -102,7 +102,7 @@ const Login = () => {
               className="img-fluid"
               src={authImg}
               alt="young-man-using-laptop-computer-with-dog-pet-on-white-background-free-vector"
-              loading="lazy"
+              
             />
           </div>
         </div>
