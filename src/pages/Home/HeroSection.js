@@ -17,7 +17,7 @@ const HeroSection = () => {
                 order. For a limited time!
               </h3>
               <NavLink
-                className="btn button-defult-hover rounded-pill t px-3 py-1 mt-1"
+                className="btn button-defult-hover rounded-pill t px-3 py-1 mt-2"
                 to="/signup"
               >
                 Signup Now

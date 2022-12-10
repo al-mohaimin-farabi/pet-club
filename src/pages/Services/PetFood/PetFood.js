@@ -30,7 +30,7 @@ const PetFood = () => {
             <span className="visually-hidden">Loading...</span>
           </div>
         </div>
-      ) : displayData < 1 ? (
+      ) : displayData == 0 ? (
         <div className="col-12 w-100 text-center">
           <img
             src={resultNotFound}
