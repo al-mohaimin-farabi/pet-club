@@ -17,20 +17,22 @@ const PetFood = () => {
         singledata.animal.toLowerCase().includes(searchedText.toLowerCase()) ||
         singledata.title.toLowerCase().includes(searchedText.toLowerCase())
     );
-    setDisplaydata(filteredData), setisLoading(false);
+    setDisplaydata(filteredData);
+    setisLoading(false);
   }, [searchedText, data]);
 
   return (
     <>
       <Navigation></Navigation>
       <SearchField setsearchedText={setsearchedText}></SearchField>
-      {isLoading ? (
-        <div className="w-100 d-flex justify-content-center  align-items-center">
+      {isLoading == true ? (
+        <div className="w-100 d-flex flex-column justify-content-center  align-items-center mt-5">
           <div className="spinner-border text-main" role="status">
             <span className="visually-hidden">Loading...</span>
           </div>
+          <span className="mt-2 fs-4 text-main">Loading...</span>
         </div>
-      ) : displayData == 0 ? (
+      ) : displayData.length == 0 ? (
         <div className="col-12 w-100 text-center">
           <img
             src={resultNotFound}
