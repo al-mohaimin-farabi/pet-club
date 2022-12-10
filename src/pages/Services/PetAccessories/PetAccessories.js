@@ -19,7 +19,7 @@ const PetAccessories = () => {
     );
     setDisplaydata(filteredData), setisLoading(false);
     console.log(displayData);
-  }, [searchedText, data, isLoading]);
+  }, [searchedText, data]);
   return (
     <>
       <Navigation></Navigation>
@@ -30,7 +30,7 @@ const PetAccessories = () => {
             <span className="visually-hidden">Loading...</span>
           </div>
         </div>
-      ) : displayData < 1 ? (
+      ) : displayData.length < 1 ? (
         <div className="col-12 w-100 text-center">
           <img
             src={resultNotFound}

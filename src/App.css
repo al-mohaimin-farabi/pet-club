@@ -120,11 +120,12 @@
 }
 
 .img-box {
-  transform: scale(0.95);
+  transform: scale(0.98);
 }
 .col:hover .img-box {
   transition: all 0.5s ease;
-  transform: scale(1);
+  overflow: hidden;
+  transform: scale(0.95);
 }
 .img-box {
   padding: 0px 15px;
@@ -141,7 +142,7 @@
   background-color: #ffffff;
 }
 
-.card:first-child::before {
+.service-showcase .card::before {
   content: "";
   position: absolute;
   background-color: var(--main-color);

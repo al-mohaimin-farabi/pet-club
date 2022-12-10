@@ -18,7 +18,7 @@ const PetFood = () => {
         singledata.title.toLowerCase().includes(searchedText.toLowerCase())
     );
     setDisplaydata(filteredData), setisLoading(false);
-  }, [searchedText, data, isLoading]);
+  }, [searchedText, data]);
 
   return (
     <>
