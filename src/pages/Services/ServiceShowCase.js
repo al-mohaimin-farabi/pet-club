@@ -12,7 +12,7 @@ const Services = () => {
         <div className="messeage-box mt-1">
           <h2 className="text-main  position-relative">Our Services</h2>
         </div>
-        <div className="row gx-5 gy-4 row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 mt-0 py-2">
+        <div className="row gx-0 gx-md-5 gy-4 row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 mt-0 py-2">
           <div className="col">
             <div className="card my-2 h-100">
               <img
