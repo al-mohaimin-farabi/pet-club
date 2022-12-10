@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import cat404Img from "../../Images/cat.jpg";
 
 import style from "./NotFound.module.css";
 const NotFound = () => {
+  useEffect(() => {
+    document.title = "404";
+  }, []);
   return (
     <section className="page_404 text-center p-4">
       <img className="img-fluid" src={cat404Img} alt="404"  />

@@ -20,8 +20,10 @@
   color: var(--main-color) !important;
   /* color: linear-gradient(20deg, #16213e, #352396) !important; */
 }
-.text-main.active {
+.active {
   font-weight: 600;
+  /* background-color: transparent !important; */
+  /* background: transparent !important; */
 }
 
 .nav-link,
@@ -40,7 +42,7 @@
 }
 .dropdown-item:focus {
   color: #ffffff !important;
-  background-color: var(--main-color);
+  background-color: var(--main-color) !important;
 }
 
 .bg-main {
@@ -92,6 +94,9 @@
   color: #ffffff;
   transition: 0.3s all ease-in;
 }
+.dropdown-item.active {
+  background-color: unset;
+}
 
 .messeage-box h2 {
   font-size: 24px;
@@ -106,69 +111,43 @@
   bottom: -15px;
 }
 
-/* .card.border-primary {
-  border: 1px solid rgba(22, 33, 62, 0.6) !important;
-}
-.nav-link.text-main {
-  font-weight: 400;
-}
-.nav-link.active {
-  font-weight: 600;
-}
-.dropdwon-item.text-main {
-  font-weight: 400;
-}
-.hover {
-  position: relative;
-}
-
-.nav-link.hover:hover::after,
-.dropdown-item.hover:hover::after {
-  position: absolute;
-  content: "";
-  bottom: 0px;
-  left: 0px;
-  width: 100%;
-  height: 2px;
-  background-color: var(--main-color);
-}
-.dropdown-toggle:hover {
-  transform: scale(1.1);
-}
-.dropdown-item.active,
-.dropdown-item:active {
-  background-color: var(--main-color) !important;
-  color: #ffffff !important;
-}
-.btn.hover:hover {
-  transition: all 0.5s ease-in-out;
-  background-color: #ffffff !important;
-  color: var(--main-color) !important;
-  border: 1px solid var(--main-color);
-}
-.btn.implicite {
-  border: 1px solid var(--main-color);
-}
-.btn.implicite:hover {
-  border: 1px solid var(--main-color) !important;
-  background-color: var(--main-color) !important;
-  color: #ffffff !important;
-}
-.btn.active {
-  border: 1px solid var(--main-color) !important;
-}
-.btn.active:hover {
-  border: 1px solid var(--main-color) !important;
-
-  background-color: var(--main-color) !important;
-  color: #ffffff !important;
-}
-
-
 .form-control:focus {
   color: #212529;
   background-color: #fff;
   border-color: var(--main-color) !important;
   outline: unset !important;
   box-shadow: none !important;
-} */
+}
+
+.img-box {
+  transform: scale(0.95);
+}
+.col:hover .img-box {
+  transition: all 0.5s ease;
+  transform: scale(1);
+}
+.img-box {
+  padding: 0px 15px;
+  width: 100%;
+  height: 400px;
+  border-radius: 20px !important;
+}
+
+.service-showcase .card {
+  /* width: 80%; */
+  border-radius: 6px;
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.1);
+  border: solid 1px rgba(37, 37, 37, 0.1);
+  background-color: #ffffff;
+}
+
+.card:first-child::before {
+  content: "";
+  position: absolute;
+  background-color: var(--main-color);
+  top: -5px;
+  left: 0px;
+  width: 100%;
+  height: 8px;
+  border-radius: 6px 6px 0 0;
+}

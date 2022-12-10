@@ -15,7 +15,6 @@ const Footer = () => {
                 style={{ width: "40%" }}
                 alt="logo"
                 className="m-0 p-0"
-                
               />
             </div>
             <p className="text-main ">
@@ -63,7 +62,7 @@ const Footer = () => {
             <ul className="p-0 m-0">
               <li className="m-0 p-0 d-flex">
                 <p className="text-main">
-                  <i className="fa-solid fa-house-chimney"></i>
+                  <i className="fa-solid fa-house"></i>
                   <strong> Address: </strong>7 No. West Sholoshohor Ward
                   Chattogram
                 </p>
@@ -79,6 +78,13 @@ const Footer = () => {
                   <i className="fa-solid fa-envelope"></i>
                   <strong> Email: </strong>
                   petclub.contact@petclub.com
+                </p>
+              </li>
+              <li className="m-0 p-0 d-flex">
+                <p className="text-main">
+                  <i className="fa-solid fa-clock"></i>
+                  <strong> Working Hours: </strong>
+                  Always Open
                 </p>
               </li>
             </ul>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navigation from "../Shared/Navigation/Navigation";
 import style from "./Login.module.css";
 import logo from "../../Images/Logo-Two.png";
@@ -6,6 +6,9 @@ import authImg from "../../Images/auth-image.png";
 import { NavLink } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 const Login = () => {
+  useEffect(() => {
+    document.title = "Login";
+  }, []);
   return (
     <>
       <Navigation></Navigation>
@@ -18,7 +21,6 @@ const Login = () => {
                 // height="70px"
                 src={logo}
                 alt="petclub"
-                
               />
             </div>
             <div>
@@ -59,7 +61,7 @@ const Login = () => {
                 <i className="fa-solid fa-arrow-right-to-bracket"></i>
               </button>
             </form>
-            <NavLink to="#" className="mt-1 ms-1 d-block text-main">
+            <NavLink as={HashLink} className="mt-1 ms-1 d-block text-main">
               forget password
             </NavLink>
             <div
@@ -70,22 +72,22 @@ const Login = () => {
             <div className="solcial-signup pb-2">
               <div className="row">
                 <div className="col">
-                  <NavLink
-                    as={HashLink}
+                  <button
+                    
                     className={`${style.responsive} d-flex w-100 h-100 justify-content-center align-items-center btn button-defult-reverse-hover   rounded px-4 py-1`}
                   >
                     <i className="fa-brands fa-google"></i> &nbsp; Login with
                     Google
-                  </NavLink>
+                  </button>
                 </div>
                 <div className="col">
-                  <NavLink
-                    as={HashLink}
+                  <button
+                    
                     className={`${style.responsive} d-flex w-100 h-100 justify-content-center align-items-center btn button-defult-reverse-hover  rounded px-4 py-1`}
                   >
                     <i className="fa-brands fa-facebook"></i> &nbsp; Login With
                     Facebook
-                  </NavLink>
+                  </button>
                 </div>
               </div>
 
@@ -102,7 +104,6 @@ const Login = () => {
               className="img-fluid"
               src={authImg}
               alt="young-man-using-laptop-computer-with-dog-pet-on-white-background-free-vector"
-              
             />
           </div>
         </div>

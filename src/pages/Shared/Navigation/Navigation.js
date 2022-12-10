@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
 import logo from "../../../Images/LOGO.png";
 const Navigation = () => {
   return (
@@ -13,7 +12,6 @@ const Navigation = () => {
             src={logo}
             className="img-fluid"
             alt="pet club"
-            
           />
         </NavLink>
         <button
@@ -30,11 +28,7 @@ const Navigation = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <NavLink
-                className="nav-link text-main  active "
-                to="/home"
-                activeclassname="active"
-              >
+              <NavLink className="nav-link text-main " to="/">
                 Home
               </NavLink>
             </li>
@@ -45,22 +39,20 @@ const Navigation = () => {
             </li>
 
             <li className="nav-item dropdown">
-              <a
-                as={HashLink}
-                to="/"
+              <NavLink
+                to="/services"
                 className="nav-link text-main "
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 Services <i className="fa-solid fa-caret-down"></i>
-              </a>
+              </NavLink>
               <ul className="dropdown-menu">
                 <li>
                   <NavLink
                     className="dropdown-item text-main hover"
-                    to="/pet-adoption"
-                    activeclassname="active"
+                    to="/services/pet-adoption"
                   >
                     Pet Adoption
                   </NavLink>
@@ -69,8 +61,7 @@ const Navigation = () => {
                 <li>
                   <NavLink
                     className="dropdown-item text-main hover"
-                    to="/pet-care"
-                    activeclassname="active"
+                    to="/services/pet-care"
                   >
                     Pet Care
                   </NavLink>
@@ -78,8 +69,7 @@ const Navigation = () => {
                 <li>
                   <NavLink
                     className="dropdown-item text-main hover"
-                    to="/pet-food"
-                    activeclassname="active"
+                    to="/services/pet-food"
                   >
                     Pet Food
                   </NavLink>
@@ -87,8 +77,7 @@ const Navigation = () => {
                 <li>
                   <NavLink
                     className="dropdown-item text-main hover"
-                    to="/pet-toy-accessories"
-                    activeclassname="active"
+                    to="/services/pet-toy-accessories"
                   >
                     Pet Toy & Accessories
                   </NavLink>
@@ -97,11 +86,7 @@ const Navigation = () => {
             </li>
 
             <li className="nav-item me-2">
-              <NavLink
-                className="nav-link text-main hover"
-                to="/tips"
-                activeclassname="active"
-              >
+              <NavLink className="nav-link text-main hover" to="/tips">
                 Tips
               </NavLink>
             </li>
@@ -109,7 +94,6 @@ const Navigation = () => {
               <NavLink
                 className="btn btn-sm button-defult-hover rounded-pill px-3 py-1 mt-1 "
                 to="/login"
-                activeclassname="active"
               >
                 Login <i className="fa-solid fa-arrow-right-to-bracket"></i>
               </NavLink>

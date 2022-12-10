@@ -13,7 +13,7 @@ const HeroSection = () => {
               </h1>
               <h3 className="fs-4 text-main">
                 Are you a new user? Join today and enjoy
-                <span className="fw-bold">Flat 5% Discount</span> on your 1st
+                <span className="fw-bold"> Flat 5% Discount</span> on your 1st
                 order. For a limited time!
               </h3>
               <NavLink
