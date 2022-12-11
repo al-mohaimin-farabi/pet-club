@@ -18,14 +18,19 @@ const PetAccessories = () => {
         singledata.animal.toLowerCase().includes(searchedText.toLowerCase()) ||
         singledata.title.toLowerCase().includes(searchedText.toLowerCase())
     );
-    setDisplaydata(filteredData);
+    if (filteredData.length == 0 && isLoading == true) {
+      setDisplaydata("Loading");
+    } else {
+      setDisplaydata(filteredData);
+    }
+
     setisLoading(false);
   }, [searchedText, data]);
   return (
     <>
       <Navigation></Navigation>
       <SearchField setsearchedText={setsearchedText}></SearchField>
-      {isLoading ? (
+      {displayData == "Loading" ? (
         <div className="w-100 d-flex flex-column justify-content-center  align-items-center mt-5">
           <div className="spinner-border text-main" role="status">
             <span className="visually-hidden"></span>
