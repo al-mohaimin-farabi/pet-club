@@ -12,17 +12,17 @@ const Services = () => {
         <div className="messeage-box mt-1">
           <h2 className="text-main  position-relative">Our Services</h2>
         </div>
-        <div className="row gx-0 gx-md-5 gy-4 row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 mt-0 py-2">
-          <div className="col">
-            <div className="card my-2 h-100">
+        <div className="row gx-0 gx-md-5 mx-0 px-0 gy-3 row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 mt-0 py-2 ">
+          <div className="col h-100 d-flex justify-content-end ">
+            <div className="card my-2 ">
               <img
                 className="card-icon img-fluid m-0 p-0 h-100"
                 // style={{ height: "380px" }}
                 src={petAdoption}
                 alt="pet adoption"
               />
-              <div className="card__body p-3">
-                <h4 className="card-title text-main">Pet Adoption</h4>
+              <div className="card__body px-3 py-2">
+                <h5 className="card-title text-main">Pet Adoption</h5>
                 <p className="card-text text-muted  ">
                   Your pet need some care just like a human. We can look after
                   your pet when you will be busy at your work. Pet Club can
@@ -39,16 +39,16 @@ const Services = () => {
               </div>
             </div>
           </div>
-          <div className="col">
-            <div className="card my-2 h-100">
+          <div className="col h-100 d-flex justify-content-start ">
+            <div className="card my-2 ">
               <img
                 className="card-icon img-fluid m-0 p-0 h-100"
                 // style={{ height: "380px" }}
                 src={petCare}
                 alt="pet adoption"
               />
-              <div className="card__body p-3">
-                <h4 className="card-title text-main">Pet Care</h4>
+              <div className="card__body px-3 py-2">
+                <h5 className="card-title text-main">Pet Care</h5>
                 <p className="card-text text-muted  ">
                   Your pet need some care just like a human. We can look after
                   your pet when you will be busy at your work. Pet Club can
@@ -65,16 +65,16 @@ const Services = () => {
               </div>
             </div>
           </div>
-          <div className="col">
-            <div className="card my-2 h-100">
+          <div className="col h-100 d-flex justify-content-end ">
+            <div className="card my-2 ">
               <img
                 className="card-icon img-fluid m-0 p-0 h-100"
                 // style={{ height: "380px" }}
                 src={petFood}
                 alt="pet accessories"
               />
-              <div className="card__body p-3">
-                <h4 className="card-title text-main">Pet Food</h4>
+              <div className="card__body px-3 py-2">
+                <h5 className="card-title text-main">Pet Food</h5>
                 <p className="card-text text-muted  ">
                   Your pet need good quality food for better helth. Pet Club can
                   provide you best quality authentic and organic Food.
@@ -90,16 +90,16 @@ const Services = () => {
               </div>
             </div>
           </div>
-          <div className="col">
-            <div className="card my-2 h-100">
+          <div className="col h-100 d-flex justify-content-start ">
+            <div className="card my-2 ">
               <img
                 className="card-icon img-fluid m-0 p-0 h-100"
                 // style={{ height: "380px" }}
                 src={PetAccessories}
                 alt="pet accessories"
               />
-              <div className="card__body p-3">
-                <h4 className="card-title text-main">Pet Accessories</h4>
+              <div className="card__body px-3 py-2">
+                <h5 className="card-title text-main">Pet Accessories</h5>
                 <p className="card-text text-muted  ">
                   Mentel helth is very important for animal. Pet Club can
                   provide you best quality Accessories and Toy for your pet.

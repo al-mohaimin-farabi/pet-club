@@ -3,9 +3,9 @@ import { HashLink } from "react-router-hash-link";
 import logo from "../../../Images/Logo-Two.png";
 import style from "./Footer.module.css";
 
-const Footer = () => {
+const Footer = ({ children, test }) => {
   return (
-    <footer className="bg-light py-2">
+    <footer className="bg-light py-2 mt-1">
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-4 col-lg-4">

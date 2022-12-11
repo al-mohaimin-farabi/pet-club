@@ -135,11 +135,16 @@
 }
 
 .service-showcase .card {
-  /* width: 80%; */
+  width: 90%;
   border-radius: 6px;
   box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.1);
   border: solid 1px rgba(37, 37, 37, 0.1);
   background-color: #ffffff;
+}
+.service-showcase .card img {
+  filter: brightness(70%);
+  width: 100%;
+  height: 350px !important;
 }
 
 .service-showcase .card::before {

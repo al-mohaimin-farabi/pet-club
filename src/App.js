@@ -8,6 +8,7 @@ import Signup from "./pages/Auth/Signup";
 import PetFood from "./pages/Services/PetFood/PetFood";
 import About from "./pages/About/About";
 import PetAccessories from "./pages/Services/PetAccessories/PetAccessories";
+
 function App() {
   return (
     <div className="App">
