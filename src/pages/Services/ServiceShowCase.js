@@ -13,7 +13,7 @@ const Services = () => {
           <h2 className="text-main  position-relative">Our Services</h2>
         </div>
         <div className="row gx-0 gx-md-5 mx-0 px-0 gy-3 row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 mt-0 py-2 ">
-          <div className="col h-100 d-flex justify-content-end ">
+          <div className="col h-100 d-flex justify-content-md-end">
             <div className="card my-2 ">
               <img
                 className="card-icon img-fluid m-0 p-0 h-100"
@@ -39,7 +39,7 @@ const Services = () => {
               </div>
             </div>
           </div>
-          <div className="col h-100 d-flex justify-content-start ">
+          <div className="col h-100 d-flex justify-content-md-start ">
             <div className="card my-2 ">
               <img
                 className="card-icon img-fluid m-0 p-0 h-100"
@@ -65,7 +65,7 @@ const Services = () => {
               </div>
             </div>
           </div>
-          <div className="col h-100 d-flex justify-content-end ">
+          <div className="col h-100 d-flex justify-content-md-end">
             <div className="card my-2 ">
               <img
                 className="card-icon img-fluid m-0 p-0 h-100"

@@ -141,6 +141,7 @@
   border: solid 1px rgba(37, 37, 37, 0.1);
   background-color: #ffffff;
 }
+
 .service-showcase .card img {
   filter: brightness(70%);
   width: 100%;
@@ -156,4 +157,14 @@
   width: 100%;
   height: 8px;
   border-radius: 6px 6px 0 0;
+}
+
+@media only screen and (max-width: 767px) and (min-width: 200px) {
+  .service-showcase .card {
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px rgba(37, 37, 37, 0.1);
+    background-color: #ffffff;
+  }
 }
