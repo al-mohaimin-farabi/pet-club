@@ -4,6 +4,7 @@ import Navigation from "../../Shared/Navigation/Navigation";
 import Products from "../../Shared/Products/Products";
 import resultNotFound from "../../../Images/cant-find-search-result.gif";
 import SearchField from "../../Shared/SearchField/SearchField";
+import Footer from "../../Shared/Footer/Footer";
 
 const PetFood = () => {
   const [isLoading, setisLoading] = useState(true);
@@ -39,8 +40,8 @@ const PetFood = () => {
         </div>
       ) : (
         <section>
-          <div className="container">
-            <div className="row g-3 row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-3 mt-0 py-2">
+          <div className="container mb-3">
+            <div className="row g-3 row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4 mt-0 py-2 ">
               {displayData.length >= 1 ? (
                 displayData.map((data) => (
                   <Products key={data.id} data={data}></Products>
@@ -58,6 +59,7 @@ const PetFood = () => {
           </div>
         </section>
       )}
+      <Footer></Footer>
     </>
   );
 };

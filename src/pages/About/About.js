@@ -1,17 +1,7 @@
 import React, { useEffect } from "react";
 import Footer from "../Shared/Footer/Footer";
 import Navigation from "../Shared/Navigation/Navigation";
-import AwesomeSlider from "react-awesome-slider";
-import "react-awesome-slider/dist/styles.css";
-
-const slider = (
-  <AwesomeSlider>
-    <div className="text-white fw-bolder bg-success p-5">1</div>
-    <div className="text-white fw-bolder bg-success p-5">2</div>
-    <div className="text-white fw-bolder bg-success p-5">3</div>
-    <div className="text-white fw-bolder bg-success p-5">4</div>
-  </AwesomeSlider>
-);
+import Slider from "./Slider";
 
 const About = () => {
   useEffect(() => {
@@ -20,7 +10,7 @@ const About = () => {
   return (
     <>
       <Navigation></Navigation>
-      {slider}
+      <Slider></Slider>
       <Footer></Footer>
     </>
   );

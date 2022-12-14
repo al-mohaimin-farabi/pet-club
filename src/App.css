@@ -95,7 +95,7 @@
   transition: 0.3s all ease-in;
 }
 .dropdown-item.active {
-  background-color: unset;
+  background-color: #e9ecef;
 }
 
 .messeage-box h2 {

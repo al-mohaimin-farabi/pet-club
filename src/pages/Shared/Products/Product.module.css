@@ -1,0 +1,12 @@
+.img_box img {
+  width: 250px;
+  height: 250px;
+}
+.title {
+  font-size: 20px;
+}
+
+.card_hover:hover .img_box img {
+  transition: all 0.3s ease-out;
+  transform: scale(1.1);
+}
