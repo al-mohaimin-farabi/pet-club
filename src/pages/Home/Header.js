@@ -1,9 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import heroImg from "../../Images/hero-photo.png";
-const HeroSection = () => {
+const Header = () => {
   return (
-    <section className="hero">
+    <header className="hero">
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 col-lg-6 col-xl-6">
@@ -34,8 +34,8 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
+    </header>
   );
 };
 
-export default HeroSection;
+export default Header;

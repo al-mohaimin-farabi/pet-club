@@ -59,15 +59,6 @@ const Navigation = () => {
                 <li>
                   <NavLink
                     className="dropdown-item text-main hover"
-                    to="/services/pet-adoption"
-                  >
-                    Pet Adoption
-                  </NavLink>
-                </li>
-
-                <li>
-                  <NavLink
-                    className="dropdown-item text-main hover"
                     to="/services/pet-care"
                   >
                     Pet Care

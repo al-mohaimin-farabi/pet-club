@@ -14,16 +14,16 @@ const Signup = () => {
       <Navigation></Navigation>
       <div className="container mt-3 mt-md-5 d-flex justify-content-center align-items-center">
         <div className="row shadow-lg rounded mx-1">
-          <div className="col-12 col-md-12 col-lg-6 p-3">
-            <div className="logo-div d-flex justify-content-center py-2 mb-2">
-              <img className="" width="40%" src={logo} alt="petclub" />
+          <div className="col-12 col-md-12 col-lg-6 px-3 py-1">
+            <div className="d-flex justify-content-center align-items-center ">
+              <img width="35%" className="img-fluid" src={logo} alt="petclub" />
             </div>
             <div>
-              <h3 className="text-main fs-3 mb-3">Singup For PetClub</h3>
+              <h3 className="text-main fs-3 mb-0">Signup For PetClub</h3>
             </div>
             <form>
-              <div className="mb-3">
-                <label htmlFor="Name" className="form-label">
+              <div className="mb-2">
+                <label htmlFor="Name" className="form-label mt-2">
                   Name
                 </label>
                 <input
@@ -49,7 +49,7 @@ const Signup = () => {
                   We'll never share your email with anyone else.
                 </div>
               </div>
-              <div className="mb-3">
+              <div className="mb-2">
                 <label htmlFor="exampleInputPassword1" className="form-label">
                   Password
                 </label>
@@ -64,20 +64,20 @@ const Signup = () => {
 
               <button
                 type="submit"
-                className="btn w-100 rounded button-defult-hover px-4 py-1"
+                className="btn w-100 rounded button-defult-hover px-4 py-1 mt-2"
                 href="./index.html"
               >
                 SignUp&nbsp; <i className="fa-solid fa-user-plus"></i>
               </button>
             </form>
             <div
-              className={`${style.or} d-flex justify-content-center my-3 position-relative`}
+              className={`${style.or} d-flex justify-content-center my-1 position-relative`}
             >
               <span className="fs-5 fw-normal text-main">Or</span>
             </div>
-            <div className="solcial-signup pb-2">
-              <div className="row">
-                <div className="col">
+            <div className="solcial-signup pb-4">
+              <div className="row ">
+                <div className="col-6">
                   <button
                     className={`${style.responsive} d-flex w-100 h-100 justify-content-center align-items-center btn button-defult-reverse-hover   rounded px-4 py-1`}
                   >
@@ -85,7 +85,7 @@ const Signup = () => {
                     Google
                   </button>
                 </div>
-                <div className="col">
+                <div className="col-6">
                   <button
                     className={`${style.responsive} d-flex w-100 h-100 justify-content-center align-items-center btn button-defult-reverse-hover  rounded px-4 py-1`}
                   >

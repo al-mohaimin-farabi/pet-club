@@ -1,12 +1,11 @@
 import React from "react";
+import TitleBox from "../Shared/Title-box/TitleBox";
 
 const BlogShowCase = () => {
   return (
-    <section className="blog-showcase py-2 my-3">
+    <section className="blog-showcase  my-1">
       <div className="container">
-        <div className="messeage-box mt-1">
-          <h2 className="text-main  position-relative">From Our Blog</h2>
-        </div>
+        <TitleBox title="From Our Blog"></TitleBox>
       </div>
     </section>
   );

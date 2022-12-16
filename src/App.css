@@ -13,7 +13,7 @@
 
 :root {
   --main-color: #16213e;
-  --main-color-semi-transparent: rgba(22, 33, 62, 0.5);
+  --main-color-semi-transparent: rgba(24, 40, 70, 0.8);
 }
 
 .text-main {
@@ -24,6 +24,13 @@
   font-weight: 600;
   /* background-color: transparent !important; */
   /* background: transparent !important; */
+}
+
+.btn.light {
+  background-color: var(--main-color-semi-transparent);
+}
+.btn.light:hover {
+  background-color: var(--main-color);
 }
 
 .nav-link,
@@ -47,6 +54,9 @@
 
 .bg-main {
   background-color: var(--main-color) !important;
+}
+.bg-main-light {
+  background-color: var(--main-color-semi-transparent) !important;
 }
 .bg-main-bordered {
   border: 1px solid transparent;
@@ -82,6 +92,7 @@
   color: var(--main-color);
   transition: 0.3s all ease-in;
 }
+
 .button-defult-reverse-hover:focus {
   border: 1px solid transparent;
   background-color: var(--main-color) !important;
@@ -89,7 +100,7 @@
   transition: 0.3s all ease-in;
 }
 .button-defult-reverse-hover:hover {
-  order: 1px solid transparent;
+  border: 1px solid transparent;
   background-color: var(--main-color);
   color: #ffffff;
   transition: 0.3s all ease-in;
@@ -98,11 +109,11 @@
   background-color: #e9ecef;
 }
 
-.messeage-box h2 {
-  font-size: 24px;
+.title-box h2 {
+  font-size: 28px;
 }
 
-.messeage-box h2::before {
+.title-box h2::before {
   position: absolute;
   content: "";
   width: 100%;
@@ -145,7 +156,7 @@
 .service-showcase .card img {
   filter: brightness(70%);
   width: 100%;
-  height: 350px !important;
+  height: 250px !important;
 }
 
 .service-showcase .card::before {
@@ -157,6 +168,18 @@
   width: 100%;
   height: 8px;
   border-radius: 6px 6px 0 0;
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 1px #eee;
+}
+.accordion-button:not(.collapsed) {
+  color: var(--main-color);
+  background-color: unset;
+}
+.accordion-button:not(.collapsed)::after {
+  background-image: var(--bs-accordion-btn-active-icon);
+  transform: var(--bs-accordion-btn-icon-transform);
 }
 
 @media only screen and (max-width: 767px) and (min-width: 200px) {

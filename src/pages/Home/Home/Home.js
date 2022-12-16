@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
 import Navigation from "../../Shared/Navigation/Navigation";
 import Footer from "../../Shared/Footer/Footer";
-import HeroSection from "../HeroSection";
+import Header from "../Header";
 import BlogShowCase from "../BlogShowCase";
 import Services from "../../Services/ServiceShowCase";
+import Faq from "../Faq";
+import NewsLatter from "../NewsLatter";
 
 const Home = () => {
   useEffect(() => {
@@ -11,12 +13,13 @@ const Home = () => {
   }, []);
   return (
     <>
-      <header className="header">
-        <Navigation></Navigation>
-        <HeroSection></HeroSection>
-      </header>
-      <Services></Services>
+      <Navigation></Navigation>
+      <Header></Header>
+      {/* <Services></Services> */}
       <BlogShowCase></BlogShowCase>
+      <NewsLatter></NewsLatter>
+      <Faq></Faq>
+
       <Footer></Footer>
     </>
   );

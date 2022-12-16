@@ -14,20 +14,15 @@ const Login = () => {
       <Navigation></Navigation>
       <section className="container mt-3 mt-md-5 d-flex justify-content-center align-items-center">
         <div className="row shadow-lg rounded mx-1">
-          <div className="col-12 col-md-12 col-lg-6 p-3">
-            <div className="d-flex justify-content-center py-2 mb-2 ">
-              <img
-                width="40%"
-                // height="70px"
-                src={logo}
-                alt="petclub"
-              />
+          <div className="col-12 col-md-12 col-lg-6 px-3 py-1">
+            <div className="d-flex justify-content-center align-items-center ">
+              <img width="35%" className="img-fluid" src={logo} alt="petclub" />
             </div>
             <div>
-              <h3 className="text-main fs-3 mb-3">Login To PetClub</h3>
+              <h3 className="text-main fs-3 mb-0">Login To PetClub</h3>
             </div>
             <form>
-              <div className="mb-3">
+              <div className="mb-2">
                 <label htmlFor="exampleInputEmail1" className="form-label mt-2">
                   Email
                 </label>
@@ -40,7 +35,7 @@ const Login = () => {
                   aria-describedby="emailHelp"
                 />
               </div>
-              <div className="mb-3">
+              <div className="mb-2">
                 <label htmlFor="exampleInputPassword1" className="form-label">
                   Password
                 </label>
@@ -55,17 +50,20 @@ const Login = () => {
 
               <button
                 type="submit"
-                className="btn w-100 button-defult-hover  rounded px-4 py-1"
+                className="btn w-100 button-defult-hover  rounded px-4 py-1 mt-2"
               >
                 Login&nbsp;{" "}
                 <i className="fa-solid fa-arrow-right-to-bracket"></i>
               </button>
             </form>
-            <NavLink as={HashLink} className="mt-1 ms-1 d-block text-main">
+            <NavLink
+              as={HashLink}
+              className="mt-1 ms-1 d-block text-main fw-normal"
+            >
               forget password
             </NavLink>
             <div
-              className={`${style.or} d-flex justify-content-center my-3 position-relative`}
+              className={`${style.or} d-flex justify-content-center my-1 position-relative`}
             >
               <span className="fs-5 fw-normal text-main">Or</span>
             </div>
@@ -73,7 +71,6 @@ const Login = () => {
               <div className="row">
                 <div className="col">
                   <button
-                    
                     className={`${style.responsive} d-flex w-100 h-100 justify-content-center align-items-center btn button-defult-reverse-hover   rounded px-4 py-1`}
                   >
                     <i className="fa-brands fa-google"></i> &nbsp; Login with
@@ -82,7 +79,6 @@ const Login = () => {
                 </div>
                 <div className="col">
                   <button
-                    
                     className={`${style.responsive} d-flex w-100 h-100 justify-content-center align-items-center btn button-defult-reverse-hover  rounded px-4 py-1`}
                   >
                     <i className="fa-brands fa-facebook"></i> &nbsp; Login With
