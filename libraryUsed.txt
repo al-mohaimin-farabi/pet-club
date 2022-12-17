@@ -1,4 +1,4 @@
 react-router-dom
 modul 
 hashlink
-react-awesome-slider
+react-slick-slider

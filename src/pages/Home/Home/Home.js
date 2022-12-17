@@ -6,6 +6,7 @@ import BlogShowCase from "../BlogShowCase";
 import Services from "../../Services/ServiceShowCase";
 import Faq from "../Faq";
 import NewsLatter from "../NewsLatter";
+import UserReview from "../UserReview";
 
 const Home = () => {
   useEffect(() => {
@@ -15,11 +16,11 @@ const Home = () => {
     <>
       <Navigation></Navigation>
       <Header></Header>
-      {/* <Services></Services> */}
+      <Services></Services>
       <BlogShowCase></BlogShowCase>
       <NewsLatter></NewsLatter>
       <Faq></Faq>
-
+      <UserReview></UserReview>
       <Footer></Footer>
     </>
   );

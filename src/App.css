@@ -13,12 +13,16 @@
 
 :root {
   --main-color: #16213e;
+  --secondary-color: #8dd8f8;
   --main-color-semi-transparent: rgba(24, 40, 70, 0.8);
 }
 
 .text-main {
   color: var(--main-color) !important;
   /* color: linear-gradient(20deg, #16213e, #352396) !important; */
+}
+.text-secondary {
+  color: var(--secondary-color) !important;
 }
 .active {
   font-weight: 600;
@@ -54,6 +58,9 @@
 
 .bg-main {
   background-color: var(--main-color) !important;
+}
+.bg-secondary {
+  background-color: var(--secondary-color) !important;
 }
 .bg-main-light {
   background-color: var(--main-color-semi-transparent) !important;

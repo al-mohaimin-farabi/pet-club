@@ -1,0 +1,12 @@
+.NewsLatter {
+  background: url(../../Images/newslatter-bg.png);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 20%);
+  background-size: initial;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 916px) {
+  .NewsLatter {
+    background: unset;
+  }
+}
