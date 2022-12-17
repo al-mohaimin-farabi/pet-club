@@ -1,4 +1,4 @@
 react-router-dom
 modul 
 hashlink
-react-slick-slider
+react-owl-carosule

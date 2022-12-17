@@ -188,7 +188,12 @@
   background-image: var(--bs-accordion-btn-active-icon);
   transform: var(--bs-accordion-btn-icon-transform);
 }
-
+.alice-carousel__dots {
+  margin: 10px 0px 3px !important;
+}
+.alice-carousel > div .alice-carousel__wrapper {
+  padding: 10px 0px !important;
+}
 @media only screen and (max-width: 767px) and (min-width: 200px) {
   .service-showcase .card {
     width: 100%;

@@ -5,7 +5,7 @@ const Faq = () => {
     <div className="container mt-4 mb-3">
       <div className="row px-2">
         <div className="col-5 d-none d-md-block">
-          <img src={faqImg} className="img-fluid rounded " alt="" />
+          <img src={faqImg} className="img-fluid rounded h-100" alt="" />
         </div>
         <div className="col-12 col-md-7 col-lg-7">
           <div className="faq pb-2 ">
