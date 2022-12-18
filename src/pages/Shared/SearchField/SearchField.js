@@ -1,11 +1,10 @@
 import React from "react";
+import TitleBox from "../Title-box/TitleBox";
 
 const SearchField = ({ setsearchedText }) => {
   return (
-    <div className="messeage-box mt-1 container mb-0">
-      <h2 className="text-main mt-2 position-relative">
-        We Got The Best Things For You
-      </h2>
+    <div className="mt-1 container mb-0">
+      <TitleBox title={"We Got The Best Things For You"}></TitleBox>
       <div className="input-group search-box-div mt-4 border-primary rounded-pill px-3">
         <input
           type="text"
