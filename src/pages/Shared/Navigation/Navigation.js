@@ -90,7 +90,7 @@ const Navigation = () => {
             </li>
             <li className="nav-item">
               <NavLink
-                className="btn btn-sm button-defult-hover rounded-pill px-3 py-1 mt-1 "
+                className="btn btn-sm btn-defult  rounded-pill px-3 py-1 mt-1 "
                 to="/login"
               >
                 Login <i className="fa-solid fa-arrow-right-to-bracket"></i>

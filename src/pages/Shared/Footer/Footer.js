@@ -23,13 +23,15 @@ const Footer = () => {
               deliver your pet food so you can receive from your doorstep.
             </p>
             <div className={style.social_link}>
-              <h5 className=" text-main  text-uppercase mb-2 ">Get social!</h5>
+              <h5 className=" text-secondary  text-uppercase mb-3 ">
+                Get social!
+              </h5>
               <ul className="d-flex justify-content-start p-0 m-0">
                 <li className="me-3">
                   <a
                     as={HashLink}
                     to="/"
-                    className="rounded-circle button-defult-hover p-2 btn  d-flex"
+                    className="rounded-circle btn-defult  p-2 btn  d-flex"
                   >
                     <i className="fa-brands fa-facebook"></i>
                   </a>
@@ -38,7 +40,7 @@ const Footer = () => {
                   <a
                     as={HashLink}
                     to="/"
-                    className="rounded-circle button-defult-hover p-2 btn  d-flex"
+                    className="rounded-circle btn-defult  p-2 btn  d-flex"
                   >
                     <i className="fa-brands fa-instagram"></i>
                   </a>
@@ -47,7 +49,7 @@ const Footer = () => {
                   <a
                     as={HashLink}
                     to="/"
-                    className="rounded-circle button-defult-hover p-2 btn  d-flex"
+                    className="rounded-circle btn-defult  p-2 btn  d-flex"
                   >
                     <i className="fa-brands fa-twitter"></i>
                   </a>
@@ -57,7 +59,7 @@ const Footer = () => {
           </div>
           <div className="col-12 col-md-4 col-lg-4">
             <div className={style.box}>
-              <h5 className=" text-main  text-uppercase">Contact Info</h5>
+              <h5 className=" text-secondary text-uppercase">Contact Info</h5>
             </div>
             <ul className="p-0 m-0">
               <li className="m-0 p-0 d-flex">
@@ -91,7 +93,7 @@ const Footer = () => {
           </div>
           <div className="col-12 col-md-4 col-lg-4 text-uppercase pb-5">
             <div className={style.box}>
-              <h5 className=" text-main   text-uppercase">
+              <h5 className=" text-secondary   text-uppercase">
                 VISIT US IN PERSON!
               </h5>
             </div>

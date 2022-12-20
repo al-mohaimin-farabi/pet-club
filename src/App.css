@@ -13,7 +13,7 @@
 
 :root {
   --main-color: #16213e;
-  --secondary-color: #8dd8f8;
+  --secondary-color: #13a89e;
   --main-color-semi-transparent: rgba(39, 57, 90, 0.8);
 }
 
@@ -81,32 +81,32 @@
   border: 1px solid var(--main-color) !important;
 }
 
-.button-defult-hover {
+.btn-defult {
   border: 1px solid transparent;
   background-color: var(--main-color);
   color: #ffffff;
   transition: 0.3s all ease-in;
 }
-.button-defult-hover:hover {
+.btn-defult:hover {
   border: 1px solid var(--main-color);
   background-color: #fff;
   color: var(--main-color);
   transition: 0.3s all ease-in;
 }
-.button-defult-reverse-hover {
+.btn-defult-opposite {
   border: 1px solid var(--main-color);
   background-color: #fff;
   color: var(--main-color);
   transition: 0.3s all ease-in;
 }
 
-.button-defult-reverse-hover:focus {
+.btn-defult-opposite:focus {
   border: 1px solid transparent;
   background-color: var(--main-color) !important;
   color: #ffffff !important;
   transition: 0.3s all ease-in;
 }
-.button-defult-reverse-hover:hover {
+.btn-defult-opposite:hover {
   border: 1px solid transparent;
   background-color: var(--main-color);
   color: #ffffff;

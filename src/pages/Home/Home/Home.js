@@ -7,6 +7,8 @@ import Services from "../../Services/ServiceShowCase";
 import Faq from "../Faq";
 import NewsLatter from "../NewsLatter";
 import Testimonial from "../Testimonial";
+import FoodProductShowCase from "../FoodProductShowCase";
+import PetAccessoriesShowCase from "../PetAccessoriesShowCase";
 
 const Home = () => {
   useEffect(() => {
@@ -16,8 +18,11 @@ const Home = () => {
     <>
       <Navigation></Navigation>
       <Header></Header>
+
       <Services></Services>
-      {/* <BlogShowCase></BlogShowCase> */}
+      <FoodProductShowCase></FoodProductShowCase>
+      <PetAccessoriesShowCase></PetAccessoriesShowCase>
+      <BlogShowCase></BlogShowCase>
       <Testimonial></Testimonial>
       <NewsLatter></NewsLatter>
       <Faq></Faq>

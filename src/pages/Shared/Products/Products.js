@@ -20,7 +20,7 @@ const Products = ({ data }) => {
           <p className="text-main m-0 fw-normal">Stock: {stock}</p>
         </div>
         <div className="card-footer border-0 bg-transparent px-3 mb-1">
-          <button className="btn w-100 button-defult-hover fw-light">
+          <button className="btn w-100 btn-defult  fw-light">
             Buy Now <i className="fas fa-cart-plus"></i>
           </button>
         </div>

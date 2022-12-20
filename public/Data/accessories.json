@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "animal": "dog 🐶",
+    "animal": "dog",
     "title": "2 Layer Dog Collar With Bell",
     "img": "../accessories-images/images-1.png",
     "price": 300,
@@ -9,7 +9,7 @@
   },
   {
     "id": 2,
-    "animal": "dog 🐶",
+    "animal": "dog",
     "title": "Dog Adjustable Leash Harness Set Denim Collar",
     "img": "../accessories-images/images-2.png",
     "price": 900,
@@ -17,7 +17,7 @@
   },
   {
     "id": 3,
-    "animal": "dog 🐶",
+    "animal": "dog",
     "title": "Pet Protection Cover Anti-Bite Scratching Wound Healing Ring for Cats & Dogs",
     "img": "../accessories-images/images-3.png",
     "price": 450,
@@ -25,7 +25,7 @@
   },
   {
     "id": 4,
-    "animal": "bird 🐤",
+    "animal": "bird",
     "title": "Nutribird A18 Lori",
     "img": "../accessories-images/images-4.png",
     "price": 4600,
@@ -33,7 +33,7 @@
   },
   {
     "id": 5,
-    "animal": "cat 🐱",
+    "animal": "cat",
     "title": "Cat Litter Tray / Box with Scooper",
     "img": "../accessories-images/images-5.png",
     "price": 1255,
@@ -41,7 +41,7 @@
   },
   {
     "id": 6,
-    "animal": "bird 🐤",
+    "animal": "bird",
     "title": "Bird Band Numbers for Identification",
     "img": "../accessories-images/images-6.png",
     "price": 10,
@@ -49,7 +49,7 @@
   },
   {
     "id": 7,
-    "animal": "cat 🐱",
+    "animal": "cat",
     "title": "Premium Steel Pet Food Bowl",
     "img": "../accessories-images/images-7.png",
     "price": 600,
@@ -57,7 +57,7 @@
   },
   {
     "id": 8,
-    "animal": "dog 🐶",
+    "animal": "dog",
     "title": "Dog collar",
     "img": "../accessories-images/images-8.png",
     "brand": "unknown",
@@ -66,7 +66,7 @@
   },
   {
     "id": 9,
-    "animal": "dog 🐶",
+    "animal": "dog",
     "title": "Dog t-shirt",
     "img": "../accessories-images/images-9.png",
     "brand": "unknown",

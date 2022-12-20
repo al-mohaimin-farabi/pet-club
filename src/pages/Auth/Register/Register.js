@@ -1,28 +1,39 @@
 import React, { useEffect } from "react";
-import Navigation from "../Shared/Navigation/Navigation";
-import style from "./Login.module.css";
-import logo from "../../Images/Logo-Two.png";
-import authImg from "../../Images/auth-image.png";
-import { NavLink } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
-const Login = () => {
+import Navigation from "../../Shared/Navigation/Navigation";
+import style from "../Auth.module.css";
+import logo from "../../../Images/Logo-Two.png";
+import authImg from "../../../Images/auth-image.png";
+// import { NavLink } from "react-router-dom";
+// import { HashLink } from "react-router-hash-link";
+const Register = () => {
   useEffect(() => {
-    document.title = "Login";
+    document.title = "SignUp";
   }, []);
   return (
     <>
       <Navigation></Navigation>
-      <section className="container mt-3 mt-md-5 d-flex justify-content-center align-items-center">
+      <div className="container mt-3 mt-md-5 d-flex justify-content-center align-items-center">
         <div className="row shadow-lg rounded mx-1">
           <div className="col-12 col-md-12 col-lg-6 px-3 py-1">
             <div className="d-flex justify-content-center align-items-center ">
               <img width="35%" className="img-fluid" src={logo} alt="petclub" />
             </div>
             <div>
-              <h3 className="text-main fs-3 mb-0">Login To PetClub</h3>
+              <h3 className="text-main fs-3 mb-0">Signup For PetClub</h3>
             </div>
             <form>
               <div className="mb-2">
+                <label htmlFor="Name" className="form-label mt-2">
+                  Name
+                </label>
+                <input
+                  placeholder="Your Name"
+                  requred="true"
+                  type="text"
+                  className="form-control form-control-sm text-main"
+                  id="Name"
+                  aria-describedby="nameHelp"
+                />
                 <label htmlFor="exampleInputEmail1" className="form-label mt-2">
                   Email
                 </label>
@@ -34,6 +45,9 @@ const Login = () => {
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
                 />
+                <div id="emailHelp" className="form-text">
+                  We'll never share your email with anyone else.
+                </div>
               </div>
               <div className="mb-2">
                 <label htmlFor="exampleInputPassword1" className="form-label">
@@ -50,52 +64,39 @@ const Login = () => {
 
               <button
                 type="submit"
-                className="btn w-100 button-defult-hover  rounded px-4 py-1 mt-2"
+                className="btn w-100 rounded btn-defult  px-4 py-1 mt-2"
+                href="./index.html"
               >
-                Login&nbsp;{" "}
-                <i className="fa-solid fa-arrow-right-to-bracket"></i>
+                SignUp&nbsp; <i className="fa-solid fa-user-plus"></i>
               </button>
             </form>
-            <NavLink
-              as={HashLink}
-              className="mt-1 ms-1 d-block text-main fw-normal"
-            >
-              forget password
-            </NavLink>
             <div
               className={`${style.or} d-flex justify-content-center my-1 position-relative`}
             >
               <span className="fs-5 fw-normal text-main">Or</span>
             </div>
-            <div className="solcial-signup pb-2">
-              <div className="row">
-                <div className="col">
+            <div className="solcial-signup pb-4">
+              <div className="row ">
+                <div className="col-6">
                   <button
-                    className={`${style.responsive} d-flex w-100 h-100 justify-content-center align-items-center btn button-defult-reverse-hover   rounded px-4 py-1`}
+                    className={`${style.responsive} d-flex w-100 h-100 justify-content-center align-items-center btn btn-defult-opposite   rounded px-4 py-1`}
                   >
-                    <i className="fa-brands fa-google"></i> &nbsp; Login with
+                    <i className="fa-brands fa-google"></i> &nbsp; Sign Up with
                     Google
                   </button>
                 </div>
-                <div className="col">
+                <div className="col-6">
                   <button
-                    className={`${style.responsive} d-flex w-100 h-100 justify-content-center align-items-center btn button-defult-reverse-hover  rounded px-4 py-1`}
+                    className={`${style.responsive} d-flex w-100 h-100 justify-content-center align-items-center btn btn-defult-opposite  rounded px-4 py-1`}
                   >
-                    <i className="fa-brands fa-facebook"></i> &nbsp; Login With
-                    Facebook
+                    <i className="fa-brands fa-facebook"></i> &nbsp; Sign Up
+                    With Facebook
                   </button>
                 </div>
               </div>
-
-              <div className="text-main p-1 rounded mt-2 bg-white">
-                <span>Dont Have An Account!</span>&nbsp;
-                <NavLink className="text-main" to="/signup">
-                  create an account
-                </NavLink>
-              </div>
             </div>
           </div>
-          <div className="col-12 col-lg-6 p-3 bg-main-gradient rounded-end d-none d-lg-block d-flex justify-content-center align-items-center d-custom-none">
+          <div className="col-12 col-lg-6 p-3 rounded-end d-none d-lg-block d-flex justify-content-center align-items-center d-custom-none bg-main-gradient">
             <img
               className="img-fluid"
               src={authImg}
@@ -103,9 +104,9 @@ const Login = () => {
             />
           </div>
         </div>
-      </section>
+      </div>
     </>
   );
 };
 
-export default Login;
+export default Register;

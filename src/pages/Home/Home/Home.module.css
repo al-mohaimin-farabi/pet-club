@@ -17,6 +17,7 @@
 }
 .review_card {
   position: relative;
+  /* height: 160px !important; */
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 .review_card .quate {
@@ -40,7 +41,8 @@
   font-size: 28px;
   font-weight: 600;
   margin-top: 8px;
-  letter-spacing: 1px;
+  letter-spacing: 0px;
+  transition: all 0.5s ease;
 }
 .service_card p {
   color: #575a7b;
@@ -68,10 +70,10 @@
   background-position: 0 100%;
 }
 .service_card:hover .icon_wrapper {
-  background-color: #ffffff !important;
+  background-color: #13a89e !important;
 }
 .service_card:hover h3 {
-  color: #ffffff !important;
+  color: #13a89e !important;
 }
 .service_card:hover p {
   color: #f0f0f0;
@@ -83,4 +85,19 @@
 .service_card:hover .service_btn {
   background-color: #575a7b !important;
   color: #ffffff !important;
+}
+.popular_products {
+  width: 240px;
+  height: 300px;
+}
+.popular_products > img {
+  width: 150px;
+  height: 150px;
+}
+.popular_products h5 {
+  font-size: 22px !important;
+  font-weight: 600;
+}
+.popular_products p {
+  font-size: 18px !important;
 }
