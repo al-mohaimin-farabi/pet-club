@@ -3,7 +3,7 @@ import TitleBox from "../Title-box/TitleBox";
 
 const SearchField = ({ setsearchedText }) => {
   return (
-    <div className="mt-1 container mb-0">
+    <div className="mt-3 container mb-0">
       <TitleBox title={"We Got The Best Things For You"}></TitleBox>
       <div className="input-group search-box-div mt-4 border-primary rounded-pill px-3">
         <input

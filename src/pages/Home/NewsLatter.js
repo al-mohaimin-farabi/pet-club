@@ -1,9 +1,9 @@
 import React from "react";
-import Style from "./NewsLatter.module.css";
+import Style from "./Home/Home.module.css";
 
 const NewsLatter = () => {
   return (
-    <div className={`${Style.NewsLatter} my-4 bg-main`}>
+    <div className={`${Style.NewsLatter} mt-0 mb-5 bg-main`}>
       <div className="container ">
         <div className="NewsLatter_content text-center py-2">
           <h2 className="text-white m-0 fs-2">NewsLatter.</h2>

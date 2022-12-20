@@ -2,7 +2,7 @@ import React from "react";
 import faqImg from "../../Images/faq.jpg";
 const Faq = () => {
   return (
-    <div className="container mt-4 mb-3">
+    <div className="container mt-4 mb-4">
       <div className="row px-2">
         <div className="col-5 d-none d-md-block">
           <img src={faqImg} className="img-fluid rounded h-100" alt="" />
