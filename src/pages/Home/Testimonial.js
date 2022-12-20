@@ -20,7 +20,6 @@ const Testimonial = () => {
       <TitleBox title={"Happy Clients & Feedbacks"}></TitleBox>
       <div className="row px-2 mt-4">
         <AliceCarousel
-          mouseTracking
           responsive={responsive}
           autoPlay={true}
           disableButtonsControls={true}
@@ -29,7 +28,7 @@ const Testimonial = () => {
         >
           <div className={`${style.review_card} card h-100 mx-2 my-1 border-0`}>
             <div className={style.quate}>
-              <i className="fa-solid fa-quote-right text-success"></i>
+              <i className="fa-solid fa-quote-right text-secondary"></i>
             </div>
             <div className="card-body text-center p-0">
               <p className="card-text text-main mb-0 py-1 px-1">
@@ -40,7 +39,7 @@ const Testimonial = () => {
             <div className="card-footer bg-transparent border-0 d-flex justify-content-center align-items-center  ">
               <img className={`${style.userIcon} me-2`} src={userOne} alt="" />
               <div className={style.user_data}>
-                <p className="text-success mb-0">TH Tanmoy</p>
+                <p className="text-secondary mb-0">TH Tanmoy</p>
                 <i className="fa-solid fa-star text-warning"></i>
                 <i className="fa-solid fa-star text-warning"></i>
                 <i className="fa-solid fa-star text-warning"></i>
@@ -51,7 +50,7 @@ const Testimonial = () => {
           </div>
           <div className={`${style.review_card} card h-100 mx-2 my-1 border-0`}>
             <div className={style.quate}>
-              <i className="fa-solid fa-quote-right text-success"></i>
+              <i className="fa-solid fa-quote-right text-secondary"></i>
             </div>
             <div className="card-body text-center p-0">
               <p className="card-text text-main mb-0 py-1 px-1">
@@ -62,7 +61,7 @@ const Testimonial = () => {
             <div className="card-footer bg-transparent border-0 d-flex justify-content-center align-items-center  ">
               <img className={`${style.userIcon} me-2`} src={userTwo} alt="" />
               <div className={style.user_data}>
-                <p className="text-success mb-0">Al Faysal</p>
+                <p className="text-secondary mb-0">Al Faysal</p>
                 <i className="fa-solid fa-star text-warning"></i>
                 <i className="fa-solid fa-star text-warning"></i>
                 <i className="fa-solid fa-star text-warning"></i>
@@ -73,7 +72,7 @@ const Testimonial = () => {
           </div>
           <div className={`${style.review_card} card h-100 mx-2 my-1 border-0`}>
             <div className={style.quate}>
-              <i className="fa-solid fa-quote-right text-success"></i>
+              <i className="fa-solid fa-quote-right text-secondary"></i>
             </div>
             <div className="card-body text-center p-0">
               <p className="card-text text-main mb-0 py-1 px-1">
@@ -88,7 +87,7 @@ const Testimonial = () => {
                 alt=""
               />
               <div className={style.user_data}>
-                <p className="text-success mb-0">Kazi Moinul Ahsan</p>
+                <p className="text-secondary mb-0">Kazi Moinul Ahsan</p>
                 <i className="fa-solid fa-star text-warning"></i>
                 <i className="fa-solid fa-star text-warning"></i>
                 <i className="fa-solid fa-star text-warning"></i>
@@ -99,7 +98,7 @@ const Testimonial = () => {
           </div>
           <div className={`${style.review_card} card h-100 mx-2 my-1 border-0`}>
             <div className={style.quate}>
-              <i className="fa-solid fa-quote-right text-success"></i>
+              <i className="fa-solid fa-quote-right text-secondary"></i>
             </div>
             <div className="card-body text-center p-0">
               <p className="card-text text-main mb-0 py-1 px-1">
@@ -110,7 +109,7 @@ const Testimonial = () => {
             <div className="card-footer bg-transparent border-0 d-flex justify-content-center align-items-center  ">
               <img className={`${style.userIcon} me-2`} src={userFour} alt="" />
               <div className={style.user_data}>
-                <p className="text-success mb-0">Shama Nishat Sharmin</p>
+                <p className="text-secondary mb-0">Shama Nishat Sharmin</p>
                 <i className="fa-solid fa-star text-warning"></i>
                 <i className="fa-solid fa-star text-warning"></i>
                 <i className="fa-solid fa-star text-warning"></i>

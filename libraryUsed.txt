@@ -2,3 +2,4 @@ react-router-dom
 modul 
 hashlink
 react-owl-carosule
+firebase

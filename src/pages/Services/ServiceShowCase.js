@@ -1,9 +1,9 @@
 import React from "react";
 import TitleBox from "../Shared/Title-box/TitleBox";
 import style from "../Home/Home/Home.module.css";
-import petCare from "../../Images/ServicesLogo/petCare.png";
-import petFood from "../../Images/ServicesLogo/petFood.png";
-import petToyAndAcc from "../../Images/ServicesLogo/petToy&Acc.png";
+import petCare from "../../Images/Icons/petCare.png";
+import petFood from "../../Images/Icons/petFood.png";
+import petToyAndAcc from "../../Images/Icons/petToy&Acc.png";
 import { NavLink } from "react-router-dom";
 
 const Services = () => {
@@ -12,8 +12,8 @@ const Services = () => {
       <div className="container">
         <TitleBox title={"Our Services"}></TitleBox>
 
-        <div className="row row-cols-1 row-cols-md-3 row-cols-lg-3 mt-3 px-2 g-3 mb-1">
-          <div className="col ">
+        <div className="row  mt-3 px-2 g-3 mb-1">
+          <div className="col-12 col-sm-12 col-lg-4 col-md-6 ">
             <div
               className={`${style.service_card} card h-100 text-center border-0 p-3`}
             >
@@ -30,14 +30,14 @@ const Services = () => {
               <div className="card-footer bg-transparent border-0 m-0">
                 <NavLink
                   to="services/pet-care"
-                  className={`${style.service_btn} btn button-defult-hover`}
+                  className={`${style.service_btn} btn btn-defult`}
                 >
                   Pet Care
                 </NavLink>
               </div>
             </div>
           </div>
-          <div className="col ">
+          <div className="col-12 col-sm-12 col-lg-4 col-md-6  ">
             <div
               className={`${style.service_card} card h-100 text-center border-0 p-3`}
             >
@@ -54,14 +54,14 @@ const Services = () => {
               <div className="card-footer bg-transparent border-0 m-0">
                 <NavLink
                   to="services/pet-food"
-                  className={`${style.service_btn} btn button-defult-hover`}
+                  className={`${style.service_btn} btn btn-defult `}
                 >
                   Pet Food
                 </NavLink>
               </div>
             </div>
           </div>
-          <div className="col ">
+          <div className="col-12 col-sm-12 col-lg-4 col-md-12 ">
             <div
               className={`${style.service_card} card h-100 text-center border-0 p-3`}
             >
@@ -79,7 +79,7 @@ const Services = () => {
               <div className="card-footer bg-transparent border-0 m-0">
                 <NavLink
                   to="services/pet-food"
-                  className={`${style.service_btn} btn button-defult-hover`}
+                  className={`${style.service_btn} btn btn-defult `}
                 >
                   Pet Toy & Accessories
                 </NavLink>

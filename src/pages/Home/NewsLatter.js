@@ -7,7 +7,7 @@ const NewsLatter = () => {
       <div className="container ">
         <div className="NewsLatter_content text-center py-2">
           <h2 className="text-white m-0 fs-2">NewsLatter.</h2>
-          <p className="text-success mb-1 fw-light">
+          <p className="text-secondary mb-1 fw-light">
             Stay up to date with our latest news and products
           </p>
         </div>

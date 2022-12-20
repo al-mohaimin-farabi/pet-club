@@ -15,15 +15,15 @@
   left: 0px;
 }
 @media only screen and (min-width: 380px) and (max-width: 770px) {
-  .responsive {
-    font-size: 14px;
+  .responsive_btn {
+    font-size: 16px;
     padding: 5px !important;
   }
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1399px) {
-  .responsive {
-    font-size: 20px;
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .responsive_btn {
+    font-size: 16px;
     padding: 8px !important;
   }
 }
