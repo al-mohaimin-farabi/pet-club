@@ -12,22 +12,21 @@
 }
 
 :root {
-  --main-color: #16213e;
+  /* --main-color: #16213e; */
+  --main-color: #111f44;
   --secondary-color: #13a89e;
-  --main-color-semi-transparent: rgba(39, 57, 90, 0.8);
+  --main-color-semi-transparent: rgba(52, 68, 97, 0.8);
 }
 
 .text-main {
   color: var(--main-color) !important;
-  /* color: linear-gradient(20deg, #16213e, #352396) !important; */
 }
 .text-secondary {
   color: var(--secondary-color) !important;
 }
-.active {
+.nav-link.active,
+.dropdown-item.active {
   font-weight: 600;
-  /* background-color: transparent !important; */
-  /* background: transparent !important; */
 }
 
 .btn.light {
@@ -51,9 +50,17 @@
   height: 2px;
   background-color: var(--main-color);
 }
+.nav-link.user::before {
+  display: none !important;
+}
+
 .dropdown-item:focus {
   color: #ffffff !important;
   background-color: var(--main-color) !important;
+}
+
+.text-justifyed {
+  text-align: justify !important;
 }
 
 .bg-main {
@@ -65,10 +72,13 @@
 .bg-main-light {
   background-color: var(--main-color-semi-transparent) !important;
 }
-.bg-main-bordered {
+.text-main-light {
+  color: var(--main-color-semi-transparent) !important;
+}
+/* .bg-main-bordered {
   border: 1px solid transparent;
   background-color: var(--main-color) !important;
-}
+} */
 .bg-main-gradient {
   background: radial-gradient(
     circle,
@@ -77,40 +87,42 @@
     rgba(22, 33, 62, 1)
   ) !important;
 }
+.bg-main-linear-gradient {
+  background-image: linear-gradient(rgba(37, 64, 104, 0.8), var(--main-color));
+}
 .border-primary {
   border: 1px solid var(--main-color) !important;
 }
 
 .btn-defult {
-  border: 1px solid transparent;
-  background-color: var(--main-color);
-  color: #ffffff;
-  transition: 0.3s all ease-in;
+  border: 1px solid transparent !important;
+  background-color: var(--main-color) !important;
+  color: #ffffff !important;
+  transition: 0.3s ease-in-out !important;
+  transition-property: background-color, color, border !important;
 }
 .btn-defult:hover {
-  border: 1px solid var(--main-color);
-  background-color: #fff;
-  color: var(--main-color);
-  transition: 0.3s all ease-in;
+  border: 1px solid var(--main-color) !important;
+  background-color: #fff !important;
+  color: var(--main-color) !important;
 }
 .btn-defult-opposite {
   border: 1px solid var(--main-color);
   background-color: #fff;
   color: var(--main-color);
-  transition: 0.3s all ease-in;
+  transition: 0.3s ease-in-out !important;
+  transition-property: background-color, color, border !important;
 }
 
 .btn-defult-opposite:focus {
   border: 1px solid transparent;
   background-color: var(--main-color) !important;
   color: #ffffff !important;
-  transition: 0.3s all ease-in;
 }
 .btn-defult-opposite:hover {
   border: 1px solid transparent;
   background-color: var(--main-color);
   color: #ffffff;
-  transition: 0.3s all ease-in;
 }
 .dropdown-item.active {
   background-color: #e9ecef;
@@ -118,6 +130,7 @@
 
 .title-box h2 {
   font-size: 28px;
+  text-transform: capitalize;
 }
 
 .title-box h2::before {
@@ -126,17 +139,20 @@
   width: 100%;
   height: 2px;
   background-color: var(--main-color);
-  bottom: -15px;
+  bottom: -12px;
 }
 
-.form-control:focus {
+.form-control:focus,
+.form-select:focus {
   color: #212529;
   background-color: #fff;
   border-color: var(--main-color) !important;
   outline: unset !important;
   box-shadow: none !important;
 }
-
+.form-select option:hover {
+  background-color: var(--main-color) !important;
+}
 .accordion-button:focus {
   box-shadow: 0 0 0 1px #eee;
 }
@@ -166,8 +182,24 @@
 .alice-carousel__dots-item {
   background-color: var(--secondary-color) !important;
 }
-
-@media only screen and (max-width: 767px) and (min-width: 200px) {
+.blog-showcase .card {
+  box-shadow: 0px 3px 7px rgba(52, 68, 97, 0.6);
+}
+.blog-showcase .blog_img {
+  width: 100%;
+  height: 308px;
+  filter: brightness(85%);
+}
+.img_box {
+  width: 100%;
+  height: 230px;
+  margin: 15px 0px !important;
+  filter: drop-shadow(-17px 39px 59px rgba(0, 0, 0, 0.5));
+}
+.pet_care_service {
+  filter: brightness(80%) !important;
+}
+/* @media only screen and (max-width: 767px) and (min-width: 200px) {
   .service-showcase .card {
     width: 100%;
     border-radius: 6px;
@@ -175,4 +207,4 @@
     border: solid 1px rgba(37, 37, 37, 0.1);
     background-color: #ffffff;
   }
-}
+} */

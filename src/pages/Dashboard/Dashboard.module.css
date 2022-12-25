@@ -1,0 +1,14 @@
+.add_product form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.add_product form input,
+textarea {
+  margin: 4px;
+  padding: 4px;
+  width: 100%;
+}

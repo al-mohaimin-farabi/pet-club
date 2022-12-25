@@ -1,4 +1,4 @@
-import initializeFirebase from "../Pages/Login/Login/Firebase/firebase.init";
+import initializeFirebase from "../pages/Auth/FireBase/firebase.init";
 import { useState, useEffect } from "react";
 import {
   getAuth,
@@ -8,7 +8,7 @@ import {
   signOut,
   GoogleAuthProvider,
   signInWithPopup,
-  FacebookAuthProvider ,
+  FacebookAuthProvider,
   updateProfile,
   getIdToken,
 } from "firebase/auth";
@@ -24,13 +24,13 @@ const useFirebase = () => {
 
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
-  const facebookProvider = new GoogleAuthProvider();
+  const facebookProvider = new FacebookAuthProvider();
 
-  const registerUser = (email, password, name, location, history) => {
+  const registerUser = (email, password, name, location, navigate) => {
     setIsLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        console.log(userCredential);
+        // console.log(userCredential);
         setAuthError("");
         const newUser = { email, displayName: name };
         setUser(newUser);
@@ -43,7 +43,7 @@ const useFirebase = () => {
         })
           .then(() => {
             const destination = location?.state?.from || "/";
-            history.replace(destination);
+            navigate(destination);
           })
           .catch((error) => {
             setAuthError(error.message);
@@ -58,12 +58,12 @@ const useFirebase = () => {
       });
   };
 
-  const loginUser = (email, password, location, history) => {
+  const loginUser = (email, password, location, navigate) => {
     setIsLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const destination = location?.state?.from || "/";
-        history.replace(destination);
+        navigate(destination);
         setAuthError("");
       })
       .catch((error) => {
@@ -72,7 +72,8 @@ const useFirebase = () => {
       .finally(() => setIsLoading(false));
   };
 
-  const signInWithGoogle = (location, history) => {
+  // google signin
+  const signInWithGoogle = (location, navigate) => {
     setIsLoading(true);
     signInWithPopup(auth, googleProvider)
       .then((result) => {
@@ -80,7 +81,7 @@ const useFirebase = () => {
         saveUser(user.email, user.displayName, "PUT");
         setAuthError("");
         const destination = location?.state?.from || "/";
-        history.replace(destination);
+        navigate(destination);
       })
       .catch((error) => {
         setAuthError(error.message);
@@ -88,7 +89,25 @@ const useFirebase = () => {
       .finally(() => setIsLoading(false));
   };
 
-  // observer user state
+  // facebook signin
+  const signInWithFacebook = (location, navigate) => {
+    setIsLoading(true);
+    signInWithPopup(auth, facebookProvider)
+      .then((result) => {
+        const user = result.user;
+        // console.log(user);
+        saveUser(user.email, user.displayName, "PUT");
+        setAuthError("");
+        const destination = location?.state?.from || "/";
+        navigate(destination);
+      })
+      .catch((error) => {
+        setAuthError(error.message);
+      })
+      .finally(() => setIsLoading(false));
+  };
+
+  // observer user state || login-logout state
   useEffect(() => {
     const unsubscribed = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -104,13 +123,17 @@ const useFirebase = () => {
     return () => unsubscribed;
   }, [auth]);
 
+  // check user role
   useEffect(() => {
-    const url = `https://intense-everglades-68946.herokuapp.com/users/${user.email}`;
+    const url = `http://localhost:5000/users/${user.email}`;
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setAdmin(data.admin));
+      .then((data) => {
+        setAdmin(data.admin);
+      });
   }, [user.email]);
 
+  // logout
   const logout = () => {
     setIsLoading(true);
     signOut(auth)
@@ -123,9 +146,10 @@ const useFirebase = () => {
       .finally(() => setIsLoading(false));
   };
 
+  //  save user to the data base || check user email exsist or not
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch("https://intense-everglades-68946.herokuapp.com/users", {
+    fetch("http://localhost:5000/users", {
       method: method,
       headers: {
         "content-type": "application/json",
@@ -143,6 +167,7 @@ const useFirebase = () => {
     loginUser,
     logout,
     signInWithGoogle,
+    signInWithFacebook,
   };
 };
 

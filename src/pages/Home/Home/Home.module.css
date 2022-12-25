@@ -10,6 +10,7 @@
     background: unset;
   }
 }
+
 .userIcon {
   width: 70px;
   height: 70px;
@@ -27,34 +28,51 @@
   transform: translateX(-50%);
   font-size: 28px;
 }
-.service_card {
-  width: 100%;
-  background: linear-gradient(#ffffff 50%, var(--main-color) 50%);
-  background-size: 100% 200%;
-  background-position: 0 2.5%;
-  border-radius: 8px;
+
+.services_card {
+  position: relative;
+  z-index: 1;
   box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
-  cursor: pointer;
-  transition: 0.5s;
 }
-.service_card h3 {
+.services_card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: calc(100% + 2px);
+  margin-left: -1px;
+  height: 8px;
+  z-index: -1;
+  border-radius: 0px 0px 5px 5px;
+  background-color: var(--main-color);
+  transform: scale(1);
+  transform-origin: bottom;
+  transition: height 0.5s ease-in-out;
+}
+.services_card:hover::before,
+.services_card:focus::before {
+  height: 100%;
+  border-radius: 5px;
+}
+.services_card h3 {
   font-size: 28px;
   font-weight: 600;
   margin-top: 8px;
-  letter-spacing: 0px;
-  transition: all 0.5s ease;
+  letter-spacing: 1px;
+  transition: color 0.4s ease-in-out;
 }
-.service_card p {
+.services_card p {
   color: #575a7b;
   font-size: 20px;
   letter-spacing: 0px;
+  transition: color 0.5s ease-in-out;
 }
-.service_card img {
+.services_card img {
   margin: 0px;
   width: 70px;
   height: 70px;
 }
-.icon_wrapper {
+.services_card .icon_wrapper {
   position: relative;
   height: 100px;
   width: 100px;
@@ -62,42 +80,95 @@
   border-radius: 50%;
   display: grid;
   place-items: center;
-  transition: 0.4s;
+  transition: background-color 0.4s ease-in-out;
   transition-delay: 0.1s;
 }
 
-.service_card:hover {
-  background-position: 0 100%;
-}
-.service_card:hover .icon_wrapper {
+.services_card:hover .icon_wrapper {
   background-color: #13a89e !important;
 }
-.service_card:hover h3 {
+
+.services_card:hover h3 {
   color: #13a89e !important;
 }
-.service_card:hover p {
+.services_card:hover p {
   color: #f0f0f0;
 }
-/* .service_btn {
-  background-color: #575a7b;
-  color: #ffffff;
-} */
-.service_card:hover .service_btn {
+
+.services_card:hover .services_btn {
   background-color: #575a7b !important;
   color: #ffffff !important;
 }
+
+.services_card.even::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: calc(100% + 2px);
+  margin-left: -1px;
+  height: 100%;
+  z-index: -1;
+  border-radius: 5px;
+  background-color: var(--main-color);
+  transform: scale(1);
+  transform-origin: top;
+  transition: height 0.5s ease-in-out;
+}
+.services_card.even:hover::before,
+.services_card.even:focus::before {
+  background-color: var(--main-color);
+  height: 8px;
+  border-radius: 0px 0px 5px 5px;
+}
+.services_card.even p {
+  transition: color 0.5s ease-in-out;
+  color: #ffffff;
+}
+.services_card.even:hover .icon_wrapper {
+  background-color: var(--main-color) !important;
+}
+.services_card.even:hover h3 {
+  color: var(--main-color) !important;
+}
+.services_card.even:hover p {
+  color: #575a7b !important;
+}
+.services_card.even .services_btn {
+  background-color: #575a7b !important;
+  color: #ffffff !important;
+  transition: background-color 0.2s ease-in-out;
+  transition-delay: 0.1s;
+}
+.services_card.even:hover .services_btn {
+  background-color: #16213e !important;
+}
+.services_card.even:hover .services_btn:hover {
+  transition: background-color 0.3s ease-in-out;
+  background-color: #575a7b !important;
+}
 .popular_products {
-  width: 240px;
-  height: 300px;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+  /* width: 240px; */
+  height: 345px;
 }
 .popular_products > img {
   width: 150px;
   height: 150px;
+  border-radius: 5px;
 }
 .popular_products h5 {
-  font-size: 22px !important;
+  font-size: 20px !important;
   font-weight: 600;
 }
 .popular_products p {
   font-size: 18px !important;
+}
+.view_blog {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.view_blog:hover {
+  background-color: var(--main-color) !important;
+  color: var(--secondary-color) !important;
 }

@@ -1,7 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
+import useAuth from "../../../Hooks/useAuth";
 import logo from "../../../Images/LOGO.png";
+import userIcon from "../../../Images/Icons/userIcon.png";
 const Navigation = () => {
+  const { user, logout } = useAuth();
   return (
     <nav className="navbar navbar-expand-lg bg-light shadow-sm">
       <div className="container">
@@ -58,7 +62,7 @@ const Navigation = () => {
               <ul className="dropdown-menu">
                 <li>
                   <NavLink
-                    className="dropdown-item text-main hover"
+                    className="dropdown-item text-main  "
                     to="/services/pet-care"
                   >
                     Pet Care
@@ -66,7 +70,7 @@ const Navigation = () => {
                 </li>
                 <li>
                   <NavLink
-                    className="dropdown-item text-main hover"
+                    className="dropdown-item text-main  "
                     to="/services/pet-food"
                   >
                     Pet Food
@@ -74,7 +78,7 @@ const Navigation = () => {
                 </li>
                 <li>
                   <NavLink
-                    className="dropdown-item text-main hover"
+                    className="dropdown-item text-main  "
                     to="/services/pet-toy-accessories"
                   >
                     Pet Toy & Accessories
@@ -83,18 +87,52 @@ const Navigation = () => {
               </ul>
             </li>
 
-            <li className="nav-item me-2">
-              <NavLink className="nav-link text-main hover" to="/tips">
-                Tips
+            <li className="nav-item ">
+              <NavLink className="nav-link text-main " to="/blogs">
+                Blogs
               </NavLink>
             </li>
+            {user.email && (
+              <li className="nav-item ">
+                <NavLink className="nav-link text-main " to="/dashboard">
+                  Dashboard
+                </NavLink>
+              </li>
+            )}
+            {user.displayName && (
+              <li className="nav-item p-0 ms-0 me-2 d-flex align-items-center">
+                <NavLink
+                  as={HashLink}
+                  className="nav-link user text-main fw-normal"
+                >
+                  {user.displayName}
+                </NavLink>
+                <img
+                  className="rounded-circle border-primary"
+                  src={user.photoURL ? user.photoURL : userIcon}
+                  width="40px"
+                  height="40px"
+                  alt=""
+                />
+              </li>
+            )}
             <li className="nav-item">
-              <NavLink
-                className="btn btn-sm btn-defult  rounded-pill px-3 py-1 mt-1 "
-                to="/login"
-              >
-                Login <i className="fa-solid fa-arrow-right-to-bracket"></i>
-              </NavLink>
+              {!user.email ? (
+                <NavLink
+                  className="btn btn-sm btn-defult  rounded-pill px-3 py-1 mt-1 ms-1"
+                  to="/login"
+                >
+                  Login <i className="fas fa-sign-in-alt"></i>
+                </NavLink>
+              ) : (
+                <NavLink
+                  as={HashLink}
+                  className="btn btn-sm btn-defult  rounded-pill px-3 py-1 mt-1 ms-1"
+                  onClick={logout}
+                >
+                  Logout <i className="fas fa-sign-out-alt"></i>
+                </NavLink>
+              )}
             </li>
           </ul>
         </div>
