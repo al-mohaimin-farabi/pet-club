@@ -1,5 +1,5 @@
 .img_box img {
-  width: 250px;
+  width: calc(100% - 13%);
   height: 250px;
 }
 .title {

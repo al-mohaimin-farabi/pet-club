@@ -5,7 +5,7 @@ import style from "./Footer.module.css";
 
 const Footer = () => {
   return (
-    <footer className="bg-light py-2 mt-2">
+    <footer className="bg-light py-2 mt-5">
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-4 col-lg-4">
@@ -18,7 +18,7 @@ const Footer = () => {
               />
             </div>
             <p className=" text-main  ">
-              Pet CLub is an online pet shop in Chittagong providing your loving
+              Pet CLub is an online pet shop based in Chittagong providing your loving
               pets with their favourite foods and other accessories. We home
               deliver your pet food so you can receive from your doorstep.
             </p>

@@ -1,76 +1,67 @@
 [
   {
-    "id": 1,
     "animal": "dog",
     "title": "2 Layer Dog Collar With Bell",
-    "img": "../accessories-images/images-1.png",
-    "price": 300,
+    "img": "/accessories-images/images-1.png",
+    "price": "300",
     "stock": 4
   },
   {
-    "id": 2,
     "animal": "dog",
     "title": "Dog Adjustable Leash Harness Set Denim Collar",
-    "img": "../accessories-images/images-2.png",
-    "price": 900,
+    "img": "/accessories-images/images-2.png",
+    "price": "900",
     "stock": 5
   },
   {
-    "id": 3,
     "animal": "dog",
     "title": "Pet Protection Cover Anti-Bite Scratching Wound Healing Ring for Cats & Dogs",
-    "img": "../accessories-images/images-3.png",
-    "price": 450,
+    "img": "/accessories-images/images-3.png",
+    "price": "450",
     "stock": 9
   },
   {
-    "id": 4,
     "animal": "bird",
     "title": "Nutribird A18 Lori",
-    "img": "../accessories-images/images-4.png",
-    "price": 4600,
+    "img": "/accessories-images/images-4.png",
+    "price": "4600",
     "stock": 19
   },
   {
-    "id": 5,
     "animal": "cat",
     "title": "Cat Litter Tray / Box with Scooper",
-    "img": "../accessories-images/images-5.png",
-    "price": 1255,
+    "img": "/accessories-images/images-5.png",
+    "price": "1255",
     "stock": 15
   },
   {
-    "id": 6,
     "animal": "bird",
     "title": "Bird Band Numbers for Identification",
-    "img": "../accessories-images/images-6.png",
-    "price": 10,
+    "img": "/accessories-images/images-6.png",
+    "price": "10",
     "stock": 168
   },
   {
-    "id": 7,
     "animal": "cat",
     "title": "Premium Steel Pet Food Bowl",
-    "img": "../accessories-images/images-7.png",
-    "price": 600,
+    "img": "/accessories-images/images-7.png",
+    "price": "600",
     "stock": 22
   },
   {
-    "id": 8,
     "animal": "dog",
     "title": "Dog collar",
-    "img": "../accessories-images/images-8.png",
-    "brand": "unknown",
-    "price": 1000,
+    "img": "/accessories-images/images-8.png",
+
+    "price": "1000",
     "stock": 30
   },
   {
-    "id": 9,
     "animal": "dog",
     "title": "Dog t-shirt",
-    "img": "../accessories-images/images-9.png",
-    "brand": "unknown",
-    "price": 800,
+    "img": "/accessories-images/images-9.png",
+
+    "price": "800",
     "stock": 20
   }
 ]

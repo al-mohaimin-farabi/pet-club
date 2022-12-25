@@ -9,29 +9,25 @@ import Footer from "../../Shared/Footer/Footer";
 const PetAccessories = () => {
   const [isLoading, setisLoading] = useState(true);
   const [searchedText, setsearchedText] = useState("");
-  const { data } = useFetch("/Data/accessories.json");
+  const { data } = useFetch("http://localhost:5000/petAccAndToy");
   const [displayData, setDisplaydata] = useState([]);
 
   useLayoutEffect(() => {
-    document.title = "Pet Food";
+    console.log("from prodcuts");
+    document.title = "Pet Toy And Accessories";
     const filteredData = data.filter(
       (singledata) =>
         singledata.animal.toLowerCase().includes(searchedText.toLowerCase()) ||
         singledata.title.toLowerCase().includes(searchedText.toLowerCase())
     );
-    if (filteredData.length == 0 && isLoading == true) {
-      setDisplaydata("Loading");
-    } else {
-      setDisplaydata(filteredData);
-    }
-
-    setisLoading(false);
+    setDisplaydata(filteredData);
+    if (data.length > 0) setisLoading(false);
   }, [searchedText, data]);
   return (
     <>
       <Navigation></Navigation>
       <SearchField setsearchedText={setsearchedText}></SearchField>
-      {displayData == "Loading" ? (
+      {isLoading ? (
         <div className="w-100 d-flex flex-column justify-content-center  align-items-center mt-5">
           <div className="spinner-border text-main" role="status">
             <span className="visually-hidden"></span>
@@ -44,7 +40,7 @@ const PetAccessories = () => {
             <div className="row g-3 row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4 mt-0 py-2">
               {displayData.length >= 1 ? (
                 displayData.map((data) => (
-                  <Products key={data.id} data={data}></Products>
+                  <Products key={data._id} data={data} from="PetAcc"></Products>
                 ))
               ) : (
                 <div className="col-12 w-100 text-center">

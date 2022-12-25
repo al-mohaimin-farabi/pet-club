@@ -1,0 +1,22 @@
+.paymentImg_responsiveness {
+  width: 100vw;
+  height: calc(100vh - 20vh);
+}
+.paymentImg_responsiveness img {
+  width: 100%;
+  padding: 10px;
+  height: calc(100% - 20vh);
+  border-radius: 18px;
+}
+@media only screen and (min-width: 900px) {
+  .paymentImg_responsiveness {
+    width: 100vw;
+    height: calc(100vh - 20vh);
+  }
+  .paymentImg_responsiveness img {
+    width: 95%;
+    padding: 10px;
+    height: 100%;
+    border-radius: 18px;
+  }
+}

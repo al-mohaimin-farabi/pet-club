@@ -6,16 +6,16 @@ import petFood from "../../Images/Icons/petFood.png";
 import petToyAndAcc from "../../Images/Icons/petToy&Acc.png";
 import { NavLink } from "react-router-dom";
 
-const Services = () => {
+const servicess = () => {
   return (
     <section className="py-2 my-3">
       <div className="container">
-        <TitleBox title={"Our Services"}></TitleBox>
+        <TitleBox title={"Our servicess"}></TitleBox>
 
-        <div className="row  mt-3 px-2 g-3 mb-1">
+        <div className="row mt-3 px-2 g-3 mb-1">
           <div className="col-12 col-sm-12 col-lg-4 col-md-6 ">
             <div
-              className={`${style.service_card} card h-100 text-center border-0 p-3`}
+              className={`${style.services_card} card h-100 text-center border-0 p-3`}
             >
               <div className="card-body">
                 <div className={`${style.icon_wrapper} bg-main mx-auto `}>
@@ -30,7 +30,7 @@ const Services = () => {
               <div className="card-footer bg-transparent border-0 m-0">
                 <NavLink
                   to="services/pet-care"
-                  className={`${style.service_btn} btn btn-defult`}
+                  className={`${style.services_btn} btn btn-defult`}
                 >
                   Pet Care
                 </NavLink>
@@ -39,13 +39,13 @@ const Services = () => {
           </div>
           <div className="col-12 col-sm-12 col-lg-4 col-md-6  ">
             <div
-              className={`${style.service_card} card h-100 text-center border-0 p-3`}
+              className={`${style.services_card} ${style.even} card h-100 text-center border-0 p-3`}
             >
               <div className="card-body">
-                <div className={`${style.icon_wrapper} bg-main mx-auto `}>
+                <div className={`${style.icon_wrapper}  bg-secondary mx-auto `}>
                   <img src={petFood} alt="" className="" />
                 </div>
-                <h3 className="text-main card-title">Pet Food</h3>
+                <h3 className="text-secondary card-title">Pet Food</h3>
                 <p className="card-text m-0">
                   If you are woandaring where to find good quality othentic pet
                   food at afordable price, You are at the right place.
@@ -54,7 +54,7 @@ const Services = () => {
               <div className="card-footer bg-transparent border-0 m-0">
                 <NavLink
                   to="services/pet-food"
-                  className={`${style.service_btn} btn btn-defult `}
+                  className={`${style.services_btn} btn `}
                 >
                   Pet Food
                 </NavLink>
@@ -63,7 +63,7 @@ const Services = () => {
           </div>
           <div className="col-12 col-sm-12 col-lg-4 col-md-12 ">
             <div
-              className={`${style.service_card} card h-100 text-center border-0 p-3`}
+              className={`${style.services_card} card h-100 text-center border-0 p-3`}
             >
               <div className="card-body">
                 <div className={`${style.icon_wrapper} bg-main mx-auto `}>
@@ -78,8 +78,8 @@ const Services = () => {
               </div>
               <div className="card-footer bg-transparent border-0 m-0">
                 <NavLink
-                  to="services/pet-food"
-                  className={`${style.service_btn} btn btn-defult `}
+                  to="services/pet-toy-accessories"
+                  className={`${style.services_btn} btn btn-defult `}
                 >
                   Pet Toy & Accessories
                 </NavLink>
@@ -92,4 +92,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default servicess;
