@@ -1,7 +1,7 @@
 import React from "react";
 import TitleBox from "../Title-box/TitleBox";
 
-const SearchField = ({ setsearchedText }) => {
+const SearchField = ({ searchedText, setsearchedText }) => {
   return (
     <div className="mt-3 container mb-0">
       <TitleBox title={"We Got The Best Things For You"}></TitleBox>
@@ -13,7 +13,7 @@ const SearchField = ({ setsearchedText }) => {
           aria-label="Recipient's username"
           aria-describedby="basic-addon2"
           id="searched-text"
-          // value={searchedText}
+          value={searchedText}
           onChange={(e) => setsearchedText(e.target.value)}
         />
 

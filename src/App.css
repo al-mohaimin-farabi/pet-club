@@ -12,8 +12,8 @@
 }
 
 :root {
-  /* --main-color: #16213e; */
-  --main-color: #111f44;
+  --main-color: #16213e;
+  /* --main-color: #111f44; */
   --secondary-color: #13a89e;
   --main-color-semi-transparent: rgba(52, 68, 97, 0.8);
 }

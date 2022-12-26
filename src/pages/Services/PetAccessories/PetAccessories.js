@@ -1,19 +1,18 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, {  useLayoutEffect, useState } from "react";
 import useFetch from "../../../Hooks/useFetch";
 import Navigation from "../../Shared/Navigation/Navigation";
 import Products from "../../Shared/Products/Products";
 import resultNotFound from "../../../Images/cant-find-search-result.gif";
 import SearchField from "../../Shared/SearchField/SearchField";
 import Footer from "../../Shared/Footer/Footer";
+import Skeleton from "../../Shared/Skeleton/Skeleton";
 
 const PetAccessories = () => {
-  const [isLoading, setisLoading] = useState(true);
   const [searchedText, setsearchedText] = useState("");
-  const { data } = useFetch("http://localhost:5000/petAccAndToy");
+  const { data, isLoading } = useFetch("http://localhost:5000/petAccAndToy");
   const [displayData, setDisplaydata] = useState([]);
 
   useLayoutEffect(() => {
-    console.log("from prodcuts");
     document.title = "Pet Toy And Accessories";
     const filteredData = data.filter(
       (singledata) =>
@@ -21,18 +20,24 @@ const PetAccessories = () => {
         singledata.title.toLowerCase().includes(searchedText.toLowerCase())
     );
     setDisplaydata(filteredData);
-    if (data.length > 0) setisLoading(false);
   }, [searchedText, data]);
   return (
     <>
       <Navigation></Navigation>
-      <SearchField setsearchedText={setsearchedText}></SearchField>
+      <SearchField
+        searchedText={searchedText}
+        setsearchedText={setsearchedText}
+      ></SearchField>
+
       {isLoading ? (
-        <div className="w-100 d-flex flex-column justify-content-center  align-items-center mt-5">
-          <div className="spinner-border text-main" role="status">
-            <span className="visually-hidden"></span>
+        <div className="container mb-3">
+          <div className="row g-3 row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4 mt-0 py-2">
+            {[...Array(12)].map((elementInArray, index) => (
+              <div key={index} className="col">
+                <Skeleton></Skeleton>
+              </div>
+            ))}
           </div>
-          <span className="mt-2 fs-4 text-main">Loading...</span>
         </div>
       ) : (
         <section>
@@ -44,18 +49,20 @@ const PetAccessories = () => {
                 ))
               ) : (
                 <div className="col-12 w-100 text-center">
-                  <img
-                    src={resultNotFound}
-                    alt="cant find your result"
-                    className="img-fluid"
-                  />
+                  {searchedText.length >= 1 && displayData.length == 0 && (
+                    <img
+                      src={resultNotFound}
+                      alt="cant find your result"
+                      className="img-fluid"
+                    />
+                  )}
                 </div>
               )}
             </div>
           </div>
+          <Footer></Footer>
         </section>
       )}
-      <Footer></Footer>
     </>
   );
 };

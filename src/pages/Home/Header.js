@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import heroImg from "../../Images/hero-photo.png";
+
+
 const Header = () => {
   return (
     <header className="hero">

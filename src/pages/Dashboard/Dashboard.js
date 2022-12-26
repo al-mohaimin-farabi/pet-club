@@ -9,13 +9,13 @@ import useAuth from "../../Hooks/useAuth";
 const drawerWidth = 200;
 
 function Dashboard(props) {
+  const { user, admin, logout } = useAuth();
   useEffect(() => {
     document.title = "Dashboard";
-  }, []);
+  }, [admin, user]);
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
-  const { admin, logout } = useAuth();
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };

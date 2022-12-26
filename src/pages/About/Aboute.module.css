@@ -98,6 +98,7 @@
   display: grid;
   place-items: center;
   border-radius: 50%;
+  color: #ffffff;
   border: 1px solid var(--main-color);
   font-size: 22px;
   transition: all 0.3s ease-in-out;
@@ -105,6 +106,7 @@
 .card_hover ul li:hover {
   background-color: var(--main-color);
   display: grid;
+  color: var(--main-color);
   place-items: center;
   border-radius: 50%;
   background-color: transparent;

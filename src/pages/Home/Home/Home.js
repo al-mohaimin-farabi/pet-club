@@ -3,7 +3,7 @@ import Navigation from "../../Shared/Navigation/Navigation";
 import Footer from "../../Shared/Footer/Footer";
 import Header from "../Header";
 import BlogShowCase from "../BlogShowCase";
-import Services from "../../Services/ServiceShowCase";
+import ServicesShowcase from "../ServiceShowCase";
 import Faq from "../Faq";
 import NewsLatter from "../NewsLatter";
 import Testimonial from "../Testimonial";
@@ -19,7 +19,7 @@ const Home = () => {
       <Navigation></Navigation>
       <Header></Header>
 
-      <Services></Services>
+      <ServicesShowcase></ServicesShowcase>
       <FoodProductShowCase></FoodProductShowCase>
       <PetAccessoriesShowCase></PetAccessoriesShowCase>
       <BlogShowCase></BlogShowCase>
