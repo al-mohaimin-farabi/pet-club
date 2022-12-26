@@ -30,6 +30,7 @@ import AddFoodProduct from "./pages/Dashboard/AddFoodProduct";
 import AddToyAccProduct from "./pages/Dashboard/AddToyAccProduct";
 
 function App() {
+  
   return (
     <div className="App">
       <AuthProvider>

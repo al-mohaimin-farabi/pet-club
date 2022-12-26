@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import Navigation from "../Shared/Navigation/Navigation";
 import TitleBox from "../Shared/Title-box/TitleBox";
+// import Update from "./Update";
 
 const Manageallproduct = () => {
   const { user } = useAuth();
@@ -84,6 +85,7 @@ function Product({ data, product, setProductData, uri }) {
       alert(`Deleting ${data.title} Aborted`);
     }
   };
+ 
   return (
     <>
       <li className="list-group-item ">
@@ -127,13 +129,8 @@ function Product({ data, product, setProductData, uri }) {
               >
                 <i className="fas fa-trash"></i>
               </button>
-              {/* <button
-                title="Remove Product"
-                onClick={() => handleDelete(data?._id)}
-                className="btn btn-outline-success mx-2"
-              >
-                <i className="fas fa-edit"></i>
-              </button> */}
+              
+              {/* <Update uri={uri} id={data._id}></Update> */}
             </div>
           </div>
         </div>

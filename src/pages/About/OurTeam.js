@@ -3,6 +3,7 @@ import style from "./Aboute.module.css";
 import farabi from "../../Images/AboutUs/farabi.jpg";
 import rahela from "../../Images/AboutUs/rahela.jpg";
 import imran from "../../Images/AboutUs/imran.jpg";
+import { HashLink } from "react-router-hash-link";
 
 const OurTeam = () => {
   return (
@@ -84,7 +85,7 @@ const OurTeam = () => {
                   </a>
                 </li>
                 <li>
-                  <a target="_blank" href="#">
+                  <a as={HashLink}>
                     <i className="fa-brands fa-github"></i>
                   </a>
                 </li>
@@ -125,7 +126,7 @@ const OurTeam = () => {
                   </a>
                 </li>
                 <li>
-                  <a target="_blank" href="#">
+                  <a as={HashLink}>
                     <i className="fa-brands fa-github"></i>
                   </a>
                 </li>

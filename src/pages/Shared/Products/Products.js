@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import style from "./Product.module.css";
+
 const Products = ({ data, from }) => {
   const { _id, img, title, price, animal, stock } = data;
 
@@ -8,7 +9,13 @@ const Products = ({ data, from }) => {
     <div className={`col ${style.card_hover} `}>
       <div className="card h-100 border-0 shadow">
         <div className={`${style.img_box} text-center p-2`}>
-          <img src={`data:image/*;base64,${img}`} className="rounded" alt="" />
+          <img
+            src={`data:image/*;base64,${img}`}
+            data-aos="zoom-in"
+            data-aos-duration="500"
+            className="rounded"
+            alt=""
+          />
         </div>
         <div className="card-body px-3 py-0 m-0 mt-1">
           <h2 className={`${style.title} text-main`}>{title}</h2>
