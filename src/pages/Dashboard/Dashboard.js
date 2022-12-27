@@ -12,7 +12,7 @@ function Dashboard(props) {
   const { user, admin, logout } = useAuth();
   useEffect(() => {
     document.title = "Dashboard";
-  }, [admin, user]);
+  }, [user.email, admin]);
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
