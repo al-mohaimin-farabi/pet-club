@@ -1,7 +1,7 @@
 import { Alert } from "@mui/material";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 const style = {
@@ -16,46 +16,58 @@ const style = {
   //   boxShadow: 24,
   p: 4,
 };
-const Update = ({ uri, id }) => {
+const Update = ({ uri, id, setRerender, rerender }) => {
   const { register, handleSubmit, reset } = useForm();
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
   const [erroMessage, setErroMessage] = useState("");
-  const onSubmit = (data) => {
-    // setSuccess(false);
-    const img = data.img[0];
-    // if (!img) {
-    //   setSuccess(false);
-    //   setErroMessage("Input Image");
-    //   setError(true);
-    //   return;
-    // }
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/${uri}/${id}`)
+      .then((res) => res.json())
+      .then((data) => setData(data));
+  }, [rerender]);
+
+  const onSubmit = (updateData) => {
+    // console.log(updateData.img);
+    let img;
+    if (updateData.img[0]) {
+      img = updateData.img[0];
+    } else {
+      img = data.img;
+    }
+    console.log(img);
+
     // console.log(img);
     // return;
     const formData = new FormData();
-    formData.append("animal", data.animal);
+
+    formData.append("animal", updateData.animal);
+    formData.append("stock", updateData.stock);
     {
-      uri == "petfood" && formData.append("brand", data.brand);
+      uri == "petfood" && formData.append("brand", updateData.brand);
     }
-    formData.append("stock", data.stock);
-    formData.append("price", data.price);
-    formData.append("title", data.title);
+    formData.append("price", updateData.price);
+    formData.append("title", updateData.title);
     formData.append("img", img);
 
     // return;
 
-    fetch(`http://localhost:5000/${uri}`, {
-      method: "POST",
+    fetch(`http://localhost:5000/${uri}/${id}`, {
+      method: "PUT",
       body: formData,
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data, data.insertedId);
-        if (data.insertedId) {
+        console.log(data, data.modifiedCount);
+        if (data.modifiedCount || data.acknowledged) {
+          setRerender(!rerender);
           reset();
-          setSuccess(true);
           setError(false);
           setErroMessage("");
+          setSuccess(true);
+          setOpen(false);
         }
       })
       .catch((error) => {
@@ -94,11 +106,13 @@ const Update = ({ uri, id }) => {
           </div>
           <form onSubmit={handleSubmit(onSubmit, { required: true })}>
             <input
+              defaultValue={data?.animal}
               className="form-control px-2 my-2"
               placeholder="For Ex: cat"
               {...register("animal", { required: true })}
             />
             <input
+              defaultValue={data?.title}
               className="form-control px-2 my-2"
               placeholder="Title"
               type="text"
@@ -112,18 +126,21 @@ const Update = ({ uri, id }) => {
             />
             {uri == "petfood" && (
               <input
+                defaultValue={data?.brand}
                 className="form-control px-2 my-2"
                 placeholder="Brand"
                 {...register("brand", { required: true })}
               />
             )}
             <input
+              defaultValue={data?.price}
               className="form-control px-2 my-2"
               placeholder="Price"
               type="text"
               {...register("price", { required: true })}
             />
             <input
+              defaultValue={data?.stock}
               className="form-control px-2 my-2"
               placeholder="Stock"
               type="text"

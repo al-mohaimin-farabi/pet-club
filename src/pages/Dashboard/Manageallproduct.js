@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import Navigation from "../Shared/Navigation/Navigation";
 import TitleBox from "../Shared/Title-box/TitleBox";
-// import Update from "./Update";
+import Update from "./Update";
 
 const Manageallproduct = () => {
   const { user } = useAuth();
   const [foodProduct, setFoodProduct] = useState();
   const [toyAndAccProduct, SetToyAndAccProduct] = useState();
+  const [rerender, setRerender] = useState(false);
   useEffect(() => {
     fetch(`http://localhost:5000/petfood`)
       .then((res) => res.json())
@@ -15,7 +16,7 @@ const Manageallproduct = () => {
     fetch(`http://localhost:5000/petAccAndToy`)
       .then((res) => res.json())
       .then((data) => SetToyAndAccProduct(data));
-  }, [user.email]);
+  }, [user.email, rerender]);
   return (
     <>
       <Navigation />
@@ -34,6 +35,8 @@ const Manageallproduct = () => {
                   product={foodProduct}
                   setProductData={setFoodProduct}
                   uri={"petfood"}
+                  setRerender={setRerender}
+                  rerender={rerender}
                 ></Product>
               ))}
             </ul>
@@ -51,6 +54,8 @@ const Manageallproduct = () => {
                     product={toyAndAccProduct}
                     setProductData={SetToyAndAccProduct}
                     uri={"petAccAndToy"}
+                    setRerender={setRerender}
+                    rerender={rerender}
                   ></Product>
                 ))}
               </ul>
@@ -64,7 +69,14 @@ const Manageallproduct = () => {
 
 export default Manageallproduct;
 
-function Product({ data, product, setProductData, uri }) {
+function Product({
+  data,
+  product,
+  setProductData,
+  uri,
+  setRerender,
+  rerender,
+}) {
   const handleDelete = (id) => {
     const confirmation = window.confirm(
       `Are Sure You Wanna Delete ${data.title}`
@@ -85,7 +97,7 @@ function Product({ data, product, setProductData, uri }) {
       alert(`Deleting ${data.title} Aborted`);
     }
   };
- 
+
   return (
     <>
       <li className="list-group-item ">
@@ -129,8 +141,13 @@ function Product({ data, product, setProductData, uri }) {
               >
                 <i className="fas fa-trash"></i>
               </button>
-              
-              {/* <Update uri={uri} id={data._id}></Update> */}
+
+              <Update
+                uri={uri}
+                id={data._id}
+                setRerender={setRerender}
+                rerender={rerender}
+              ></Update>
             </div>
           </div>
         </div>
