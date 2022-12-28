@@ -24,9 +24,12 @@ const Update = ({ uri, id, setRerender, rerender }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/${uri}/${id}`)
-      .then((res) => res.json())
-      .then((data) => setData(data));
+    async function upDateData() {
+      await fetch(`http://localhost:5000/${uri}/${id}`)
+        .then((res) => res.json())
+        .then((data) => setData(data));
+    }
+    upDateData();
   }, [rerender]);
 
   const onSubmit = (updateData) => {
@@ -42,7 +45,7 @@ const Update = ({ uri, id, setRerender, rerender }) => {
     // console.log(img);
     // return;
     const formData = new FormData();
-
+    setSuccess(false);
     formData.append("animal", updateData.animal);
     formData.append("stock", updateData.stock);
     {
@@ -63,10 +66,11 @@ const Update = ({ uri, id, setRerender, rerender }) => {
         console.log(data, data.modifiedCount);
         if (data.modifiedCount || data.acknowledged) {
           setRerender(!rerender);
+          setSuccess(true);
           reset();
           setError(false);
           setErroMessage("");
-          setSuccess(true);
+
           setOpen(false);
         }
       })
@@ -94,8 +98,8 @@ const Update = ({ uri, id, setRerender, rerender }) => {
         <Box sx={style}>
           <div className="d-flex justify-content-center">
             {success && (
-              <Alert sx={{ my: 3, width: "45%" }} severity="success">
-                Product Adding Successful
+              <Alert sx={{ my: 3, width: "100%" }} severity="success">
+                Product Updating Successful
               </Alert>
             )}
             {error && (

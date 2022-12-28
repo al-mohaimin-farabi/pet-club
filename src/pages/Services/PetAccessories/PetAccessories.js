@@ -1,4 +1,4 @@
-import React, {  useLayoutEffect, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import useFetch from "../../../Hooks/useFetch";
 import Navigation from "../../Shared/Navigation/Navigation";
 import Products from "../../Shared/Products/Products";

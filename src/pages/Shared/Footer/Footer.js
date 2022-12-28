@@ -18,9 +18,9 @@ const Footer = () => {
               />
             </div>
             <p className=" text-main  ">
-              Pet CLub is an online pet shop based in Chittagong providing your loving
-              pets with their favourite foods and other accessories. We home
-              deliver your pet food so you can receive from your doorstep.
+              Pet CLub is an online pet shop based in Chittagong providing your
+              loving pets with their favourite foods and other accessories. We
+              home deliver your pet food so you can receive from your doorstep.
             </p>
             <div className={style.social_link}>
               <h5 className=" text-secondary  text-uppercase mb-3 ">

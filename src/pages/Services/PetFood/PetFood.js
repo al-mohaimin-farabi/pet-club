@@ -45,7 +45,7 @@ const PetFood = () => {
             <div className="row g-3 row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4 mt-0 py-2">
               {displayData.length >= 1 ? (
                 displayData.map((data) => (
-                  <Products key={data._id} data={data} from="PetAcc"></Products>
+                  <Products key={data._id} data={data} from="PetFood"></Products>
                 ))
               ) : (
                 <div className="col-12 w-100 text-center">

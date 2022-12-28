@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../../Hooks/useFetch";
 import Footer from "../Shared/Footer/Footer";
@@ -9,9 +9,9 @@ const FullBlog = () => {
   const { blogID } = useParams();
   const { isLoading, data } = useFetch(`http://localhost:5000/blogs/${blogID}`);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     document.title = `${data.blogTitle}`;
-  }, [blogID, data]);
+  }, [blogID]);
   return (
     <>
       <Navigation></Navigation>

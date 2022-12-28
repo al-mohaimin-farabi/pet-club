@@ -4,7 +4,7 @@ import useAuth from "../../../Hooks/useAuth";
 import Navigation from "../../Shared/Navigation/Navigation";
 
 const SecureAuthRoute = ({ children }) => {
-  console.log("from SecureAuthRoute");
+  // console.log("from SecureAuthRoute");
   const { user, isLoading } = useAuth();
   const location = useLocation();
   if (isLoading)

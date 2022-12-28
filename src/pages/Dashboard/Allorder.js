@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import Navigation from "../Shared/Navigation/Navigation";
 import TitleBox from "../Shared/Title-box/TitleBox";
 
 const Allorder = () => {
-  const [allOrders, setAllOrders] = useState();
-  useEffect(() => {
-    fetch(`http://localhost:5000/orders`)
-      .then((res) => res.json())
-      .then((data) => setAllOrders(data));
+  const [allOrders, setAllOrders] = useState([]);
+  useLayoutEffect(() => {
+    async function getData() {
+      await fetch(`http://localhost:5000/orders`)
+        .then((res) => res.json())
+        .then((data) => setAllOrders(data));
+    }
+    getData();
   }, []);
 
   return (
@@ -67,7 +70,6 @@ function Order({ data, allOrders, setAllOrders }) {
       <li className="list-group-item ">
         <div className="card mb-3 border-0">
           <div className="row g-0">
-            
             <div className="col-md-8">
               <div className="card-body">
                 <h5 className="card-title mb-2">
@@ -77,9 +79,7 @@ function Order({ data, allOrders, setAllOrders }) {
                 <p className="card-text mb-1">
                   Customer Name: {data?.customer_name}
                 </p>
-                <p className="card-text mb-1">
-                  Customer Email: {data?.email}
-                </p>
+                <p className="card-text mb-1">Customer Email: {data?.email}</p>
                 <p className="card-text mb-1">
                   Category: {data?.Service_Category || data?.category}
                 </p>
@@ -111,7 +111,6 @@ function Order({ data, allOrders, setAllOrders }) {
               >
                 <i className="fas fa-trash"></i>
               </button>
-             
             </div>
           </div>
         </div>

@@ -40,7 +40,7 @@ const MakeAdmin = () => {
     <>
       <Navigation></Navigation>
       <div className="containet text-center mt-5 ">
-        <h3 className="text-main">Make an Admin</h3>
+        <h3 className="text-main">Make An Admin</h3>
         <div className="d-flex justify-content-center">
           {success && (
             <Alert centered sx={{ my: 3, width: "45%" }} severity="success">
@@ -48,9 +48,9 @@ const MakeAdmin = () => {
             </Alert>
           )}
         </div>
-        <form className="w-25 mt-2 mx-auto" onSubmit={handleAdminSubmit}>
+        <form className="w-50 mt-2 mx-auto" onSubmit={handleAdminSubmit}>
           <input
-            placeholder="Enter email"
+            placeholder="Enter  email"
             name="email"
             type="email"
             label="Email"

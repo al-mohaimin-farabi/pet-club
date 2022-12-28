@@ -5,13 +5,16 @@ export default function useFetch(url) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
   useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setData(data))
-      .catch((error) => {
-        setError(error);
-      })
-      .finally(() => setIsLoading(false));
+    async function getData() {
+      await fetch(url)
+        .then((res) => res.json())
+        .then((data) => setData(data))
+        .catch((error) => {
+          setError(error);
+        })
+        .finally(() => setIsLoading(false));
+    }
+    getData();
   }, [url]);
 
   return { data, isLoading, error };

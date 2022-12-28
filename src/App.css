@@ -1,15 +1,11 @@
 /* custom common css */
 /* coler:#16213E */
-/* common reuseable css stylesheet */
+/* font-family: "Oswald", sans-serif; */
 
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600;700");
-
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
+/* @font-face {
   font-family: "Oswald", sans-serif;
-}
+  src: url("/public/Oswald-VariableFont_wght.ttf");
+} */
 
 :root {
   --main-color: #16213e;
@@ -191,11 +187,14 @@
   filter: brightness(85%);
 }
 .img_box {
-  width: 100%;
+  width: 50%;
   height: 230px;
-  margin: 15px 0px !important;
-  filter: drop-shadow(-17px 39px 59px rgba(0, 0, 0, 0.5));
+  margin: 10px 0px !important;
+  object-fit: contain;
+  /* border-radius:30px; */
+  filter: drop-shadow(20px 15px 10px rgba(0, 0, 0, 0.5));
 }
+
 .pet_care_service {
   filter: brightness(80%) !important;
 }

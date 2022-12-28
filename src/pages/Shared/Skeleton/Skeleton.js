@@ -3,7 +3,7 @@ import style from "./Skeleton.module.css";
 
 const Skeleton = () => {
   return (
-    <div className={style.card}>
+    <div className={style.skeleton}>
       <div className={style.header}>
         <div className={style.img}></div>
         <div className={style.details}>
@@ -18,7 +18,6 @@ const Skeleton = () => {
       </div>
       <div className={style.btns}>
         <div className={`${style.btn} ${style.btn_1}`}></div>
-        <div className={`${style.btn} ${style.btn_2}`}></div>
       </div>
     </div>
   );

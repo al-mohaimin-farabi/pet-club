@@ -20,7 +20,7 @@ const PrivateRoute = ({ children }) => {
         </div>
       </>
     );
-  if (user.email ) return children;
+  if (user.email) return children;
   return <Navigate to="/login" state={{ from: location }} />;
 };
 

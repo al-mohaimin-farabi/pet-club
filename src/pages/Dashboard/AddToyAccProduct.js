@@ -56,7 +56,7 @@ const AddToyAccProduct = () => {
       <Navigation></Navigation>
       <div className={`${style.add_product} container`}>
         <h2 className="text-main mt-3 text-center mb-3">
-          Please Add Toy & Accessories Product
+          Add Toy & Accessories Product
         </h2>
         <div className=" d-flex justify-content-center">
           {success && (
