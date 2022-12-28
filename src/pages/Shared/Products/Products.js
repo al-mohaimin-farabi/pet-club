@@ -10,9 +10,8 @@ const Products = ({ data, from }) => {
       <div className="card h-100 border-0 shadow">
         <div className={`${style.img_box} text-center p-2`}>
           <img
+            lazyload="ttrue"
             src={`data:image/*;base64,${img}`}
-            data-aos="zoom-in"
-            data-aos-duration="500"
             className="rounded"
             alt=""
           />
@@ -20,14 +19,16 @@ const Products = ({ data, from }) => {
         <div className="card-body px-3 py-0 m-0 mt-1">
           <h2 className={`${style.title} text-main`}>{title}</h2>
         </div>
-        <div className="card-footer border-0 bg-transparent px-3 d-flex justify-content-between">
-          <p className="text-main m-0 fw-normal">
+        <div className="card-footer border-0 bg-transparent px-3 d-flex justify-content-between py-1">
+          <p className="text-main m-0 p-0 fw-normal">
             Price: <span className="fs-6">৳ {price}</span>
           </p>
-          <p className="text-main m-0 fw-normal">For: {animal.toUpperCase()}</p>
-          <p className="text-main m-0 fw-normal">Stock: {stock}</p>
+          <p className="text-main m-0 p-0 fw-normal">
+            For: {animal.toUpperCase()}
+          </p>
+          <p className="text-main m-0 p-0 fw-normal">Stock: {stock}</p>
         </div>
-        <div className="card-footer border-0 bg-transparent px-3 mb-1">
+        <div className="card-footer border-0 bg-transparent px-3 mb-1 mt-0 pt-1">
           {from == "PetFood" ? (
             <NavLink
               to={`/services/pet-food/purchase/${_id}`}

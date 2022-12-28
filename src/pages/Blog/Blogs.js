@@ -9,7 +9,7 @@ const Blogs = () => {
   const { data, isLoading } = useFetch("http://localhost:5000/blogs");
   useLayoutEffect(() => {
     document.title = "Blog";
-  }, [data]);
+  }, []);
   return (
     <>
       <Navigation></Navigation>

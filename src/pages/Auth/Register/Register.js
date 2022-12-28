@@ -41,7 +41,7 @@ const Register = () => {
   };
 
   useEffect(() => {
-    console.log("from signup");
+    // console.log("from signup");
     document.title = "Signup";
   }, []);
   return (

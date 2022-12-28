@@ -1,13 +1,13 @@
-.card {
+.skeleton {
   max-width: 500px;
   width: 100%;
   background: #fff;
-  padding: 30px;
+  padding: 10px;
   border-radius: 10px;
   box-shadow: 0 6px 20px #ddd;
   height: 100% !important;
 }
-.card .header {
+.skeleton .header {
   display: flex;
   align-items: center;
 }
@@ -38,7 +38,7 @@
   width: 150px;
   margin-top: 10px;
 }
-.card .description {
+.skeleton .description {
   margin: 25px 0;
 }
 .description .line {
@@ -55,10 +55,10 @@
 .description .line_3 {
   width: calc(100% - 40%);
 }
-.card .btns {
+.skeleton .btns {
   display: flex;
 }
-.card .btns .btn {
+.skeleton .btns .btn {
   height: 45px;
   width: 100%;
   background: #d9d9d9;

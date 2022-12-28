@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import useFetch from "../../../Hooks/useFetch";
 import Navigation from "../../Shared/Navigation/Navigation";
 import useAuth from "../../../Hooks/useAuth";
-import { useNavigate } from "react-router-dom";
 import PurchaseForm from "../../Shared/PurchaseForm/PurchaseForm";
 
 const Purchase = () => {
@@ -14,7 +13,7 @@ const Purchase = () => {
 
   useEffect(() => {
     document.title = "Purchase";
-  }, [foodID, data]);
+  }, []);
 
   return (
     <>
@@ -26,7 +25,7 @@ const Purchase = () => {
               <div className=" text-center rounded-top bg-secondary m-0">
                 <img
                   src={`data:image/*;base64, ${data?.img}`}
-                  className="card-img-top w-50 img_box  py-2 rounded-5 m-0"
+                  className="card-img-top  img_box  py-2  m-0"
                   alt="..."
                 />
               </div>

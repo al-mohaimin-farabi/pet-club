@@ -6,9 +6,7 @@ import blog1 from "../../Images/BlogShowcase/blog-1.webp";
 import blog2 from "../../Images/BlogShowcase/blog-2.jpg";
 import blog4 from "../../Images/BlogShowcase/blog-4.jpg";
 
-
 const BlogShowCase = () => {
- 
   return (
     <section className="blog-showcase  my-1">
       <div className="container">
@@ -16,10 +14,7 @@ const BlogShowCase = () => {
         <div className="row mt-4 px-2">
           <div className="col-12 col-sm-12 col-md-6 col-lg-6 mt-2">
             <div className="row">
-              <div
-                className="col-12  "
-               
-              >
+              <div className="col-12  ">
                 <div className="card border-0    mb-3">
                   <img
                     src={blog2}
@@ -50,10 +45,7 @@ const BlogShowCase = () => {
                   </div>
                 </div>
               </div>
-              <div
-                className="col-12  "
-                
-              >
+              <div className="col-12  ">
                 <div className="card border-0   mb-3">
                   <img
                     src={blog4}
@@ -86,10 +78,7 @@ const BlogShowCase = () => {
               </div>
             </div>
           </div>
-          <div
-            className="col-12 col-sm-12 col-md-6 col-lg-6 mt-2  "
-           
-          >
+          <div className="col-12 col-sm-12 col-md-6 col-lg-6 mt-2  ">
             <div className="row">
               <div className="col-12 h-100">
                 <div className="card border-0    mb-3 ">

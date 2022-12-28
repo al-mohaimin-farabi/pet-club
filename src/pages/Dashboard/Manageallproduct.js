@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import Navigation from "../Shared/Navigation/Navigation";
 import TitleBox from "../Shared/Title-box/TitleBox";
@@ -9,13 +9,17 @@ const Manageallproduct = () => {
   const [foodProduct, setFoodProduct] = useState();
   const [toyAndAccProduct, SetToyAndAccProduct] = useState();
   const [rerender, setRerender] = useState(false);
-  useEffect(() => {
-    fetch(`http://localhost:5000/petfood`)
-      .then((res) => res.json())
-      .then((data) => setFoodProduct(data));
-    fetch(`http://localhost:5000/petAccAndToy`)
-      .then((res) => res.json())
-      .then((data) => SetToyAndAccProduct(data));
+  useLayoutEffect(() => {
+    async function getData() {
+      await fetch(`http://localhost:5000/petfood`)
+        .then((res) => res.json())
+        .then((data) => setFoodProduct(data));
+
+      await fetch(`http://localhost:5000/petAccAndToy`)
+        .then((res) => res.json())
+        .then((data) => SetToyAndAccProduct(data));
+    }
+    getData();
   }, [user.email, rerender]);
   return (
     <>
@@ -44,7 +48,7 @@ const Manageallproduct = () => {
           <div className="col-12 col-sm-12 col-md-6 col-lg-6">
             <TitleBox title={"Pet Toy & Accessories Product"}>
               <small className=" mt-1 mb-0 text-success fw-bold">
-                Totla Product {toyAndAccProduct?.length}
+                Total Product {toyAndAccProduct?.length}
               </small>
               <ul className="list-group mt-3 mb-3">
                 {toyAndAccProduct?.map((data) => (

@@ -37,7 +37,7 @@ const PetCare = () => {
               <TitleBox title={"We provide Three Kind Of pet care service"}>
                 {" "}
                 <small className="text-muted mt-1 fs-6">
-                  *all of our service has same price tag ৳ 500
+                  *all of our services has the same price tag ৳ 500
                 </small>
               </TitleBox>
 
@@ -47,7 +47,7 @@ const PetCare = () => {
                     <div className="col-md-5">
                       <img
                         src={petsitting}
-                        className="img-fluid rounded-start h-100"
+                        className=" img-fluid rounded-start h-100"
                         alt="..."
                       />
                     </div>

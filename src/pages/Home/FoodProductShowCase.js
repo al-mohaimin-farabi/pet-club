@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import AliceCarousel from "react-alice-carousel";
 import { NavLink } from "react-router-dom";
 import useFetch from "../../Hooks/useFetch";
@@ -14,7 +14,7 @@ const responsive = {
 
 const FoodProductShowCase = () => {
   const { data, isLoading } = useFetch("http://localhost:5000/petfood");
-
+  
   return (
     <div className="container mt-4 mb-0 ">
       <TitleBox title={"Our Most Populer Pet Food"}></TitleBox>

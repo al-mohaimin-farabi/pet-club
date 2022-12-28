@@ -125,12 +125,15 @@ const useFirebase = () => {
 
   // check user role
   useEffect(() => {
-    const url = `http://localhost:5000/users/${user.email}`;
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        setAdmin(data.admin);
-      });
+    async function isAdmin() {
+      const url = `http://localhost:5000/users/${user?.email}`;
+      await fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+          setAdmin(data.admin);
+        });
+    }
+    isAdmin();
   }, [user.email]);
 
   // logout

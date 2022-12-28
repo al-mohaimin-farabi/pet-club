@@ -1,8 +1,8 @@
 react-router-dom
-modul 
 hashlink
 react-owl-carosule
 firebase
 reacthook form
 matarial ui
 matarial icons
+.env

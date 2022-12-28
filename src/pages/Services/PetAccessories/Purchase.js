@@ -14,7 +14,7 @@ const Purchase = () => {
 
   useEffect(() => {
     document.title = "Purchase";
-  }, [accessoriesID, data]);
+  }, []);
 
   return (
     <>

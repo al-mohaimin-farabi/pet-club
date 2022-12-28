@@ -3,9 +3,9 @@ import { useLocation, Navigate } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import Navigation from "../../Shared/Navigation/Navigation";
 
-const SecureOrderSuccessRoute = ({ children, ...rest }) => {
-  console.log("from SecureOrderSuccessRoute");
-  
+const SecureOrderSuccessRoute = ({ children }) => {
+  // console.log("from SecureOrderSuccessRoute");
+
   const { user, isLoading } = useAuth();
   const location = useLocation();
 

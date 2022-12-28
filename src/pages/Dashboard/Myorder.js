@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import Navigation from "../Shared/Navigation/Navigation";
 import TitleBox from "../Shared/Title-box/TitleBox";
@@ -6,10 +6,13 @@ import TitleBox from "../Shared/Title-box/TitleBox";
 const Myorder = () => {
   const { user } = useAuth();
   const [userOrder, setUserData] = useState();
-  useEffect(() => {
-    fetch(`http://localhost:5000/orders/${user.email}`)
-      .then((res) => res.json())
-      .then((data) => setUserData(data));
+  useLayoutEffect(() => {
+    async function getData() {
+      await fetch(`http://localhost:5000/orders/${user.email}`)
+        .then((res) => res.json())
+        .then((data) => setUserData(data));
+    }
+    getData();
   }, [user.email]);
 
   return (
@@ -105,7 +108,6 @@ function Order({ data, userOrder, setUserData }) {
               >
                 <i className="fas fa-trash"></i>
               </button>
-              
             </div>
           </div>
         </div>

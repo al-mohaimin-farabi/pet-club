@@ -40,7 +40,7 @@ const Login = () => {
   };
   useEffect(() => {
     document.title = "Login";
-    console.log("from Login");
+    // console.log("from Login");
   }, []);
   return (
     <>

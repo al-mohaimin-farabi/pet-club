@@ -18,7 +18,6 @@ const Home = () => {
     <>
       <Navigation></Navigation>
       <Header></Header>
-
       <ServicesShowcase></ServicesShowcase>
       <FoodProductShowCase></FoodProductShowCase>
       <PetAccessoriesShowCase></PetAccessoriesShowCase>

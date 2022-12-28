@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import useAuth from "../../../Hooks/useAuth";
 import logo from "../../../Images/LOGO.png";
-import userIcon from "../../../Images/Icons/userIcon.png";
 const Navigation = () => {
   const { user, logout } = useAuth();
   return (
@@ -92,30 +91,35 @@ const Navigation = () => {
                 Blogs
               </NavLink>
             </li>
-            {user.email && (
-              <li className="nav-item ">
-                <NavLink className="nav-link text-main " to="/dashboard">
-                  Dashboard
-                </NavLink>
-              </li>
+            {user?.email && (
+              <>
+                <li className="nav-item ">
+                  <NavLink className="nav-link text-main " to="/dashboard">
+                    Dashboard
+                  </NavLink>
+                </li>
+                <li className="nav-item p-0 ms-0 me-2 d-flex align-items-center">
+                  <NavLink
+                    as={HashLink}
+                    className="nav-link user text-main fw-normal me-1"
+                  >
+                    {user?.displayName}
+                  </NavLink>
+                  {user?.photoURL ? (
+                    <img
+                      className="rounded-circle border-primary"
+                      src={user?.photoURL}
+                      width="40px"
+                      height="40px"
+                      alt=""
+                    />
+                  ) : (
+                    <i className="fas fa-user"></i>
+                  )}
+                </li>
+              </>
             )}
-            {user.displayName && (
-              <li className="nav-item p-0 ms-0 me-2 d-flex align-items-center">
-                <NavLink
-                  as={HashLink}
-                  className="nav-link user text-main fw-normal"
-                >
-                  {user.displayName}
-                </NavLink>
-                <img
-                  className="rounded-circle border-primary"
-                  src={user.photoURL ? user.photoURL : userIcon}
-                  width="40px"
-                  height="40px"
-                  alt=""
-                />
-              </li>
-            )}
+
             <li className="nav-item">
               {!user.email ? (
                 <NavLink
