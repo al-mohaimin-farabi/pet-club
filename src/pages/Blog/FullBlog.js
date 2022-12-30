@@ -6,12 +6,14 @@ import Navigation from "../Shared/Navigation/Navigation";
 import Skeleton from "../Shared/Skeleton/Skeleton";
 
 const FullBlog = () => {
-  const { blogID } = useParams();
-  const { isLoading, data } = useFetch(`http://localhost:5000/blogs/${blogID}`);
+  const { blogTitle } = useParams();
+  const { isLoading, data } = useFetch(
+    `http://localhost:5000/blogs/${blogTitle}`
+  );
 
   useLayoutEffect(() => {
-    document.title = `${data.blogTitle}`;
-  }, [blogID]);
+    document.title = blogTitle;
+  }, [isLoading, blogTitle]);
   return (
     <>
       <Navigation></Navigation>

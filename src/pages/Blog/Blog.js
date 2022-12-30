@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Blog = ({ data }) => {
+  console.log(data._id);
   return (
     <div className="col-12 col-sm-12 col-md-6 col-lg-6">
       <div className="card mb-4 h-100 border-0">
@@ -19,9 +20,8 @@ const Blog = ({ data }) => {
           <p className="card-text fs-6 text-white mt-2">
             {data.blog.slice(0, 330)}...
             <NavLink
-              to={`/blogs/${data._id}`}
-              className="text-white fs-6  fw-light"
-            >
+              to={`/blogs/${data.blogTitle}`}
+              className="text-white fs-6  fw-light">
               read full article
             </NavLink>
           </p>

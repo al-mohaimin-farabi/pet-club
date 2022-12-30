@@ -24,14 +24,13 @@ const NewsLatter = () => {
               <button
                 className="btn light rounded-0 border-secondary text-white fw-light"
                 type="button"
-                id="button-addon2"
-              >
+                id="button-addon2">
                 Send <i className="fa-regular fa-paper-plane"></i>
               </button>
             </div>
           </div>
           <div className="col-12 text-center  py-2">
-            <span className="text-muted ">
+            <span className="text-white fw-lighter ">
               *your email is safe with us, we don't spam
             </span>
           </div>
