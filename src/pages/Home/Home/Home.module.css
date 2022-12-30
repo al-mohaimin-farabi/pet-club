@@ -30,6 +30,7 @@
 }
 
 .services_card {
+  cursor: pointer;
   position: relative;
   z-index: 1;
   box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
@@ -85,11 +86,11 @@
 }
 
 .services_card:hover .icon_wrapper {
-  background-color: #13a89e !important;
+  background-color: var(--secondary-color) !important;
 }
 
 .services_card:hover h3 {
-  color: #13a89e !important;
+  color: var(--secondary-color) !important;
 }
 .services_card:hover p {
   color: #f0f0f0;

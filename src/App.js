@@ -30,7 +30,6 @@ import AddFoodProduct from "./pages/Dashboard/AddFoodProduct";
 import AddToyAccProduct from "./pages/Dashboard/AddToyAccProduct";
 
 function App() {
-  
   return (
     <div className="App">
       <AuthProvider>
@@ -63,7 +62,7 @@ function App() {
 
             <Route path="/services/pet-care" element={<PetCare />} />
             <Route path="/blogs" element={<Blog />} />
-            <Route path="/blogs/:blogID" element={<FullBlog />} />
+            <Route path="/blogs/:blogTitle" element={<FullBlog />} />
             <Route path="/payment-guide" element={<PaymentGuide />} />
             <Route
               path="/orderingSuccess"
@@ -79,8 +78,7 @@ function App() {
                 <PrivateRoute>
                   <Dashboard />
                 </PrivateRoute>
-              }
-            >
+              }>
               <Route
                 exact
                 path="/dashboard"

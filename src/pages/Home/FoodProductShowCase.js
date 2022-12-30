@@ -14,32 +14,30 @@ const responsive = {
 
 const FoodProductShowCase = () => {
   const { data, isLoading } = useFetch("http://localhost:5000/petfood");
-  
+
   return (
     <div className="container mt-4 mb-0 ">
       <TitleBox title={"Our Most Populer Pet Food"}></TitleBox>
       <div className="row px-2      animate__delay">
         <AliceCarousel
+          mouseTracking
           responsive={responsive}
           autoPlay={true}
           disableButtonsControls={true}
           infinite={true}
-          autoPlayInterval={6000}
-        >
+          autoPlayInterval={6000}>
           {isLoading
             ? [...Array(4)].map((elementInArray, index) => (
                 <div
                   key={index}
-                  className={`${style.popular_products} card mt-3 mx-auto `}
-                >
+                  className={`${style.popular_products} card mt-3 mx-auto `}>
                   <Skeleton></Skeleton>
                 </div>
               ))
             : data.slice(2, 13).map((singelData) => (
                 <div
                   key={singelData._id}
-                  className={`${style.popular_products} card mt-3 mx-auto `}
-                >
+                  className={`${style.popular_products} card mt-3 mx-auto `}>
                   <img
                     src={`data:image/*;base64,${singelData?.img}`}
                     className="mx-auto mt-1"
@@ -64,8 +62,7 @@ const FoodProductShowCase = () => {
                   <div className="card-footer bg-transparent border-0 m-0 py-0 pb-2 px-2">
                     <NavLink
                       to={`/services/pet-food/purchase/${singelData._id}`}
-                      className="btn btn-sm btn-defult-opposite"
-                    >
+                      className="btn btn-sm btn-defult-opposite">
                       Grab It Now
                     </NavLink>
                   </div>
