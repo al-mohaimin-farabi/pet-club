@@ -26,10 +26,10 @@ const BlogShowCase = () => {
                       Health Benefits of Human-Animal Interactions
                     </h4>
                     <span className="text-main fw-bold">Rahela Begum </span>{" "}
-                    <span className="text-white" style={{ fontSize: "14px" }}>
+                    <span className="text-main" style={{ fontSize: "14px" }}>
                       Octobor 27, 2022
                     </span>
-                    <p className="card-text fs-6  text-white">
+                    <p className="card-text fs-6  text-mian">
                       Nothing compares to the joy of coming home to a loyal
                       companion. The unconditional love of a pet can do more
                       than keep you company. Pets may also decrease stress,
@@ -37,7 +37,7 @@ const BlogShowCase = () => {
                       emotional and social skills.....
                       <NavLink
                         to={`/blogs/Health Benefits of Human-Animal Interactions`}
-                        className="text-white fs-6 fw-light">
+                        className="text-main fs-6 fw-light">
                         read full article
                       </NavLink>
                     </p>
@@ -56,10 +56,10 @@ const BlogShowCase = () => {
                       How to take care of your pet rabbits
                     </h4>
                     <span className="text-main fw-bold">Mili Akhter</span>{" "}
-                    <span className="text-white" style={{ fontSize: "14px" }}>
+                    <span className="text-main" style={{ fontSize: "14px" }}>
                       December 12, 2022
                     </span>
-                    <p className="card-text fs-6 text-white">
+                    <p className="card-text fs-6 text-main">
                       Rabbits are a social species and should not be kept alone,
                       or without at least one other rabbit with whom they are
                       compatible. Generally rabbits should live as part of a
@@ -67,7 +67,7 @@ const BlogShowCase = () => {
                       time and patience but, if successful.....
                       <NavLink
                         to={`/blogs/How to take care of your pet rabbits`}
-                        className="text-white fs-6 fw-light">
+                        className="text-main fs-6 fw-light">
                         read full article
                       </NavLink>
                     </p>
@@ -90,10 +90,10 @@ const BlogShowCase = () => {
                       Dog Training: Obedience Training for Dogs
                     </h4>
                     <span className="text-main fw-bold">Al Mohaimin Farbi</span>{" "}
-                    <span className="text-white" style={{ fontSize: "14px" }}>
+                    <span className="text-main" style={{ fontSize: "14px" }}>
                       November 30, 2022
                     </span>
-                    <p className="card-text fs-6 text-white">
+                    <p className="card-text fs-6 text-main">
                       There are two common methods of training a dog. The first
                       is the aversive-based method. The second is the
                       reward-based method. Aversive-based (discipline) training
@@ -107,7 +107,7 @@ const BlogShowCase = () => {
                       whenever your dog does something you want it to do......
                       <NavLink
                         to={`/blogs/Dog Training: Obedience Training for Dogs`}
-                        className="text-white fs-6 fw-light">
+                        className="text-main fs-6 fw-light">
                         read full article
                       </NavLink>
                     </p>

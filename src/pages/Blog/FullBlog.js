@@ -34,10 +34,10 @@ const FullBlog = () => {
                     {data?.blogTitle}
                   </h4>
                   <span className="text-main fw-bold">{data?.authorName}</span>{" "}
-                  <span className="text-white" style={{ fontSize: "14px" }}>
+                  <span className="text-main" style={{ fontSize: "14px" }}>
                     {data?.blogPublishDate}
                   </span>
-                  <p className="card-text fs-6 text-white fw-normal mt-2">
+                  <p className="card-text fs-6 text-main fw-normal mt-2">
                     {data?.blog}
                   </p>
                 </div>
