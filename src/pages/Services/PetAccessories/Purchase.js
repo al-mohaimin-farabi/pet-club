@@ -30,26 +30,26 @@ const Purchase = () => {
                   alt="..."
                 />
               </div>
-              <div className="card-body rounded-bottom bg-main-linear-gradient">
-                <h5 className="card-title text-main mb-1 mt-0 p-0 ">
+              <div className="card-body rounded-bottom bg-theme-gradient">
+                <h5 className="card-title text-secondary mb-1 mt-0 p-0 ">
                   {data?.title}
                 </h5>
                 <p className="m-0 fs-5 text-white">
                   For:{" "}
-                  <span className="text-secondary">
+                  <span className="text-white fs-6">
                     {data?.animal?.toUpperCase()}
                   </span>
                 </p>
-                <p className="m-0 fs-5 text-white">
+                <p className="m-0 fs-5 text-white ">
                   {" "}
                   Catagory:{" "}
-                  <span className="text-secondary">
+                  <span className="text-white fs-6">
                     Pet Toy And Accessories
                   </span>
                 </p>
                 <p className="card-text text-white fs-5 m-0">
                   Price:{" "}
-                  <span className="text-secondary"> ৳ {data?.price}</span>
+                  <span className="text-white fs-6"> ৳ {data?.price}</span>
                 </p>
               </div>
             </div>
@@ -57,8 +57,7 @@ const Purchase = () => {
           <PurchaseForm
             user={user}
             data={data}
-            category={"Pet Toy & Accessories"}
-          ></PurchaseForm>
+            category={"Pet Toy & Accessories"}></PurchaseForm>
         </div>
       </div>
     </>

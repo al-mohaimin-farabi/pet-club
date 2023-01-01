@@ -83,8 +83,19 @@
     rgba(22, 33, 62, 1)
   ) !important;
 }
+.bg-theme-gradient {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(30, 39, 63, 0.94) 40%,
+    rgba(10, 21, 54, 0.93) 100%
+  );
+}
 .bg-main-linear-gradient {
-  background-image: linear-gradient(rgba(37, 64, 104, 0.8), var(--main-color));
+  background-image: linear-gradient(
+    to bottom,
+    rgba(78, 78, 78, 0.2) 10%,
+    rgba(255, 255, 255, 1) 80%
+  );
 }
 .border-primary {
   border: 1px solid var(--main-color) !important;
@@ -179,7 +190,7 @@
   background-color: var(--secondary-color) !important;
 }
 .blog-showcase .card {
-  box-shadow: 0px 3px 7px rgba(52, 68, 97, 0.6);
+  box-shadow: 0px 8px 9px 0px rgba(0, 0, 0, 0.2);
 }
 .blog-showcase .blog_img {
   width: 100%;

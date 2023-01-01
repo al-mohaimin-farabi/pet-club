@@ -22,30 +22,33 @@ const Purchase = () => {
         <div className="row row-col-1 row-cols-md-2 row-cols-lg-2">
           <div className="col">
             <div className="card  mb-3 w-75 w-sm-100 mx-auto">
-              <div className=" text-center rounded-top bg-secondary m-0">
+              <div className=" text-center rounded-top bg-secondary m-0 ">
                 <img
                   src={`data:image/*;base64, ${data?.img}`}
-                  className="card-img-top  img_box  py-2  m-0"
+                  className="card-img-top img_box w-50  py-2 rounded-5 m-0"
                   alt="..."
                 />
               </div>
-              <div className="card-body rounded-bottom bg-main-linear-gradient">
-                <h5 className="card-title text-main mb-1 mt-0 p-0 ">
+              <div className="card-body rounded-bottom bg-theme-gradient">
+                <h5 className="card-title text-secondary mb-1 mt-0 p-0 ">
                   {data?.title}
                 </h5>
                 <p className="m-0 fs-5 text-white">
                   For:{" "}
-                  <span className="text-secondary">
+                  <span className="text-white fs-6">
                     {data?.animal?.toUpperCase()}
                   </span>
                 </p>
-                <p className="m-0 fs-5 text-white">
+                <p className="m-0 fs-5 text-white ">
                   {" "}
-                  Catagory: <span className="text-secondary">Pet Food</span>
+                  Catagory:{" "}
+                  <span className="text-white fs-6">
+                    Pet Toy And Accessories
+                  </span>
                 </p>
                 <p className="card-text text-white fs-5 m-0">
                   Price:{" "}
-                  <span className="text-secondary"> ৳ {data?.price}</span>
+                  <span className="text-white fs-6"> ৳ {data?.price}</span>
                 </p>
               </div>
             </div>
@@ -53,8 +56,7 @@ const Purchase = () => {
           <PurchaseForm
             user={user}
             data={data}
-            category={"Pet Food"}
-          ></PurchaseForm>
+            category={"Pet Toy & Accessories"}></PurchaseForm>
         </div>
       </div>
     </>

@@ -44,7 +44,7 @@ const WelcomeMessage = () => {
           <div className="row px-2">
             <div className="col-12 col-md-6 my-3 ">
               {" "}
-              <div className="card text-white bg-main-linear-gradient mb-3 shadow">
+              <div className="card text-white bg-theme-gradient mb-3 shadow">
                 <div className="card-header">Pet Food Products Online</div>
                 <div className="card-body">
                   <p className="card-title">
