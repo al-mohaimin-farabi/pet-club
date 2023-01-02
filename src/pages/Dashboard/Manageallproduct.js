@@ -107,7 +107,7 @@ function Product({
       <li className="list-group-item ">
         <div className="card mb-3 border-0">
           <div className="row g-0">
-            <div className="col-md-4">
+            <div className="col-md-4 ">
               <img
                 className="img-fluid"
                 src={`data:image/*;base64,${data?.img}`}

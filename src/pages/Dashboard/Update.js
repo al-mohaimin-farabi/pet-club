@@ -34,6 +34,7 @@ const Update = ({ uri, id, setRerender, rerender }) => {
 
   const onSubmit = (updateData) => {
     // console.log(updateData.img);
+
     let img;
     if (updateData.img[0]) {
       img = updateData.img[0];
@@ -45,7 +46,6 @@ const Update = ({ uri, id, setRerender, rerender }) => {
     // console.log(img);
     // return;
     const formData = new FormData();
-    setSuccess(false);
     formData.append("animal", updateData.animal);
     formData.append("stock", updateData.stock);
     {
@@ -67,11 +67,10 @@ const Update = ({ uri, id, setRerender, rerender }) => {
         if (data.modifiedCount || data.acknowledged) {
           setRerender(!rerender);
           setSuccess(true);
-          reset();
+
           setError(false);
           setErroMessage("");
-
-          setOpen(false);
+          reset();
         }
       })
       .catch((error) => {
@@ -82,7 +81,9 @@ const Update = ({ uri, id, setRerender, rerender }) => {
       });
   };
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
+  const handleOpen = () => {
+    setOpen(true), setSuccess(false);
+  };
   const handleClose = () => setOpen(false);
   return (
     <>
@@ -93,8 +94,7 @@ const Update = ({ uri, id, setRerender, rerender }) => {
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
+        aria-describedby="modal-modal-description">
         <Box sx={style}>
           <div className="d-flex justify-content-center">
             {success && (
@@ -153,8 +153,7 @@ const Update = ({ uri, id, setRerender, rerender }) => {
 
             <button
               className="form-control px-2 my-2 mt-3  btn btn-defult"
-              type="submit"
-            >
+              type="submit">
               Submit
             </button>
           </form>

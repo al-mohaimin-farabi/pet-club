@@ -9,6 +9,12 @@
   background-repeat: no-repeat;
   background-position: bottom left;
   background-size: 100% 100%;
+  /* background-attachment: fixed; */
+  background-blend-mode: multiply;
+}
+
+.backgroun_attachment_fixed {
+  background-attachment: fixed;
 }
 
 .heading {

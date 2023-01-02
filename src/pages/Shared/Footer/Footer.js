@@ -26,13 +26,12 @@ const Footer = () => {
               <h5 className=" text-secondary  text-uppercase mb-3 ">
                 Get social!
               </h5>
-              <ul className="d-flex justify-content-start p-0 m-0">
+              <ul className="d-flex justify-content-start p-0 m-0 ms-3 ms-md-0">
                 <li className="me-3">
                   <a
                     as={HashLink}
                     to="/"
-                    className="rounded-circle btn-defult  p-2 btn  d-flex"
-                  >
+                    className="rounded-circle btn-defult  p-2 btn  d-flex">
                     <i className="fa-brands fa-facebook"></i>
                   </a>
                 </li>
@@ -40,8 +39,7 @@ const Footer = () => {
                   <a
                     as={HashLink}
                     to="/"
-                    className="rounded-circle btn-defult  p-2 btn  d-flex"
-                  >
+                    className="rounded-circle btn-defult  p-2 btn  d-flex">
                     <i className="fa-brands fa-instagram"></i>
                   </a>
                 </li>
@@ -49,8 +47,7 @@ const Footer = () => {
                   <a
                     as={HashLink}
                     to="/"
-                    className="rounded-circle btn-defult  p-2 btn  d-flex"
-                  >
+                    className="rounded-circle btn-defult  p-2 btn  d-flex">
                     <i className="fa-brands fa-twitter"></i>
                   </a>
                 </li>
@@ -61,7 +58,7 @@ const Footer = () => {
             <div className={style.box}>
               <h5 className=" text-secondary text-uppercase">Contact Info</h5>
             </div>
-            <ul className="p-0 m-0">
+            <ul className="p-0 m-0 ms-3 ms-md-0">
               <li className="m-0 p-0 d-flex">
                 <p className=" text-main ">
                   <i className="fa-solid fa-house"></i>
@@ -72,14 +69,23 @@ const Footer = () => {
               <li className="m-0 p-0 d-flex align-itemscenter">
                 <p className=" text-main ">
                   <i className="fa-solid fa-phone"></i>
-                  <strong> Phone: </strong>01720867938
+                  <strong> Phone:</strong>{" "}
+                  <a
+                    className="text-decoration-none text-main"
+                    href="tel:01720867938">
+                    01720867938
+                  </a>
                 </p>
               </li>
               <li className="m-0 p-0 d-flex">
                 <p className=" text-main ">
                   <i className="fa-solid fa-envelope"></i>
                   <strong> Email: </strong>
-                  petclub.contact@petclub.com
+                  <a
+                    className="text-decoration-none text-main"
+                    href="mailto:almohaiminfarabi.work@gmail.com">
+                    petclub.contact@petclub.com
+                  </a>
                 </p>
               </li>
               <li className="m-0 p-0 d-flex">
@@ -104,8 +110,7 @@ const Footer = () => {
               style={{ border: "1px solid black" }}
               allowFullScreen="True"
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+              referrerPolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
         <br />

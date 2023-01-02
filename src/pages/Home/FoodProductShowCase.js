@@ -8,8 +8,10 @@ import style from "./Home/Home.module.css";
 
 const responsive = {
   0: { items: 1 },
-  568: { items: 3 },
-  1024: { items: 5 },
+  368: { items: 2 },
+  768: { items: 3 },
+  1024: { items: 4 },
+  1224: { items: 5 },
 };
 
 const FoodProductShowCase = () => {
@@ -18,7 +20,7 @@ const FoodProductShowCase = () => {
   return (
     <div className="container mt-4 mb-0 ">
       <TitleBox title={"Our Most Populer Pet Food"}></TitleBox>
-      <div className="row px-2      animate__delay">
+      <div className="row px-2 animate__delay">
         <AliceCarousel
           mouseTracking
           responsive={responsive}

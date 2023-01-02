@@ -28,11 +28,13 @@ import Manageallproduct from "./pages/Dashboard/Manageallproduct";
 import MakeAdmin from "./pages/Dashboard/MakeAdmin";
 import AddFoodProduct from "./pages/Dashboard/AddFoodProduct";
 import AddToyAccProduct from "./pages/Dashboard/AddToyAccProduct";
+import GoToTop from "./pages/Shared/GoToTop/ScrollToTop";
 
 function App() {
   return (
     <div className="App">
       <AuthProvider>
+        <GoToTop></GoToTop>
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
