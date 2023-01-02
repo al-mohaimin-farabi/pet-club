@@ -16,7 +16,7 @@ const OurTeam = () => {
         <div className="col-12 col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center my-3">
           <div className={`card w-100 border-0  ${style.card_hover}`}>
             <div
-              className={`${style.img_box} bg-main-linear-gradient rounded-top`}
+              className={`${style.img_box} bg-theme-gradient rounded-top`}
             >
               <img src={farabi} className="card-img-top p-2" alt="..." />
             </div>
@@ -63,7 +63,7 @@ const OurTeam = () => {
         <div className="col-12 col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center my-3">
           <div className={`card w-100 border-0  ${style.card_hover}`}>
             <div
-              className={`${style.img_box} bg-main-linear-gradient rounded-top`}
+              className={`${style.img_box} bg-theme-gradient rounded-top`}
             >
               <img src={rahela} className="card-img-top p-2" alt="..." />
             </div>
@@ -104,7 +104,7 @@ const OurTeam = () => {
         <div className="col-12 col-sm-12 col-md-12 col-lg-4 d-flex justify-content-center my-3">
           <div className={`card w-100 border-0  ${style.card_hover}`}>
             <div
-              className={`${style.img_box} bg-main-linear-gradient rounded-top`}
+              className={`${style.img_box} bg-theme-gradient rounded-top`}
             >
               <img src={imran} className="card-img-top p-2" alt="..." />
             </div>

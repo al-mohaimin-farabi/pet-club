@@ -32,7 +32,8 @@ const About = () => {
       <div className="container my-3">
         <h3 className={style.heading}>Our Mission</h3>
         <div className="row mt-3 gx-5 py-2">
-          <div className="col-12 col-sm-12 col-md-6 col-lg-6 d-flex justify-content-center bg-main-light py-2 rounded-4">
+          <div
+            className={`col-12 col-sm-12 col-md-6 col-lg-6 d-flex justify-content-center bg-main-light py-2 rounded-4 ${style.background_attachment_fixed}`}>
             <img src={target_mission} className="w-50 " alt="" />
           </div>
           <div className="col-12 col-sm-12 col-md-6 col-lg-6 text-justifyed ">

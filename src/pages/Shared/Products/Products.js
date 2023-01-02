@@ -10,7 +10,7 @@ const Products = ({ data, from }) => {
       <div className="card h-100 border-0 shadow">
         <div className={`${style.img_box} text-center p-2`}>
           <img
-            lazyload="ttrue"
+            lazyload="true"
             src={`data:image/*;base64,${img}`}
             className="rounded"
             alt=""
@@ -32,16 +32,14 @@ const Products = ({ data, from }) => {
           {from == "PetFood" ? (
             <NavLink
               to={`/services/pet-food/purchase/${_id}`}
-              className="btn-defult btn w-100 fw-light"
-            >
+              className="btn-defult btn w-100 fw-light">
               Buy Now <i className="fas fa-cart-plus"></i>
             </NavLink>
           ) : (
             from == "PetAcc" && (
               <NavLink
                 to={`/services/pet-toy-accessories/purchase/${_id}`}
-                className="btn-defult btn w-100 fw-light"
-              >
+                className="btn-defult btn w-100 fw-light">
                 Buy Now <i className="fas fa-cart-plus"></i>
               </NavLink>
             )

@@ -49,6 +49,9 @@
 .nav-link.user::before {
   display: none !important;
 }
+.text-decoration-none{
+  text-decoration: none;
+}
 
 .dropdown-item:focus {
   color: #ffffff !important;
