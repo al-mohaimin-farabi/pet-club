@@ -16,7 +16,7 @@ const OrderSuccess = () => {
             <i className="checkmark display-3 fw-bold text-white">✓</i>
           </div>
           <h1 className="text-white">Success</h1>
-          <p className="text-muted">
+          <p className="text-white">
             We received your purchase/service request;
             <br /> You Will Recive Your Order Shortly!
           </p>
