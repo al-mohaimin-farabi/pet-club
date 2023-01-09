@@ -12,7 +12,7 @@ const Allorder = () => {
         .then((data) => setAllOrders(data));
     }
     getData();
-  }, []);
+  }, [allOrders]);
 
   return (
     <>
@@ -23,8 +23,7 @@ const Allorder = () => {
             allOrders?.length
               ? "You Have " + allOrders?.length + " Order's"
               : "You Didn't Ordered Anything Yet!"
-          }
-        ></TitleBox>
+          }></TitleBox>
         <div className="row mt-4">
           <div className="col-12">
             <ul className="list-group mb-3">
@@ -33,8 +32,7 @@ const Allorder = () => {
                   key={data._id}
                   data={data}
                   userOrder={allOrders}
-                  setUserData={setAllOrders}
-                ></Order>
+                  setUserData={setAllOrders}></Order>
               ))}
             </ul>
           </div>
@@ -107,8 +105,7 @@ function Order({ data, allOrders, setAllOrders }) {
                     data?.selected_service || data?.product_name
                   )
                 }
-                className="btn btn-outline-danger mx-2"
-              >
+                className="btn btn-outline-danger mx-2">
                 <i className="fas fa-trash"></i>
               </button>
             </div>
