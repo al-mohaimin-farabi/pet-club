@@ -13,8 +13,7 @@ const PrivateRoute = ({ children }) => {
         <div className="w-100 text-center mt-5">
           <div
             className="spinner-grow text-secondary text-center"
-            role="status"
-          >
+            role="status">
             <span className="visually-hidden">Loading...</span>
           </div>
         </div>
