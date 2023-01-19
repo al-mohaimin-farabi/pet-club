@@ -38,18 +38,25 @@ Run this command on the backend folder. This command will start the server
 - It Has Separate Dashboard For Admin And Normal Users
 - Admin Can ADD, Read, Update or Delete Data
 ## Some Glims  From Pet Club
-`Home Page`
+``Home Page``
 [![screenshot-localhost-3000-2022-12-29-01-39-00.png](https://i.postimg.cc/G2zBCpmp/screenshot-localhost-3000-2022-12-29-01-39-00.png)](https://postimg.cc/r00yGMW6)
-`Product Page`
+
+``Product Page``
 [![screenshot-localhost-3000-2022-12-29-01-56-58.png](https://i.postimg.cc/ncSPLKP4/screenshot-localhost-3000-2022-12-29-01-56-58.png)](https://postimg.cc/VdMRGt1v)
+
 [![screenshot-localhost-3000-2022-12-29-01-57-39.png](https://i.postimg.cc/QxdzsY0N/screenshot-localhost-3000-2022-12-29-01-57-39.png)](https://postimg.cc/fk1CfKG1)
-`Search Functionality`
+
+``Search Functionality``
 [![screenshot-localhost-3000-2022-12-29-01-57-24.png](https://i.postimg.cc/3Nnbm2JH/screenshot-localhost-3000-2022-12-29-01-57-24.png)](https://postimg.cc/rRRJL0rh)
-`Sign Up Page`
+
+``Sign Up Page``
 [![screenshot-localhost-3000-2022-12-29-01-58-12.png](https://i.postimg.cc/PJtRCSH4/screenshot-localhost-3000-2022-12-29-01-58-12.png)](https://postimg.cc/2bKwJFVb)
+
 ``Google SignIn Option``
 [![Screenshot-13.png](https://i.postimg.cc/RVzMRHQx/Screenshot-13.png)](https://postimg.cc/rzQXyzPf)
+
 ``Admin Dash Board``
+
 [![screenshot-localhost-3000-2022-12-29-02-17-40.png](https://i.postimg.cc/VNyQfyGQ/screenshot-localhost-3000-2022-12-29-02-17-40.png)](https://postimg.cc/mPS6jnW8)
 
 [![screenshot-localhost-3000-2022-12-29-02-18-24.png](https://i.postimg.cc/N01hLNSy/screenshot-localhost-3000-2022-12-29-02-18-24.png)](https://postimg.cc/kVXYpyn9)
