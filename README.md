@@ -40,7 +40,6 @@ Run this command on the backend folder. This command will start the server
 ## Some Glims  From Pet Club
 `Home Page`
 [![screenshot-localhost-3000-2022-12-29-01-39-00.png](https://i.postimg.cc/G2zBCpmp/screenshot-localhost-3000-2022-12-29-01-39-00.png)](https://postimg.cc/r00yGMW6)
-
 `Product Page`
 [![screenshot-localhost-3000-2022-12-29-01-56-58.png](https://i.postimg.cc/ncSPLKP4/screenshot-localhost-3000-2022-12-29-01-56-58.png)](https://postimg.cc/VdMRGt1v)
 [![screenshot-localhost-3000-2022-12-29-01-57-39.png](https://i.postimg.cc/QxdzsY0N/screenshot-localhost-3000-2022-12-29-01-57-39.png)](https://postimg.cc/fk1CfKG1)
