@@ -3,9 +3,9 @@ import Navigation from "../Shared/Navigation/Navigation";
 import style from "./OrderSuccess.module.css";
 
 const OrderSuccess = () => {
-  useEffect(() => {
-    document.title = "Success";
-  }, []);
+  // useEffect(() => {
+  //   document.title = "Success";
+  // }, []);
 
   return (
     <>

@@ -9,12 +9,12 @@ const Purchase = () => {
   const { user } = useAuth();
   const { accessoriesID } = useParams();
   const { data } = useFetch(
-    `http://localhost:5000/petAccAndToy/${accessoriesID}`
+    `${process.env.REACT_APP_BACKEND_URL}/petAccAndToy/${accessoriesID}`
   );
 
-  useEffect(() => {
-    document.title = "Purchase";
-  }, []);
+  // useEffect(() => {
+  //   document.title = "Purchase";
+  // }, []);
 
   return (
     <>

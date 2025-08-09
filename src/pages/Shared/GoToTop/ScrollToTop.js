@@ -6,7 +6,7 @@ const GoToTop = () => {
       <ScrollToTop
         style={{ width: "45px", height: "45px" }}
         className="text-main bg-secondary d-flex justify-content-center align-items-center"
-        component={<i class="fa-regular fa-circle-up fs-4"></i>}
+        component={<i className="fa-regular fa-circle-up fs-4"></i>}
         title="Scroll TO Top"
         smooth
         top="700"

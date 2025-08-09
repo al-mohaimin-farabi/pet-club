@@ -29,10 +29,26 @@ import MakeAdmin from "./pages/Dashboard/MakeAdmin";
 import AddFoodProduct from "./pages/Dashboard/AddFoodProduct";
 import AddToyAccProduct from "./pages/Dashboard/AddToyAccProduct";
 import GoToTop from "./pages/Shared/GoToTop/ScrollToTop";
+import PasswordReset from "./pages/Auth/PassReset/PasswordReset";
+import { Toaster } from "react-hot-toast";
+// import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+// const queryClient = new QueryClient();
 
 function App() {
   return (
     <div className="App">
+      <Toaster
+        containerStyle={{
+          zIndex: 9999, // Ensure it's above other elements
+        }}
+        toastOptions={{
+          style: {
+            boxShadow: "0 2px 5px rgba(0, 0, 0, 0.3)", // Remove the default shadow
+            borderRadius: "8px", // Optional: Change border radius for a rounded toast
+          },
+        }}
+      />
       <AuthProvider>
         <GoToTop></GoToTop>
         <Router>
@@ -40,6 +56,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/forgotpass" element={<PasswordReset />} />
             <Route path="/services/pet-food" element={<PetFood />} />
             <Route
               path="/services/pet-food/purchase/:foodID"

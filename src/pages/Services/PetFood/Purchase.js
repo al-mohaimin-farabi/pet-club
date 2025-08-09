@@ -9,11 +9,11 @@ const Purchase = () => {
   // const navigate = useNavigate();
   const { user } = useAuth();
   const { foodID } = useParams();
-  const { data } = useFetch(`http://localhost:5000/petfood/${foodID}`);
+  const { data } = useFetch(`${process.env.REACT_APP_BACKEND_URL}/petfood/${foodID}`);
 
-  useEffect(() => {
-    document.title = "Purchase";
-  }, []);
+  // useEffect(() => {
+  //   document.title = "Purchase";
+  // }, []);
 
   return (
     <>

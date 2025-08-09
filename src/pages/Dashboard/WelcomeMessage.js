@@ -6,9 +6,15 @@ import TitleBox from "../Shared/Title-box/TitleBox";
 
 const WelcomeMessage = () => {
   const { user, admin } = useAuth();
-  const foodProducts = useFetch("http://localhost:5000/petfood").data;
-  const toyAndAccProducts = useFetch("http://localhost:5000/petaccAndToy").data;
-  const orders = useFetch("http://localhost:5000/orders").data;
+  const foodProducts = useFetch(
+    `${process.env.REACT_APP_BACKEND_URL}/petfood`
+  ).data;
+  const toyAndAccProducts = useFetch(
+    `${process.env.REACT_APP_BACKEND_URL}/petaccAndToy`
+  ).data;
+  const orders = useFetch(
+    `${process.env.REACT_APP_BACKEND_URL}/orders`
+  ).data;
 
   if (user.email && !admin)
     return (
@@ -68,7 +74,7 @@ const WelcomeMessage = () => {
                     <span className="fs-4  text-dark">
                       {toyAndAccProducts.length}
                     </span>{" "}
-                    Pet Toy And Accessories Product Onlice
+                    Pet Toy And Accessories Product Online
                   </p>
                 </div>
               </div>

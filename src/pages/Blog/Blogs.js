@@ -6,10 +6,12 @@ import Footer from "../Shared/Footer/Footer";
 import Skeleton from "../Shared/Skeleton/Skeleton";
 
 const Blogs = () => {
-  const { data, isLoading } = useFetch("http://localhost:5000/blogs");
-  useLayoutEffect(() => {
-    document.title = "Blog";
-  }, []);
+  const { data, isLoading } = useFetch(
+    `${process.env.REACT_APP_BACKEND_URL}/blogs`
+  );
+  // useLayoutEffect(() => {
+  //   document.title = "Blog";
+  // }, []);
   return (
     <>
       <Navigation></Navigation>

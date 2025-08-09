@@ -8,12 +8,12 @@ import Skeleton from "../Shared/Skeleton/Skeleton";
 const FullBlog = () => {
   const { blogTitle } = useParams();
   const { isLoading, data } = useFetch(
-    `http://localhost:5000/blogs/${blogTitle}`
+    `${process.env.REACT_APP_BACKEND_URL}/blogs/${blogTitle}`
   );
 
-  useLayoutEffect(() => {
-    document.title = blogTitle;
-  }, [isLoading, blogTitle]);
+  // useLayoutEffect(() => {
+  //   document.title = blogTitle;
+  // }, [isLoading, blogTitle]);
   return (
     <>
       <Navigation></Navigation>

@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import useFetch from "../../../Hooks/useFetch";
 import Navigation from "../../Shared/Navigation/Navigation";
 import Products from "../../Shared/Products/Products";
@@ -9,11 +9,11 @@ import Skeleton from "../../Shared/Skeleton/Skeleton";
 
 const PetAccessories = () => {
   const [searchedText, setsearchedText] = useState("");
-  const { data, isLoading } = useFetch("http://localhost:5000/petAccAndToy");
+  const { data, isLoading } = useFetch(`${process.env.REACT_APP_BACKEND_URL}/petAccAndToy`);
   const [displayData, setDisplaydata] = useState([]);
 
-  useLayoutEffect(() => {
-    document.title = "Pet Toy And Accessories";
+  useEffect(() => {
+    // document.title = "Pet Toy And Accessories";
     const filteredData = data.filter(
       (singledata) =>
         singledata.animal.toLowerCase().includes(searchedText.toLowerCase()) ||

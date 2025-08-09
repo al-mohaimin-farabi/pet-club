@@ -13,7 +13,7 @@ const MakeAdmin = () => {
   };
   const handleAdminSubmit = (e) => {
     const adminRequest = { requester: user.email, email: email };
-    fetch("http://localhost:5000/users/admin", {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/users/admin`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

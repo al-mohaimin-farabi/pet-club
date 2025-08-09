@@ -49,7 +49,7 @@
 .nav-link.user::before {
   display: none !important;
 }
-.text-decoration-none{
+.text-decoration-none {
   text-decoration: none;
 }
 
@@ -221,3 +221,56 @@
     background-color: #ffffff;
   }
 } */
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+/* Style for the parent form with disabled-form class */
+/* Prevent interaction with all child elements when disabled */
+.disabled-form {
+  pointer-events: none;
+}
+
+/* Apply styles to form fields when they are inside a disabled-form */
+.disabled-form input,
+.disabled-form button,
+.disabled-form textarea,
+.disabled-form select {
+  background-color: #d3d3d3; /* Light gray to show disabled state */
+  border-radius: 5px;
+  position: relative; /* Required for positioning the ::after pseudo-element */
+  overflow: hidden;
+  cursor: not-allowed;
+}
+
+/* Shimmer effect using ::after */
+.disabled-form input::after,
+.disabled-form button::after,
+.disabled-form textarea::after,
+.disabled-form select::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 25%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 75%
+  );
+  animation: wave 1.5s infinite;
+  z-index: 1; /* Ensure it is above the field background */
+  border-radius: 5px;
+}
+
+@keyframes wave {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}

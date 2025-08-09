@@ -30,8 +30,8 @@ const Testimonial = () => {
             <div className={style.quate}>
               <i className="fa-solid fa-quote-right text-secondary"></i>
             </div>
-            <div className="card-body text-center p-0">
-              <p className="card-text text-main mb-0 py-1 px-1">
+            <div className="card-body text-center p-0 h-[60px]">
+              <p className="card-text text-main mb-0 py-1 px-1 mt-1">
                 More I say about them that will be less. They have good pet care
                 service.
               </p>
@@ -52,10 +52,10 @@ const Testimonial = () => {
             <div className={style.quate}>
               <i className="fa-solid fa-quote-right text-secondary"></i>
             </div>
-            <div className="card-body text-center p-0">
-              <p className="card-text text-main mb-0 py-1 px-1">
+            <div className="card-body text-center p-0 h-[60px]">
+              <p className="card-text text-main mb-0 py-1 px-1 mt-1">
                 I am realy happy with there product. They provide Othentic
-                product.
+                product. You can trust them.
               </p>
             </div>
             <div className="card-footer bg-transparent border-0 d-flex justify-content-center align-items-center  ">
@@ -74,8 +74,8 @@ const Testimonial = () => {
             <div className={style.quate}>
               <i className="fa-solid fa-quote-right text-secondary"></i>
             </div>
-            <div className="card-body text-center p-0">
-              <p className="card-text text-main mb-0 py-1 px-1">
+            <div className="card-body text-center p-0 h-[60px]">
+              <p className="card-text text-main mb-0 py-1 px-1 mt-1">
                 I am happy with their product. I will suggest everyone to buy
                 their product.
               </p>
@@ -100,8 +100,8 @@ const Testimonial = () => {
             <div className={style.quate}>
               <i className="fa-solid fa-quote-right text-secondary"></i>
             </div>
-            <div className="card-body text-center p-0">
-              <p className="card-text text-main mb-0 py-1 px-1">
+            <div className="card-body text-center p-0 h-[60px]">
+              <p className="card-text text-main mb-0 py-1 px-1 mt-1">
                 They provide good quality pet food at much cheaper than other
                 places.
               </p>

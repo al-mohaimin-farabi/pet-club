@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import useFetch from "../../../Hooks/useFetch";
 import Navigation from "../../Shared/Navigation/Navigation";
 import Products from "../../Shared/Products/Products";
@@ -9,11 +9,13 @@ import Skeleton from "../../Shared/Skeleton/Skeleton";
 
 const PetFood = () => {
   const [searchedText, setsearchedText] = useState("");
-  const { data, isLoading } = useFetch("http://localhost:5000/petfood");
+  const { data, isLoading } = useFetch(
+    `${process.env.REACT_APP_BACKEND_URL}/petfood`
+  );
   const [displayData, setDisplaydata] = useState([]);
 
-  useLayoutEffect(() => {
-    document.title = "Pet Food";
+  useEffect(() => {
+    // document.title = "Pet Food";
     const filteredData = data.filter(
       (singledata) =>
         singledata.animal.toLowerCase().includes(searchedText.toLowerCase()) ||
@@ -27,8 +29,7 @@ const PetFood = () => {
       <Navigation></Navigation>
       <SearchField
         searchedText={searchedText}
-        setsearchedText={setsearchedText}
-      ></SearchField>
+        setsearchedText={setsearchedText}></SearchField>
       {isLoading ? (
         <div className="container mb-3">
           <div className="row g-3 row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4 mt-0 py-2">
@@ -45,7 +46,10 @@ const PetFood = () => {
             <div className="row g-3 row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-4 mt-0 py-2">
               {displayData.length >= 1 ? (
                 displayData.map((data) => (
-                  <Products key={data._id} data={data} from="PetFood"></Products>
+                  <Products
+                    key={data._id}
+                    data={data}
+                    from="PetFood"></Products>
                 ))
               ) : (
                 <div className="col-12 w-100 text-center">

@@ -3,9 +3,12 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Navigation from "../Shared/Navigation/Navigation";
 import style from "./Dashboard.module.css";
+import toast from "react-hot-toast";
+import useAuth from "../../Hooks/useAuth";
 
 const AddToyAccProduct = () => {
   const { register, handleSubmit, reset } = useForm();
+  const { user, tempAdmin } = useAuth();
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
   const [erroMessage, setErroMessage] = useState("");
@@ -16,6 +19,7 @@ const AddToyAccProduct = () => {
       setSuccess(false);
       setErroMessage("Input Image");
       setError(true);
+      toast.error("Add image");
       return;
     }
     // console.log(img);
@@ -27,10 +31,13 @@ const AddToyAccProduct = () => {
     formData.append("price", data.price);
     formData.append("title", data.title);
     formData.append("img", img);
-
+    if (tempAdmin) {
+      formData.append("email", user.email);
+      formData.append("addeBy", user.displayName);
+    }
     // return;
 
-    fetch("http://localhost:5000/petaccAndToy", {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/petaccAndToy`, {
       method: "POST",
       body: formData,
     })
@@ -40,6 +47,7 @@ const AddToyAccProduct = () => {
         if (data.insertedId) {
           reset();
           setSuccess(true);
+          toast.success("Product Adding Successful");
           setError(false);
           setErroMessage("");
         }
@@ -48,6 +56,7 @@ const AddToyAccProduct = () => {
         setSuccess(false);
         setErroMessage(error.message);
         setError(true);
+        toast.error(error?.message);
         console.error("Error:", error);
       });
   };
@@ -59,7 +68,7 @@ const AddToyAccProduct = () => {
           Add Toy & Accessories Product
         </h2>
         <div className=" d-flex justify-content-center">
-          {success && (
+          {/* {success && (
             <Alert sx={{ my: 3, width: "45%" }} severity="success">
               Product Adding Successful
             </Alert>
@@ -68,7 +77,7 @@ const AddToyAccProduct = () => {
             <Alert sx={{ my: 3, width: "45%" }} severity="error">
               {erroMessage}
             </Alert>
-          )}
+          )} */}
         </div>
         <form onSubmit={handleSubmit(onSubmit, { required: true })}>
           <input
@@ -103,8 +112,7 @@ const AddToyAccProduct = () => {
 
           <button
             className="form-control px-2 mt-3  btn btn-defult"
-            type="submit"
-          >
+            type="submit">
             Submit
           </button>
         </form>

@@ -7,13 +7,13 @@ import { HashLink } from "react-router-hash-link";
 
 const OurTeam = () => {
   return (
-    <section className="container">
+    <section className="container overflow-hidden">
       <h3 className={style.heading}>
         Our Team <i className="fa-solid fa-people-group"></i>
       </h3>
 
-      <div className="row mt-3 gx-5">
-        <div className="col-12 col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center my-3">
+      <div className="row mt-3 gx-5  pb-5">
+        <div className="col-12 col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center my-5 my-md-3">
           <div className={`card w-100 border-0  ${style.card_hover}`}>
             <div className={`${style.img_box} bg-theme-gradient rounded-top`}>
               <img src={farabi} className="card-img-top p-2" alt="..." />
@@ -55,7 +55,7 @@ const OurTeam = () => {
             </div>
           </div>
         </div>
-        <div className="col-12 col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center my-3">
+        <div className="col-12 col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center my-5 my-md-3">
           <div className={`card w-100 border-0  ${style.card_hover}`}>
             <div className={`${style.img_box} bg-theme-gradient rounded-top`}>
               <img src={rahela} className="card-img-top p-2" alt="..." />
@@ -93,7 +93,7 @@ const OurTeam = () => {
             </div>
           </div>
         </div>
-        <div className="col-12 col-sm-12 col-md-12 col-lg-4 d-flex justify-content-center my-3">
+        <div className="col-12 col-sm-12 col-md-12 col-lg-4 d-flex justify-content-center my-5 my-md-3">
           <div className={`card w-100 border-0  ${style.card_hover}`}>
             <div className={`${style.img_box} bg-theme-gradient rounded-top`}>
               <img src={imran} className="card-img-top p-2" alt="..." />

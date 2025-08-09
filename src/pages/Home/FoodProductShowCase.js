@@ -15,7 +15,7 @@ const responsive = {
 };
 
 const FoodProductShowCase = () => {
-  const { data, isLoading } = useFetch("http://localhost:5000/petfood");
+  const { data, isLoading } = useFetch(`${process.env.REACT_APP_BACKEND_URL}/petfood`);
 
   return (
     <div className="container mt-4 mb-0 ">

@@ -14,7 +14,7 @@ const responsive = {
 };
 
 const PetAccessoriesShowCase = () => {
-  const { data, isLoading } = useFetch("http://localhost:5000/petAccAndToy");
+  const { data, isLoading } = useFetch(`${process.env.REACT_APP_BACKEND_URL}/petAccAndToy`);
 
   return (
     <div className="container mt-4 mb-0 ">

@@ -1,18 +1,21 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import Navigation from "../Shared/Navigation/Navigation";
 import TitleBox from "../Shared/Title-box/TitleBox";
+import toast from "react-hot-toast";
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const Allorder = () => {
   const [allOrders, setAllOrders] = useState([]);
-  useLayoutEffect(() => {
+  useEffect(() => {
     async function getData() {
-      await fetch(`http://localhost:5000/orders`)
+      await fetch(`${BACKEND_URL}/orders`)
         .then((res) => res.json())
         .then((data) => setAllOrders(data));
     }
     getData();
-  }, [allOrders]);
+  }, []);
 
   return (
     <>
@@ -31,8 +34,8 @@ const Allorder = () => {
                 <Order
                   key={data._id}
                   data={data}
-                  userOrder={allOrders}
-                  setUserData={setAllOrders}></Order>
+                  orders={allOrders}
+                  setOrderData={setAllOrders}></Order>
               ))}
             </ul>
           </div>
@@ -44,28 +47,43 @@ const Allorder = () => {
 
 export default Allorder;
 
-function Order({ data, allOrders, setAllOrders }) {
+function Order({ data, orders, setOrderData }) {
   const handleDelete = (id, title) => {
-    const confirmation = window.confirm(`Are Sure You Wanna Delete ${title}`);
+    const confirmation = window.confirm(
+      `Are you sure you want to delete ${title}?`
+    );
     if (confirmation) {
-      const url = `http://localhost:5000/orders/${id}`;
+      const url = `${BACKEND_URL}/orders/${id}`;
       fetch(url, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount) {
-            const remaining = allOrders.filter((order) => order._id !== id);
-            setAllOrders(remaining);
+            const remaining = orders?.filter((order) => order._id !== id);
+            setOrderData(remaining);
+            toast.success(`Order has been deleted successfully!`);
+          } else {
+            toast.error("Failed to delete the order. Please try again.");
           }
+        })
+        .catch((error) => {
+          console.error("Error deleting order:", error);
+          toast.error(
+            error?.message || "An error occurred while deleting the order."
+          );
         });
     } else {
-      alert(`Deleting ${title} Aborted`);
+      toast.info(`Deleting ${title} was aborted.`);
+      toast(`Deleting ${title} was aborted.`, {
+        icon: "❌",
+      });
     }
   };
+
   return (
     <>
-      <li className="list-group-item ">
+      <li className="list-group-item">
         <div className="card mb-3 border-0">
           <div className="row g-0">
             <div className="col-md-8">
@@ -98,7 +116,7 @@ function Order({ data, allOrders, setAllOrders }) {
             </div>
             <div className="col-md-4 d-flex justify-content-center align-items-center">
               <button
-                title="Cancle Order"
+                title="Cancel Order"
                 onClick={() =>
                   handleDelete(
                     data._id,

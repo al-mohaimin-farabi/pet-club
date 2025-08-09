@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Navigation from "../../Shared/Navigation/Navigation";
 import style from "../Auth.module.css";
 import logo from "../../../Images/Logo-Two.png";
@@ -8,8 +8,14 @@ import fbSignIn from "../../../Images/Icons/facebookicon.png";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
+
+const notify = () => toast.success("Verification email has been sent");
 
 const Register = () => {
+  const [verificationMessage, setVerificationMessage] = useState("");
+  const [isVisible, setIsVisible] = useState(false);
   const {
     register,
     handleSubmit,
@@ -24,13 +30,43 @@ const Register = () => {
     authError,
     signInWithGoogle,
     signInWithFacebook,
+    sendEmailVerificationToUser,
+    signOut,
+    auth,
   } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
 
-  const onSubmit = (data) => {
-    registerUser(data.email, data.password, data.name, location, navigate);
-    if (user.email) reset();
+  // const onSubmit = (data) => {
+  //   registerUser(data.email, data.password, data.name, location, navigate);
+  //   if (user.email) reset();
+  // };
+
+  const onSubmit = async (data) => {
+    // notify();
+    // return;
+
+    try {
+      // Step 1: Register the user
+      await registerUser(
+        data.email,
+        data.password,
+        data.name,
+        notify,
+        location,
+        navigate
+      );
+      // Step 2: Provide feedback to the user
+      setVerificationMessage(
+        "A verification email has been sent to your email address. Please verify your email before logging in."
+      );
+      // toast.success("Verification email has been sent 1");
+      if (user.email) reset();
+      // Step 3: Optionally sign out the user after registration (optional)
+      await signOut(auth);
+    } catch (error) {
+      console.error("Error during registration:", error.message);
+    }
   };
 
   const handleGoogleSignIn = () => {
@@ -40,19 +76,19 @@ const Register = () => {
     signInWithFacebook(location, navigate);
   };
 
-  useEffect(() => {
-    // console.log("from signup");
-    document.title = "Signup";
-  }, []);
+  // useEffect(() => {
+  //   // console.log("from signup");
+  //   document.title = "Signup";
+  // }, []);
   return (
     <>
+      {/* <Toaster /> */}
       <Navigation></Navigation>
       {isLoading && (
         <div className="w-100 text-center mt-5">
           <div
             className="spinner-grow text-secondary text-center"
-            role="status"
-          >
+            role="status">
             <span className="visually-hidden">Loading...</span>
           </div>
         </div>
@@ -109,7 +145,7 @@ const Register = () => {
                   </label>
                   <input
                     {...register("email", {
-                      required: "Email Can Not Be Empty",
+                      required: " Email Can't Be Empty",
                     })}
                     type="email"
                     className={
@@ -136,24 +172,38 @@ const Register = () => {
                 <label htmlFor="exampleInputPassword1" className="form-label">
                   Password
                 </label>
-                <input
-                  {...register("password", {
-                    required: "PassWord Can Not Be Empty",
-                    minLength: {
-                      value: 6,
-                      message: "Minmum Lenght Should Be 6",
-                    },
-                  })}
-                  type="password"
-                  className={
-                    errors?.password
-                      ? "form-control is-invalid"
-                      : "form-control"
-                  }
-                  placeholder="Password"
-                  id="exampleInputPassword1"
-                  name="password"
-                />
+                <div className="position-relative">
+                  <input
+                    {...register("password", {
+                      required: "PassWord Can Not Be Empty",
+                      minLength: {
+                        value: 6,
+                        message: "Minmum Lenght Should Be 6",
+                      },
+                    })}
+                    type={`${!isVisible ? "password" : "text"}`}
+                    className={
+                      errors?.password
+                        ? "form-control is-invalid"
+                        : "form-control"
+                    }
+                    placeholder="Password"
+                    id="exampleInputPassword1"
+                    name="password"
+                  />
+                  <div
+                    onClick={() => {
+                      setIsVisible(!isVisible);
+                    }}
+                    className="position-absolute  cursor-pointer z-3 border-0 bg-trasnparent w- top-50 end-0 translate-middle">
+                    {isVisible ? (
+                      <i className="fa-solid fa-eye "></i>
+                    ) : (
+                      <i className="fa-solid fa-eye-slash"></i>
+                    )}
+                  </div>
+                </div>
+
                 {errors?.password && (
                   <p className="py-2 text-danger ">
                     <i className="fas  fa-exclamation-triangle ms-1"></i>{" "}
@@ -165,21 +215,35 @@ const Register = () => {
                 <label htmlFor="exampleInputPassword2" className="form-label">
                   Confirm Password
                 </label>
-                <input
-                  {...register("cPass", {
-                    required: "Confirm Password",
-                    validate: (value) => {
-                      if (watch("password") !== value) {
-                        return "Password Do Not Match";
-                      }
-                    },
-                  })}
-                  type="password"
-                  className="form-control"
-                  placeholder="Confirm Password"
-                  id="exampleInputPassword2"
-                  name="cPass"
-                />
+                <div className="position-relative">
+                  <input
+                    {...register("cPass", {
+                      required: "Confirm Password",
+                      validate: (value) => {
+                        if (watch("password") !== value) {
+                          return "Password Do Not Match";
+                        }
+                      },
+                    })}
+                    type="password"
+                    className="form-control postion-relative"
+                    placeholder="Confirm Password"
+                    id="exampleInputPassword2"
+                    name="cPass"
+                  />
+                  <div
+                    onClick={() => {
+                      setIsVisible(!isVisible);
+                    }}
+                    className="position-absolute cursor-pointer z-3 border-0 bg-trasnparent top-50 end-0 translate-middle">
+                    {isVisible ? (
+                      <i className="fa-solid fa-eye "></i>
+                    ) : (
+                      <i className="fa-solid fa-eye-slash"></i>
+                    )}
+                  </div>
+                </div>
+
                 {errors?.cPass && (
                   <p className="py-2 text-danger ">
                     <i className="fas  fa-exclamation-triangle ms-1"></i>{" "}
@@ -191,21 +255,26 @@ const Register = () => {
               <button type="submit" className="btn btn-defult fw-normal  w-100">
                 Signup <i className="fas fa-sign-in-alt"></i>
               </button>
-              <NavLink to="/login" className="fw-normal text-main ms-1">
-                already have an account!
-              </NavLink>
+
+              <div className="">
+                <NavLink to="/login" className="fw-normal text-main ms-1">
+                  already have an account!
+                </NavLink>
+                <span className="fs-5 mx-2">or</span>
+                <NavLink to="/forgotpass" className="fw-normal text-main ms-1 ">
+                  forgot password
+                </NavLink>
+              </div>
             </form>
             <div
-              className={`${style.or} d-flex justify-content-center my-2 position-relative`}
-            >
+              className={`${style.or} d-flex justify-content-center my-2 position-relative`}>
               <span className="fs-5 fw-normal text-main">Or</span>
             </div>
             <div className="row">
               <div className="col-12 col-sm-12 col-md-6 col-lg-6 my-2 ">
                 <button
                   onClick={handleGoogleSignIn}
-                  className={`${style.responsive_btn} btn btn-defult-opposite d-flex justify-content-center align-items-center w-100`}
-                >
+                  className={`${style.responsive_btn} btn btn-defult-opposite d-flex justify-content-center align-items-center w-100`}>
                   <img src={googleSignIn} width="30px" height="30px" alt="" />
                   &nbsp;Sign In With Google
                 </button>
@@ -213,8 +282,7 @@ const Register = () => {
               <div className="col-12 col-sm-12 col-md-6 col-lg-6 my-2 ">
                 <button
                   onClick={handleFacebookSignIn}
-                  className={`btn btn-defult-opposite d-flex justify-content-center align-items-center w-100 ${style.responsive_btn}`}
-                >
+                  className={`btn btn-defult-opposite d-flex justify-content-center align-items-center w-100 ${style.responsive_btn}`}>
                   <img src={fbSignIn} width="30px" height="30px" alt="" />
                   &nbsp;Sign In With Facebook
                 </button>

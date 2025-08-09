@@ -3,16 +3,18 @@ import PropTypes from "prop-types";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import { NavLink, Outlet } from "react-router-dom";
-import { Button } from "@mui/material";
+import { Button, Tooltip } from "@mui/material";
 import useAuth from "../../Hooks/useAuth";
+import { HashLink } from "react-router-hash-link";
+import toast, { Toaster } from "react-hot-toast";
 
 const drawerWidth = 200;
 
 function Dashboard(props) {
-  const { user, admin, logout } = useAuth();
-  useEffect(() => {
-    document.title = "Dashboard";
-  }, []);
+  const { user, admin, tempAdmin, setIsTempAdmin, logout } = useAuth();
+
+  // useEffect(() => {}, [admin, tempAdmin]);
+
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -20,29 +22,75 @@ function Dashboard(props) {
     setMobileOpen(!mobileOpen);
   };
 
+  const assignTempAdmin = async (email) => {
+    const makingTemp = toast.loading("Making temporary admin...");
+    try {
+      const requester = user.email;
+
+      const response = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/users/tempadmin`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, requester }),
+        }
+      );
+
+      if (response.ok) {
+        const result = await response.json();
+        toast.dismiss(makingTemp); // Dismiss the loading toast
+
+        console.log("Temporary admin assigned successfully:", result);
+        toast.success(
+          result?.message || "Temporary admin role assigned successfully!"
+        );
+        setIsTempAdmin(true); // Update the state to reflect the new role
+      } else {
+        const errorData = await response.json();
+        toast.dismiss(makingTemp);
+        console.error(
+          "Failed to assign temporary admin role:",
+          errorData.message
+        );
+
+        toast.error(
+          errorData?.message ||
+            "Failed to assign temporary admin role. Please try again."
+        );
+      }
+    } catch (error) {
+      toast.dismiss(makingTemp);
+      console.error("Error assigning temporary admin role:", error);
+      toast.error(
+        error?.message ||
+          "An error occurred while assigning the temporary admin role."
+      );
+    }
+  };
+
   const drawer = (
     <div className="text-center">
+      {/* <Toaster /> */}
       <NavLink
         style={{
           textDecoration: "none",
           color: "black",
         }}
-        to="/dashboard"
-      >
+        to="/dashboard">
         <Button
           className="btn-defult"
           sx={{ mb: 1, mt: 4, width: "95%" }}
           variant="outlined"
-          color="success"
-        >
+          color="success">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="26"
             height="26"
             fill="currentColor"
             className="bi bi-box"
-            viewBox="0 0 16 16"
-          >
+            viewBox="0 0 16 16">
             <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z" />
           </svg>
           &nbsp; DashBoard
@@ -54,22 +102,19 @@ function Dashboard(props) {
           textDecoration: "none",
           color: "black",
         }}
-        to="/"
-      >
+        to="/">
         <Button
           className="btn-defult"
           sx={{ my: 1, width: "95%" }}
           variant="outlined"
-          color="success"
-        >
+          color="success">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="26"
             height="26"
             fill="currentColor"
             className="bi bi-arrow-left-circle-fill"
-            viewBox="0 0 16 16"
-          >
+            viewBox="0 0 16 16">
             <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
           </svg>
           &nbsp; Home
@@ -83,61 +128,100 @@ function Dashboard(props) {
               textDecoration: "none",
               color: "black",
             }}
-            to={`/dashboard/myorders`}
-          >
+            to={`/dashboard/myorders`}>
             <Button
               className="btn-defult"
               sx={{ my: 1, width: "95%" }}
               variant="outlined"
-              color="success"
-            >
+              color="success">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="26"
                 height="26"
                 fill="currentColor"
                 className="bi bi-cart-check-fill"
-                viewBox="0 0 16 16"
-              >
+                viewBox="0 0 16 16">
                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708z" />
               </svg>
               &nbsp; My Orders
             </Button>
-          </NavLink>
+          </NavLink>{" "}
+          {!tempAdmin && !admin && (
+            <NavLink
+              style={{
+                textDecoration: "none",
+                color: "black",
+              }}
+              to={HashLink}>
+              <Button
+                className="btn-defult"
+                sx={{ my: 1, width: "95%" }}
+                variant="outlined"
+                color="success"
+                onClick={() => assignTempAdmin(user.email)}>
+                View As a Temporary Admin
+              </Button>
+            </NavLink>
+          )}
         </div>
       )}
 
-      {admin && (
-        <div className="text-center mt-2">
+      {(admin || tempAdmin) && (
+        <div className="text-center mt-1">
           <NavLink
             style={{
               textDecoration: "none",
               color: "black",
             }}
-            to={`/dashboard/makeAdmin`}
-          >
-            <Button
-              className="btn-defult"
-              sx={{ my: 1, mb: 2, width: "95%" }}
-              variant="outlined"
-              color="success"
+            to={`${tempAdmin ? `/dashboard` : `/dashboard/makeAdmin`}`}>
+            <Tooltip
+              title={
+                tempAdmin
+                  ? "You are already an admin (Only SuperAdmin can access it)"
+                  : "Click to make admin"
+              }
+              arrow
+              PopperProps={{
+                modifiers: [
+                  {
+                    name: "offset",
+                    options: {
+                      offset: [0, 10], // Adjust the offset to add some space between the tooltip and the button
+                    },
+                  },
+                  {
+                    name: "preventOverflow",
+                    options: {
+                      boundary: "window", // Prevent overflow beyond the window
+                    },
+                  },
+                ],
+              }}
+              disableInteractive // Disable the hover effect for better placement control
             >
-              Make Admin
-            </Button>
+              <span>
+                <Button
+                  disabled={tempAdmin}
+                  className={`${tempAdmin ? "" : "btn-defult"}`}
+                  sx={{ my: 1, width: "95%" }}
+                  variant="outlined"
+                  color="success">
+                  Make Admin
+                </Button>
+              </span>
+            </Tooltip>
           </NavLink>
           <NavLink
             style={{
               textDecoration: "none",
               color: "black",
             }}
-            to={`/dashboard/addfoodProduct`}
-          >
+            to={`/dashboard/addfoodProduct`}>
             <Button
               className="btn-defult"
-              sx={{ my: 1, mb: 2, width: "95%" }}
+              sx={{ my: 1, width: "95%" }}
               variant="outlined"
-              color="success"
-            >
+              color="success">
               Add Food Product
             </Button>
           </NavLink>
@@ -146,14 +230,12 @@ function Dashboard(props) {
               textDecoration: "none",
               color: "black",
             }}
-            to={`/dashboard/addToyAndAccProduct`}
-          >
+            to={`/dashboard/addToyAndAccProduct`}>
             <Button
               className="btn-defult"
-              sx={{ my: 1, mb: 2, width: "95%" }}
+              sx={{ my: 1, width: "95%" }}
               variant="outlined"
-              color="success"
-            >
+              color="success">
               Add Toy & Accessories Product
             </Button>
           </NavLink>
@@ -162,14 +244,12 @@ function Dashboard(props) {
               textDecoration: "none",
               color: "black",
             }}
-            to={`/dashboard/manageallorder`}
-          >
+            to={`/dashboard/manageallorder`}>
             <Button
               className="btn-defult"
-              sx={{ my: 1, mb: 2, width: "95%" }}
+              sx={{ my: 1, width: "95%" }}
               variant="outlined"
-              color="success"
-            >
+              color="success">
               Manage All Order
             </Button>
           </NavLink>
@@ -178,14 +258,12 @@ function Dashboard(props) {
               textDecoration: "none",
               color: "black",
             }}
-            to={`/dashboard/manageallproduct`}
-          >
+            to={`/dashboard/manageallproduct`}>
             <Button
               className="btn-defult"
-              sx={{ my: 1, mb: 2, width: "95%" }}
+              sx={{ my: 1, width: "95%" }}
               variant="outlined"
-              color="success"
-            >
+              color="success">
               Manage All Product
             </Button>
           </NavLink>
@@ -194,8 +272,7 @@ function Dashboard(props) {
       <button
         onClick={logout}
         style={{ width: "95%" }}
-        className="btn btn-outline-danger opacity-75 "
-      >
+        className="btn btn-outline-danger opacity-75 ">
         Logout
       </button>
     </div>
@@ -211,8 +288,7 @@ function Dashboard(props) {
       <Box
         component="nav"
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-        aria-label="mailbox folders"
-      >
+        aria-label="mailbox folders">
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Drawer
           container={container}
@@ -228,8 +304,7 @@ function Dashboard(props) {
               boxSizing: "border-box",
               width: drawerWidth,
             },
-          }}
-        >
+          }}>
           {drawer}
         </Drawer>
         <Drawer
@@ -241,8 +316,7 @@ function Dashboard(props) {
               width: drawerWidth,
             },
           }}
-          open
-        >
+          open>
           {drawer}
         </Drawer>
       </Box>
@@ -252,8 +326,7 @@ function Dashboard(props) {
           flexGrow: 1,
           p: 0,
           width: { sm: `calc(100% - ${drawerWidth}px)` },
-        }}
-      >
+        }}>
         {/* <Toolbar /> */}
         <Outlet></Outlet>
       </Box>

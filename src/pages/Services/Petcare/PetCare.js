@@ -10,9 +10,9 @@ import PetCareBookingForm from "./PetCareBookingForm";
 
 const PetCare = () => {
   const { user } = useAuth();
-  useEffect(() => {
-    document.title = "Pet Care";
-  }, []);
+  // useEffect(() => {
+  //   document.title = "Pet Care";
+  // }, []);
   return (
     <>
       <Navigation></Navigation>

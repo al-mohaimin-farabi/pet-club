@@ -3,7 +3,7 @@ import TitleBox from "../Shared/Title-box/TitleBox";
 import style from "../Home/Home/Home.module.css";
 import petCare from "../../Images/Icons/petCare.png";
 import petFood from "../../Images/Icons/petFood.png";
-import petToyAndAcc from "../../Images/Icons/petToy&Acc.png";
+import petToyAndAcc from "../../Images/Icons/petToy_Acc.png";
 import { NavLink } from "react-router-dom";
 
 const servicess = () => {
@@ -15,8 +15,7 @@ const servicess = () => {
         <div className="row mt-3 px-2 g-3 mb-1">
           <div className="col-12 col-sm-12 col-lg-4 col-md-6 ">
             <div
-              className={`${style.services_card} card h-100 text-center border-0 p-3`}
-            >
+              className={`${style.services_card} card h-100 text-center border-0 p-3`}>
               <div className="card-body">
                 <div className={`${style.icon_wrapper} bg-main mx-auto `}>
                   <img src={petCare} alt="" className="" />
@@ -30,8 +29,7 @@ const servicess = () => {
               <div className="card-footer bg-transparent border-0 m-0">
                 <NavLink
                   to="services/pet-care"
-                  className={`${style.services_btn} btn btn-defult`}
-                >
+                  className={`${style.services_btn} btn btn-defult`}>
                   Pet Care
                 </NavLink>
               </div>
@@ -39,8 +37,7 @@ const servicess = () => {
           </div>
           <div className="col-12 col-sm-12 col-lg-4 col-md-6  ">
             <div
-              className={`${style.services_card} ${style.even} card h-100 text-center border-0 p-3`}
-            >
+              className={`${style.services_card} ${style.even} card h-100 text-center border-0 p-3`}>
               <div className="card-body">
                 <div className={`${style.icon_wrapper}  bg-secondary mx-auto `}>
                   <img src={petFood} alt="" className="" />
@@ -54,8 +51,7 @@ const servicess = () => {
               <div className="card-footer bg-transparent border-0 m-0">
                 <NavLink
                   to="services/pet-food"
-                  className={`${style.services_btn} btn `}
-                >
+                  className={`${style.services_btn} btn `}>
                   Pet Food
                 </NavLink>
               </div>
@@ -63,8 +59,7 @@ const servicess = () => {
           </div>
           <div className="col-12 col-sm-12 col-lg-4 col-md-12 ">
             <div
-              className={`${style.services_card} card h-100 text-center border-0 p-3`}
-            >
+              className={`${style.services_card} card h-100 text-center border-0 p-3`}>
               <div className="card-body">
                 <div className={`${style.icon_wrapper} bg-main mx-auto `}>
                   <img src={petToyAndAcc} alt="" className="" />
@@ -79,8 +74,7 @@ const servicess = () => {
               <div className="card-footer bg-transparent border-0 m-0">
                 <NavLink
                   to="services/pet-toy-accessories"
-                  className={`${style.services_btn} btn btn-defult `}
-                >
+                  className={`${style.services_btn} btn btn-defult `}>
                   Pet Toy & Accessories
                 </NavLink>
               </div>

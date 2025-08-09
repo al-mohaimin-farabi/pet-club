@@ -11,9 +11,9 @@ import FoodProductShowCase from "../FoodProductShowCase";
 import PetAccessoriesShowCase from "../PetAccessoriesShowCase";
 
 const Home = () => {
-  useEffect(() => {
-    document.title = "Home";
-  }, []);
+  // useEffect(() => {
+  //   document.title = "Home";
+  // }, []);
   return (
     <>
       <Navigation></Navigation>

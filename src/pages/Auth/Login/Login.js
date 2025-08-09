@@ -10,6 +10,7 @@ import useAuth from "../../../Hooks/useAuth";
 import { useForm } from "react-hook-form";
 const Login = () => {
   const [loginData, setLoginData] = useState({});
+  const [isVisible, setIsVisible] = useState(false);
   const {
     register,
     handleSubmit,
@@ -38,10 +39,10 @@ const Login = () => {
   const handleFacebookSignIn = () => {
     signInWithFacebook(location, navigate);
   };
-  useEffect(() => {
-    document.title = "Login";
-    // console.log("from Login");
-  }, []);
+  // useEffect(() => {
+  //   document.title = "Login";
+  //   // console.log("from Login");
+  // }, []);
   return (
     <>
       <Navigation></Navigation>
@@ -49,8 +50,7 @@ const Login = () => {
         <div className="w-100 text-center mt-5">
           <div
             className="spinner-grow text-secondary text-center"
-            role="status"
-          >
+            role="status">
             <span className="visually-hidden">Loading...</span>
           </div>
         </div>
@@ -77,7 +77,7 @@ const Login = () => {
                 </label>
                 <input
                   {...register("email", {
-                    required: "Email Can Not Be Empty",
+                    required: " Email Can't Be Empty",
                   })}
                   type="email"
                   name="email"
@@ -103,24 +103,38 @@ const Login = () => {
                 <label htmlFor="exampleInputPassword1" className="form-label">
                   Password
                 </label>
-                <input
-                  {...register("password", {
-                    required: "PassWord Can Not Be Empty",
-                    minLength: {
-                      value: 6,
-                      message: "Minmum Lenght Should Be 6",
-                    },
-                  })}
-                  type="password"
-                  name="password"
-                  className={
-                    errors?.password
-                      ? "form-control is-invalid"
-                      : "form-control"
-                  }
-                  placeholder="Password"
-                  id="exampleInputPassword1"
-                />
+
+                <div className="position-relative">
+                  <input
+                    {...register("password", {
+                      required: "PassWord Can Not Be Empty",
+                      minLength: {
+                        value: 6,
+                        message: "Minmum Lenght Should Be 6",
+                      },
+                    })}
+                    type={`${!isVisible ? "password" : "text"}`}
+                    name="password"
+                    className={`position-relative z-1 ${
+                      errors?.password
+                        ? "form-control is-invalid"
+                        : "form-control"
+                    }`}
+                    placeholder="Password"
+                    id="exampleInputPassword1"
+                  />
+                  <div
+                    onClick={() => {
+                      setIsVisible(!isVisible);
+                    }}
+                    className="position-absolute  cursor-pointer z-3 border-0 bg-trasnparent w- top-50 end-0 translate-middle">
+                    {isVisible ? (
+                      <i className="fa-solid fa-eye "></i>
+                    ) : (
+                      <i className="fa-solid fa-eye-slash"></i>
+                    )}
+                  </div>
+                </div>
                 {errors?.password && (
                   <p className="py-2 text-danger ">
                     <i className="fas  fa-exclamation-triangle ms-1"></i>{" "}
@@ -132,22 +146,26 @@ const Login = () => {
               <button type="submit" className="btn btn-defult  w-100">
                 Login <i className="fas fa-sign-in-alt"></i>
               </button>
-              <NavLink to="/signup" className="fw-normal text-main ms-1">
-                don't have an account!
-              </NavLink>
+              <div className="">
+                <NavLink to="/signup" className="fw-normal text-main ms-1 ">
+                  don't have an account!
+                </NavLink>{" "}
+                <span className="fs-5 mx-2">or</span>
+                <NavLink to="/forgotpass" className="fw-normal text-main ms-1 ">
+                  forgot password
+                </NavLink>
+              </div>
             </form>
 
             <div
-              className={`${style.or} d-flex justify-content-center my-2 position-relative`}
-            >
+              className={`${style.or} d-flex justify-content-center my-2 position-relative`}>
               <span className="fs-5 fw-normal text-main">Or</span>
             </div>
             <div className="row">
               <div className="col-12 col-sm-12 col-md-6 col-lg-6 my-2 ">
                 <button
                   onClick={handleGoogleSignIn}
-                  className={`${style.responsive_btn} btn btn-defult-opposite d-flex justify-content-center align-items-center w-100`}
-                >
+                  className={`${style.responsive_btn} btn btn-defult-opposite d-flex justify-content-center align-items-center w-100`}>
                   <img src={googleSignIn} width="30px" height="30px" alt="" />
                   &nbsp;Login In With Google
                 </button>
@@ -155,8 +173,7 @@ const Login = () => {
               <div className="col-12 col-sm-12 col-md-6 col-lg-6 my-2 ">
                 <button
                   onClick={handleFacebookSignIn}
-                  className={`btn btn-defult-opposite d-flex justify-content-center align-items-center w-100 ${style.responsive_btn}`}
-                >
+                  className={`btn btn-defult-opposite d-flex justify-content-center align-items-center w-100 ${style.responsive_btn}`}>
                   <img src={fbSignIn} width="30px" height="30px" alt="" />
                   &nbsp;Login In With Facebook
                 </button>

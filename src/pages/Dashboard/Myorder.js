@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import Navigation from "../Shared/Navigation/Navigation";
 import TitleBox from "../Shared/Title-box/TitleBox";
@@ -6,9 +6,9 @@ import TitleBox from "../Shared/Title-box/TitleBox";
 const Myorder = () => {
   const { user } = useAuth();
   const [userOrder, setUserData] = useState();
-  useLayoutEffect(() => {
+  useEffect(() => {
     async function getData() {
-      await fetch(`http://localhost:5000/orders/${user.email}`)
+      await fetch(`${process.env.REACT_APP_BACKEND_URL}/orders/${user.email}`)
         .then((res) => res.json())
         .then((data) => setUserData(data));
     }
@@ -24,8 +24,7 @@ const Myorder = () => {
             userOrder?.length
               ? "You Have " + userOrder?.length + " Order's"
               : "You Didn't Ordered Anything Yet!"
-          }
-        ></TitleBox>
+          }></TitleBox>
         <div className="row mt-4">
           <div className="col-12">
             <ul className="list-group mb-3">
@@ -33,9 +32,8 @@ const Myorder = () => {
                 <Order
                   key={data._id}
                   data={data}
-                  userOrder={userOrder}
-                  setUserData={setUserData}
-                ></Order>
+                  orders={userOrder}
+                  setOrderData={setUserData}></Order>
               ))}
             </ul>
           </div>
@@ -51,7 +49,7 @@ function Order({ data, userOrder, setUserData }) {
   const handleDelete = (id, title) => {
     const confirmation = window.confirm(`Are Sure You Wanna Delete ${title}`);
     if (confirmation) {
-      const url = `http://localhost:5000/orders/${id}`;
+      const url = `${process.env.REACT_APP_BACKEND_URL}/orders/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -104,8 +102,7 @@ function Order({ data, userOrder, setUserData }) {
                     data?.selected_service || data?.product_name
                   )
                 }
-                className="btn btn-outline-danger mx-2"
-              >
+                className="btn btn-outline-danger mx-2">
                 <i className="fas fa-trash"></i>
               </button>
             </div>

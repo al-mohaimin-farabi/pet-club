@@ -40,7 +40,7 @@ const PetCareBookingForm = ({ user }) => {
         body: JSON.stringify(data),
       };
 
-      const request = await fetch("http://localhost:5000/orders", param);
+      const request = await fetch(`${process.env.REACT_APP_BACKEND_URL}/orders`, param);
       console.log(request);
 
       if (request.status === 200) {

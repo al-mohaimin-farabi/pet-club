@@ -3,7 +3,7 @@ import { useLocation, Navigate } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 
 const AdminRoute = ({ children }) => {
-  const { user, admin, isLoading } = useAuth();
+  const { user, admin, isLoading, tempAdmin } = useAuth();
   const location = useLocation();
   if (isLoading)
     return (
@@ -11,14 +11,13 @@ const AdminRoute = ({ children }) => {
         <div className="w-100 text-center mt-5">
           <div
             className="spinner-grow text-secondary text-center"
-            role="status"
-          >
+            role="status">
             <span className="visually-hidden">Loading...</span>
           </div>
         </div>
       </>
     );
-  if (user.email && admin) return children;
+  if (user.email && (admin || tempAdmin)) return children;
   return <Navigate to="/login" state={{ from: location }} />;
 };
 
