@@ -292,6 +292,7 @@ const useFirebase = () => {
   // logout
   const logout = () => {
     setIsLoading(true);
+    localStorage.removeItem("idToken");
     signOut(auth)
       .then(() => {
         // Sign-out successful.
