@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import Navigation from "../Shared/Navigation/Navigation";
 import TitleBox from "../Shared/Title-box/TitleBox";
@@ -8,7 +8,6 @@ import toast from "react-hot-toast";
 const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 const Manageallproduct = () => {
-  const { user } = useAuth();
   const [foodProduct, setFoodProduct] = useState([]);
   const [toyAndAccProduct, SetToyAndAccProduct] = useState([]);
 
@@ -33,7 +32,7 @@ const Manageallproduct = () => {
     fetchData("petAccAndToy", SetToyAndAccProduct, setIsPetAccAndToyLoading);
   }, []);
 
-  const handleUpdate = (id, updatedData) => {};
+  // const handleUpdate = (id, updatedData) => {};
 
   return (
     <>
@@ -152,7 +151,9 @@ function Product({ product, setProductData, data, uri }) {
         })
         .catch((error) => {
           console.error("Error deleting product:", error);
-          toast.error("An error occurred while deleting the product.");
+          toast.error(
+            error?.message || "An error occurred while deleting the product."
+          );
         });
     } else {
       alert(`Deleting ${data.title} Aborted`);

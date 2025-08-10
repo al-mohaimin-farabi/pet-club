@@ -36,7 +36,10 @@ const PurchaseForm = ({ user, data, category }) => {
       };
       console.log(orderData);
 
-      const request = await fetch(`${process.env.REACT_APP_BACKEND_URL}/orders`, param);
+      const request = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/orders`,
+        param
+      );
       console.log(request);
 
       if (request.status === 200) {
@@ -139,12 +142,10 @@ const PurchaseForm = ({ user, data, category }) => {
             <select
               {...register("delivery_city", { required: true })}
               className="form-select"
-              aria-label="Default select example"
-            >
+              aria-label="Default select example">
               <option
                 defaultValue={"Select Delivery City"}
-                value="Select Delivery City"
-              >
+                value="Select Delivery City">
                 Select Delivery City
               </option>
               <option value="Dhaka">Dhaka</option>
@@ -180,13 +181,21 @@ const PurchaseForm = ({ user, data, category }) => {
               }
               id="exampleInputPhoneNumber"
             />
-            {errors?.customer_phone_num?.type === "pattern" ||
+            {/* {errors?.customer_phone_num?.type === "pattern" ||
               (errors?.customer_phone_num?.message && (
                 <p className="py-2 text-danger ">
                   <i className="fas  fa-exclamation-triangle ms-1"></i> Please
                   Input A Valid BD Number
                 </p>
-              ))}
+              ))} */}
+
+            {(errors?.customer_phone_num?.type === "pattern" ||
+              errors?.customer_phone_num?.message) && (
+              <p className="py-2 text-danger ">
+                <i className="fas  fa-exclamation-triangle ms-1"></i> Please
+                Input A Valid BD Number
+              </p>
+            )}
           </div>
         </div>
         <div className="form-floating mb-3">
@@ -201,8 +210,7 @@ const PurchaseForm = ({ user, data, category }) => {
                 : "form-control"
             }
             placeholder="Delivery Details"
-            id="floatingTextarea"
-          ></textarea>
+            id="floatingTextarea"></textarea>
           <label htmlFor="floatingTextarea">Delivery Details</label>
           {errors.delivery_details && (
             <p className="py-2 text-danger ">
@@ -242,8 +250,7 @@ const PurchaseForm = ({ user, data, category }) => {
         <NavLink
           to="/payment-guide"
           className="btn btn-defult-opposite text-warning fs-6 px-5 "
-          title="How To Pay?"
-        >
+          title="How To Pay?">
           How To Pay <i className="fa-sharp fa-solid fa-circle-exclamation"></i>
         </NavLink>
       </form>

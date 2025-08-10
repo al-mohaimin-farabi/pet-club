@@ -8,10 +8,11 @@ import useAuth from "../../Hooks/useAuth";
 
 const AddFoodProduct = () => {
   const { register, handleSubmit, reset } = useForm();
-  const { user, tempAdmin } = useAuth();
+  const { user, admin, tempAdmin } = useAuth();
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
   const [erroMessage, setErroMessage] = useState("");
+ 
   const onSubmit = (data) => {
     // setSuccess(false);
     const img = data.img[0];
@@ -31,9 +32,10 @@ const AddFoodProduct = () => {
     formData.append("price", data.price);
     formData.append("title", data.title);
     formData.append("img", img);
+    formData.append("addedBy", admin ? "admin" : tempAdmin && "temp_admin");
     if (tempAdmin) {
-      formData.append("email", user.email);
-      formData.append("addeBy", user.displayName);
+      formData.append("email", user?.email);
+      formData.append("name", user?.displayName);
     }
 
     // return;

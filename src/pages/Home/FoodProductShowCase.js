@@ -29,16 +29,16 @@ const FoodProductShowCase = () => {
           infinite={true}
           autoPlayInterval={6000}>
           {isLoading
-            ? [...Array(4)].map((elementInArray, index) => (
+            ? [...Array(4)]?.map((elementInArray, index) => (
                 <div
                   key={index}
                   className={`${style.popular_products} card mt-3 mx-auto `}>
                   <Skeleton></Skeleton>
                 </div>
               ))
-            : data.slice(2, 13).map((singelData) => (
+            : data?.slice(2, 13).map((singelData) => (
                 <div
-                  key={singelData._id}
+                  key={singelData?._id}
                   className={`${style.popular_products} card mt-3 mx-auto `}>
                   <img
                     src={`data:image/*;base64,${singelData?.img}`}

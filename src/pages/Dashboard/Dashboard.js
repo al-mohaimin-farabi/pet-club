@@ -6,7 +6,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import { Button, Tooltip } from "@mui/material";
 import useAuth from "../../Hooks/useAuth";
 import { HashLink } from "react-router-hash-link";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 const drawerWidth = 200;
 
