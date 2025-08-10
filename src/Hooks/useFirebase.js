@@ -240,21 +240,54 @@ const useFirebase = () => {
   }, [auth]);
 
   // check user is superadmin
+
+  // useEffect(() => {
+  //   async function isAdmin() {
+  //     const url = `${process.env.REACT_APP_BACKEND_URL}/users/${user?.email}/roles`;
+  //     await fetch(url)
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         // console.log(data, "admin data");
+
+  //         setIsSuperAdmin(data?.superAdmin);
+  //         setIsTempAdmin(data?.tempAdmin);
+  //         // console.log(data?.superAdmin, data?.tempAdmin);
+  //       });
+  //   }
+  //   isAdmin();
+  // }, [user?.email, user?.admin, tempAdmin]);
+
   useEffect(() => {
     async function isAdmin() {
-      const url = `${process.env.REACT_APP_BACKEND_URL}/users/${user?.email}/roles`;
-      await fetch(url)
-        .then((res) => res.json())
-        .then((data) => {
-          // console.log(data, "admin data");
+      const idToken = localStorage.getItem("idToken"); // Get the ID Token from localStorage
 
+      if (idToken) {
+        const url = `${process.env.REACT_APP_BACKEND_URL}/users/${user?.email}/roles`;
+
+        try {
+          const response = await fetch(url, {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${idToken}`, // Attach the token here
+              "Content-Type": "application/json",
+            },
+          });
+
+          const data = await response.json();
           setIsSuperAdmin(data?.superAdmin);
           setIsTempAdmin(data?.tempAdmin);
-          console.log(data?.superAdmin, data?.tempAdmin);
-        });
+        } catch (error) {
+          console.error("Error checking roles:", error);
+        }
+      } else {
+        console.log("No ID Token found");
+      }
     }
-    isAdmin();
-  }, [user?.email, user?.admin, tempAdmin]);
+
+    if (user?.email) {
+      isAdmin();
+    }
+  }, [user?.email, tempAdmin]);
 
   // logout
   const logout = () => {
@@ -272,13 +305,17 @@ const useFirebase = () => {
   //  save user to the data base || check user email exsist or not
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/users`, {
-      method: method,
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(user),
-    }).then();
+    const idToken = localStorage.getItem("idToken");
+    if (idToken) {
+      fetch(`${process.env.REACT_APP_BACKEND_URL}/users`, {
+        method: method,
+        headers: {
+          "content-type": "application/json",
+          Authorization: `Bearer ${idToken}`, // Attach the token to the request
+        },
+        body: JSON.stringify(user),
+      }).then();
+    }
   };
 
   return {

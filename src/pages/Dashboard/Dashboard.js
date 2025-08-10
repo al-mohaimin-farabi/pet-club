@@ -25,7 +25,14 @@ function Dashboard(props) {
   const assignTempAdmin = async (email) => {
     const makingTemp = toast.loading("Making temporary admin...");
     try {
-      const requester = user.email;
+      const requester = user?.email;
+      const idToken = localStorage.getItem("idToken"); // Get the ID Token from localStorage
+
+      if (!idToken) {
+        toast.dismiss(makingTemp);
+        toast.error("User not authenticated");
+        return;
+      }
 
       const response = await fetch(
         `${process.env.REACT_APP_BACKEND_URL}/users/tempadmin`,
@@ -33,6 +40,7 @@ function Dashboard(props) {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
+            Authorization: `Bearer ${idToken}`, // Attach the token here
           },
           body: JSON.stringify({ email, requester }),
         }
