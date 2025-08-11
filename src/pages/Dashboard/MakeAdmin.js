@@ -51,8 +51,8 @@ const MakeAdmin = () => {
 
   return (
     <>
-      <Navigation></Navigation>
-      <div className="containet text-center mt-5 ">
+      {/* <Navigation></Navigation> */}
+      <div className="containet text-center mt-3 ">
         <h3 className="text-main">Make An Admin</h3>
         <div className="d-flex justify-content-center">
           {success && (

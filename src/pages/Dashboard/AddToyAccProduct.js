@@ -63,7 +63,7 @@ const AddToyAccProduct = () => {
   };
   return (
     <>
-      <Navigation></Navigation>
+      {/* <Navigation></Navigation> */}
       <div className={`${style.add_product} container`}>
         <h2 className="text-main mt-3 text-center mb-3">
           Add Toy & Accessories Product

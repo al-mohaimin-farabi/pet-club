@@ -12,14 +12,11 @@ const WelcomeMessage = () => {
   const toyAndAccProducts = useFetch(
     `${process.env.REACT_APP_BACKEND_URL}/petaccAndToy`
   ).data;
-  const orders = useFetch(
-    `${process.env.REACT_APP_BACKEND_URL}/orders`
-  ).data;
+  const orders = useFetch(`${process.env.REACT_APP_BACKEND_URL}/orders`).data;
 
   if (user.email && !admin)
     return (
       <>
-        <Navigation></Navigation>
         <div className="container mt-3">
           <TitleBox title={`Dashboard For ${user.displayName}`}></TitleBox>
 
@@ -37,7 +34,7 @@ const WelcomeMessage = () => {
   else if (user.email && admin)
     return (
       <>
-        <Navigation></Navigation>
+        {/* <Navigation></Navigation> */}
         <div className="container mt-3">
           <TitleBox title={`Welcome ${user.displayName}`}></TitleBox>
           <div className="row px-2">
@@ -50,7 +47,7 @@ const WelcomeMessage = () => {
           <div className="row px-2">
             <div className="col-12 col-md-6 my-3 ">
               {" "}
-              <div className="card text-white bg-theme-gradient mb-3 shadow">
+              <div className="card text-white bg-theme-gradient shadow">
                 <div className="card-header">Pet Food Products Online</div>
                 <div className="card-body">
                   <p className="card-title">
@@ -79,7 +76,7 @@ const WelcomeMessage = () => {
                 </div>
               </div>
             </div>
-            <div className="col-6 offset-3">
+            <div className="col-12 col-md-6 offset-md-3">
               <div className="card text-white bg-dark bg-gradient mb-3 shadow">
                 <div className="card-header">Orders</div>
                 <div className="card-body">

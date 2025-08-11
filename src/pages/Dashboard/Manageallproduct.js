@@ -36,7 +36,7 @@ const Manageallproduct = () => {
 
   return (
     <>
-      <Navigation />
+      {/* <Navigation /> */}
       <div className="container mt-3">
         <div className="row mt-4">
           {isPetFoodLoading && isPetAccAndToyLoading ? (

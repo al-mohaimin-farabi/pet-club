@@ -274,3 +274,13 @@
     left: 100%;
   }
 }
+
+.hide-avobe-600px {
+  display: none !important;
+}
+
+@media (max-width: 599px) {
+  .hide-avobe-600px {
+    display: block !important;
+  }
+}

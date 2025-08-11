@@ -97,7 +97,7 @@ const Navigation = () => {
             </li>
             {user?.email && (
               <>
-                <li className="nav-item ">
+                <li className="nav-item mb-1 mb-lg-0">
                   <NavLink className="nav-link text-main " to="/dashboard">
                     Dashboard
                   </NavLink>

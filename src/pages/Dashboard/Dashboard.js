@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -7,6 +7,7 @@ import { Button, Tooltip } from "@mui/material";
 import useAuth from "../../Hooks/useAuth";
 import { HashLink } from "react-router-hash-link";
 import toast from "react-hot-toast";
+import Navigation from "../Shared/Navigation/Navigation";
 
 const drawerWidth = 200;
 
@@ -16,10 +17,13 @@ function Dashboard(props) {
   // useEffect(() => {}, [admin, tempAdmin]);
 
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
+  };
+  const closeDrawer = () => {
+    setMobileOpen(false);
   };
 
   const assignTempAdmin = async (email) => {
@@ -88,6 +92,7 @@ function Dashboard(props) {
         }}
         to="/dashboard">
         <Button
+          onClick={closeDrawer}
           className="btn-defult"
           sx={{ mb: 1, mt: 4, width: "95%" }}
           variant="outlined"
@@ -112,6 +117,7 @@ function Dashboard(props) {
         }}
         to="/">
         <Button
+          onClick={closeDrawer}
           className="btn-defult"
           sx={{ my: 1, width: "95%" }}
           variant="outlined"
@@ -138,6 +144,7 @@ function Dashboard(props) {
             }}
             to={`/dashboard/myorders`}>
             <Button
+              onClick={closeDrawer}
               className="btn-defult"
               sx={{ my: 1, width: "95%" }}
               variant="outlined"
@@ -166,7 +173,10 @@ function Dashboard(props) {
                 sx={{ my: 1, width: "95%" }}
                 variant="outlined"
                 color="success"
-                onClick={() => assignTempAdmin(user.email)}>
+                onClick={() => {
+                  // closeDrawer();
+                  assignTempAdmin(user.email);
+                }}>
                 View As a Temporary Admin
               </Button>
             </NavLink>
@@ -209,6 +219,7 @@ function Dashboard(props) {
             >
               <span>
                 <Button
+                  onClick={closeDrawer}
                   disabled={tempAdmin}
                   className={`${tempAdmin ? "" : "btn-defult"}`}
                   sx={{ my: 1, width: "95%" }}
@@ -226,6 +237,7 @@ function Dashboard(props) {
             }}
             to={`/dashboard/addfoodProduct`}>
             <Button
+              onClick={closeDrawer}
               className="btn-defult"
               sx={{ my: 1, width: "95%" }}
               variant="outlined"
@@ -240,6 +252,7 @@ function Dashboard(props) {
             }}
             to={`/dashboard/addToyAndAccProduct`}>
             <Button
+              onClick={closeDrawer}
               className="btn-defult"
               sx={{ my: 1, width: "95%" }}
               variant="outlined"
@@ -254,6 +267,7 @@ function Dashboard(props) {
             }}
             to={`/dashboard/manageallorder`}>
             <Button
+              onClick={closeDrawer}
               className="btn-defult"
               sx={{ my: 1, width: "95%" }}
               variant="outlined"
@@ -268,6 +282,7 @@ function Dashboard(props) {
             }}
             to={`/dashboard/manageallproduct`}>
             <Button
+              onClick={closeDrawer}
               className="btn-defult"
               sx={{ my: 1, width: "95%" }}
               variant="outlined"
@@ -336,6 +351,28 @@ function Dashboard(props) {
           width: { sm: `calc(100% - ${drawerWidth}px)` },
         }}>
         {/* <Toolbar /> */}
+        <Navigation></Navigation>
+        <div className="hide-avobe-600px">
+          <Box sx={{ px: 2 }}>
+            <Button
+              className="btn-defult"
+              sx={{ mb: 1, mt: 1, width: "100%" }}
+              variant="outlined"
+              color="success"
+              onClick={handleDrawerToggle}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="26"
+                height="26"
+                fill="currentColor"
+                className="bi bi-box"
+                viewBox="0 0 16 16">
+                <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z" />
+              </svg>
+              &nbsp; DashBoard Menu
+            </Button>
+          </Box>
+        </div>
         <Outlet></Outlet>
       </Box>
     </Box>
