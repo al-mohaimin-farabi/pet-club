@@ -10,7 +10,7 @@ const servicess = () => {
   return (
     <section className="py-2 my-3">
       <div className="container">
-        <TitleBox title={"Our servicess"}></TitleBox>
+        <TitleBox title={"Our services"}></TitleBox>
 
         <div className="row mt-3 px-2 g-3 mb-1">
           <div className="col-12 col-sm-12 col-lg-4 col-md-6 ">
